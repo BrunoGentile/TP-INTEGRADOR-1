@@ -68,10 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login.aspx" />
-    <Content Include="ModificarPaciente.aspx" />
     <Content Include="Web.config" />
     <Content Include="ModificarMedico.aspx" />
     <Content Include="TurnosAsignados.aspx" />
+    <Content Include="ModificarPaciente.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">

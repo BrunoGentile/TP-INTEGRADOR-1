@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModificarPaciente.aspx.cs" Inherits="TP_INTEGRADOR_15.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModificarPaciente.aspx.cs" Inherits="TP_INTEGRADOR_15.ModificarPaciente" %>
 
 <!DOCTYPE html>
 
@@ -7,25 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-
         .auto-style1 {
             width: 100%;
+        }
+        .auto-style2 {
+            width: 10px;
         }
         .auto-style4 {
             width: 10px;
             height: 23px;
-        }
-        .auto-style18 {
-            height: 23px;
-            width: 215px;
-        }
-        .auto-style10 {
-            height: 23px;
-            width: 172px;
-        }
-        .auto-style13 {
-            height: 23px;
-            width: 75px;
         }
         .auto-style6 {
             height: 23px;
@@ -34,31 +24,42 @@
             width: 10px;
             height: 26px;
         }
-        .auto-style19 {
+        .auto-style9 {
             height: 26px;
-            width: 215px;
+        }
+        .auto-style10 {
+            height: 23px;
+            width: 172px;
         }
         .auto-style11 {
             height: 26px;
             width: 172px;
         }
+        .auto-style12 {
+            width: 172px;
+        }
+        .auto-style13 {
+            height: 23px;
+            width: 75px;
+        }
         .auto-style14 {
             height: 26px;
             width: 75px;
         }
-        .auto-style9 {
-            height: 26px;
-        }
-        .auto-style2 {
-            width: 10px;
-        }
-        .auto-style12 {
-            width: 172px;
-        }
         .auto-style15 {
             width: 75px;
         }
-        </style>
+        .auto-style18 {
+            height: 23px;
+            width: 215px;
+        }
+        .auto-style19 {
+            height: 26px;
+            width: 215px;
+        }
+        .auto-style20 {
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -141,14 +142,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2"></td>
-                    <td></td>
-                    <td class="auto-style12"></td>
-                    <td class="auto-style15"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style13"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
