@@ -10,9 +10,6 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 9px;
-        }
         .auto-style3 {
             width: 136px;
         }
@@ -117,10 +114,6 @@
             width: 180px;
             height: 30px;
         }
-        .auto-style35 {
-            width: 9px;
-            height: 23px;
-        }
         .auto-style36 {
             width: 136px;
             height: 23px;
@@ -160,7 +153,7 @@
         <div id="DIV_Login" runat="server" Visible="true">
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style35"></td>
+                    <td class="auto-style7"></td>
                     <td class="auto-style36"></td>
                     <td class="auto-style37">
                         <asp:Label ID="LBL_Title" runat="server" Font-Size="20pt" Font-Underline="True" Text="Clínica Médica"></asp:Label>
@@ -169,7 +162,7 @@
                     <td class="auto-style8"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style35"></td>
+                    <td class="auto-style7"></td>
                     <td class="auto-style36"></td>
                     <td class="auto-style37">
                     </td>
@@ -177,7 +170,7 @@
                     <td class="auto-style8"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style3">Número de Legajo:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TB_UserName" runat="server" Width="200px"></asp:TextBox>
@@ -186,7 +179,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style3">Contraseña:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TB_Password" runat="server" Width="200px"></asp:TextBox>
@@ -195,7 +188,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style44">
@@ -237,7 +230,7 @@
                         <asp:HyperLink ID="HL_AltaPaciente" runat="server" NavigateUrl="~/Login.aspx">Dar Alta a Paciente</asp:HyperLink>
                     </td>
                     <td class="auto-style27">
-                        <asp:HyperLink ID="HL_ModificarPaciente" runat="server" NavigateUrl="~/Login.aspx">Modificar Datos de Paciente</asp:HyperLink>
+                        <asp:HyperLink ID="HL_ModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx">Modificar Datos de Paciente</asp:HyperLink>
                     </td>
                     <td class="auto-style24">
                         <asp:HyperLink ID="HL_BajaPaciente" runat="server" NavigateUrl="~/Login.aspx">Dar de Baja a Paciente</asp:HyperLink>
