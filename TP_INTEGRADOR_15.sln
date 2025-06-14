@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_INTEGRADOR_15", "TP_INTEGRADOR_15\TP_INTEGRADOR_15.csproj", "{0BB5242D-0CF7-4109-B284-AF27D415FE41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BB5242D-0CF7-4109-B284-AF27D415FE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB5242D-0CF7-4109-B284-AF27D415FE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB5242D-0CF7-4109-B284-AF27D415FE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB5242D-0CF7-4109-B284-AF27D415FE41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D78DAEA-2644-4EEC-922C-3B1E5A82169A}
+	EndGlobalSection
+EndGlobal
