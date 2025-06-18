@@ -12,13 +12,17 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 153px;
+            width: 177px;
         }
         .auto-style3 {
-            width: 471px;
+            width: 316px;
         }
         .auto-style4 {
             width: 97px;
+        }
+        .auto-style5 {
+            width: 177px;
+            margin-left: 40px;
         }
     </style>
 </head>
@@ -27,8 +31,9 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">
-                        <asp:Label ID="lblUsuario" runat="server" Text="Usuario: Charly Garcia"></asp:Label>
+                    <td class="auto-style5">
+                        <asp:Label ID="lblUsuario" runat="server" Text="Usuario: "></asp:Label>
+                        <asp:Label ID="nombreUsuario" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
@@ -84,7 +89,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" AutoGenerateSelectButton="True">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo"></asp:TemplateField>
                                 <asp:TemplateField HeaderText="DNI"></asp:TemplateField>
