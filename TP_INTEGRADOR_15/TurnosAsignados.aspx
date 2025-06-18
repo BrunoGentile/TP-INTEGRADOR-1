@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TurnosAsignados.aspx.cs" Inherits="TP_INTEGRADOR_15.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TurnosAsignados.aspx.cs" Inherits="TP_INTEGRADOR_15.WebForm3" %>
 
 <!DOCTYPE html>
 
@@ -7,8 +7,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
+
         .auto-style1 {
             width: 100%;
+        }
+        .auto-style6 {
+            width: 143px;
+            height: 23px;
+        }
+        .auto-style7 {
+            width: 371px;
+            height: 23px;
+        }
+        .auto-style8 {
+            width: 146px;
+            height: 23px;
+        }
+        .auto-style9 {
+            height: 23px;
+        }
+        .auto-style5 {
+            width: 143px;
         }
         .auto-style3 {
             width: 371px;
@@ -16,25 +35,22 @@
         .auto-style4 {
             width: 146px;
         }
-        .auto-style5 {
-            width: 143px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style5">
+                    <td class="auto-style6">
                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario: Lionel Messi"></asp:Label>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style5">&nbsp;</td>

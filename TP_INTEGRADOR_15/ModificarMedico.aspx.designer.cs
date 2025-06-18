@@ -11,7 +11,7 @@ namespace TP_INTEGRADOR_15
 {
 
 
-    public partial class WebForm1
+    public partial class WebForm2
     {
 
         /// <summary>
@@ -52,42 +52,29 @@ namespace TP_INTEGRADOR_15
 
         /// <summary>
         /// Control txtFiltrado.
-        /// Control LBL_UserName.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_UserName;
-
-        /// <summary>
-        /// Control TB_UserName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFiltrado;
-        protected global::System.Web.UI.WebControls.TextBox TB_UserName;
 
         /// <summary>
         /// Control btnFiltrar.
-        /// Control BTN_Send.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
-        protected global::System.Web.UI.WebControls.Button BTN_Send;
 
         /// <summary>
-        /// Control GV_Pacientes.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GV_Pacientes;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

@@ -69,9 +69,9 @@
   <ItemGroup>
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
+    <Content Include="ModificarPaciente.aspx" />
     <Content Include="ModificarMedico.aspx" />
     <Content Include="TurnosAsignados.aspx" />
-    <Content Include="ModificarPaciente.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -87,6 +87,20 @@
     </Compile>
     <Compile Include="ModificarPaciente.aspx.designer.cs">
       <DependentUpon>ModificarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarMedico.aspx.cs">
+      <DependentUpon>ModificarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarMedico.aspx.designer.cs">
+      <DependentUpon>ModificarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TurnosAsignados.aspx.cs">
+      <DependentUpon>TurnosAsignados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TurnosAsignados.aspx.designer.cs">
+      <DependentUpon>TurnosAsignados.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
