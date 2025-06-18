@@ -206,7 +206,7 @@
             </table>
         </div>
         
-        <div id="DIV_InterfazAdmin" runat="server" Visible="true">
+        <div id="DIV_InterfazAdmin" runat="server" Visible="false">
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style7"></td>
@@ -326,7 +326,7 @@
             </table>
         </div>
 
-        <div id="DIV_InterfazMedico" runat="server" Visible="true">
+        <div id="DIV_InterfazMedico" runat="server" Visible="false">
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style7"></td>
