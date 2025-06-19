@@ -13,9 +13,15 @@ namespace Datos
     public class GestionMedicos
     {
         //CONEXION A LA BASE DE DATOS
-        private string Conexion = "";
+        private string Conexion = @"Data Source=localhost\SQLEXPRESS; Initial Catalog=ClinicaGrupo15;Integrated Security = True";
         //OBJETO DE LA CLASE MEDICOS
         Medicos _Medico = new Medicos();
 
+        //OBTENER CONEXION
+        private SqlConnection ObtenerConexion()
+        {
+            SqlConnection conexion = new SqlConnection(Conexion);
+            return conexion;
+        }
     }
 }
