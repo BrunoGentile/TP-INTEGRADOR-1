@@ -89,7 +89,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True">
+                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo"></asp:TemplateField>
                                 <asp:TemplateField HeaderText="DNI"></asp:TemplateField>

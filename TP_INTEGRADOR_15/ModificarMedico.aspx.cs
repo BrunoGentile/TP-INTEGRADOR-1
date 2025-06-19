@@ -13,5 +13,15 @@ namespace TP_INTEGRADOR_15
         {
 
         }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvMedico.EditIndex = -1;
+        }
     }
 }

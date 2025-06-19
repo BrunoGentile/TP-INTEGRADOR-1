@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Medicos
+    public class Medicos
     {
         // ---------- PROPIEDADES ----------
         private string _Legajo_Medico;
