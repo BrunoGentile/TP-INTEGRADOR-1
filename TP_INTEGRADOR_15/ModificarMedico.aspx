@@ -91,7 +91,11 @@
                     <td class="auto-style3">
                         <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing">
                             <Columns>
-                                <asp:TemplateField HeaderText="Legajo"></asp:TemplateField>
+                                <asp:TemplateField HeaderText="Legajo">
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="DNI"></asp:TemplateField>
                                 <asp:TemplateField HeaderText="Medico"></asp:TemplateField>
                                 <asp:TemplateField HeaderText="Especialidad"></asp:TemplateField>
