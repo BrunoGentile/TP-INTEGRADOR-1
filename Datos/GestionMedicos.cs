@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using Entidades;
+using System.Runtime.CompilerServices;
 
 namespace Datos
 {
@@ -19,11 +20,17 @@ namespace Datos
         Medicos _Medico = new Medicos();
 
         //OBTENER CONEXION
-        private SqlConnection ObtenerConexion()
+        public SqlConnection ObtenerConexion()
         {
-
-            SqlConnection conexion = new SqlConnection(Conexion);
-            return conexion;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(Conexion);
+                return conexion;
+            }
+            catch (Exception)
+            {
+                return null; // Retorna null si hay un error al crear la conexión
+            }
 
         }
 
@@ -37,6 +44,35 @@ namespace Datos
             adaptador.Fill(dataTable);
             
             conexion.Close();
+        }
+
+        public void actualizarMedicos(Medicos medico) { 
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+            String ConsultaSQL = "UPDATE Medicos SET Nombre_Medico = @Nombre, Apellido_Medico = @Apellido, CodEspecialidad_Medico = @Especialidad, " +
+                "Correo_Medico = @Correo, Telefono_Medico = @Telefono, Sexo_Medico = @Sexo, Nacionalidad_Medico = @Nacionalidad, Provincia_Medico = @Provincia," + 
+                "Ciudad_Medico = @Ciudad, Direccion_Medico = @Direccion, DiasAtencion_Medico = @DiasAtencion, HorarioInicio_Medico = @HorarioInicio, " +
+                "HorarioFin_Medico = @HorarioFin WHERE Legajo_Medico = @Legajo";
+            SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
+
+            comando.Parameters.AddWithValue("@Legajo", medico.Legajo_Medico);
+            comando.Parameters.AddWithValue("@Nombre", medico.Nombre_Medico);
+            comando.Parameters.AddWithValue("@Apellido", medico.Apellido_Medico);
+            comando.Parameters.AddWithValue("@Especialidad", medico.CodEspecialidad_Medico);
+            comando.Parameters.AddWithValue("@Correo", medico.Correo_Medico);
+            comando.Parameters.AddWithValue("@Telefono", medico.Telefono_Medico);
+            comando.Parameters.AddWithValue("@Sexo", medico.Sexo_Medico);
+            comando.Parameters.AddWithValue("@Nacionalidad", medico.Nacionalidad_Medico);
+            comando.Parameters.AddWithValue("@Provincia", medico.Provincia_Medico);
+            comando.Parameters.AddWithValue("@Ciudad", medico.Ciudad_Medico);
+            comando.Parameters.AddWithValue("@Direccion", medico.Direccion_Medico);
+            comando.Parameters.AddWithValue("@DiasAtencion", medico.DiasAtencion_Medico);
+            comando.Parameters.AddWithValue("@HorarioInicio", medico.HorarioInicio_Medico);
+            comando.Parameters.AddWithValue("@HorarioFin", medico.HorarioFin_Medico);
+
+            //executar el comando
+            comando.ExecuteNonQuery();
+            ObtenerConexion().Close();
         }
 
         // -------------------------------------------------------------------------------------------------

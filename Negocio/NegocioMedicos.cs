@@ -22,5 +22,10 @@ namespace Negocio
             GestionMedicos.ObtenerMedicos(dataTable);
             return dataTable;   
         }
+
+        public void ActualizarMedico(Medicos medico)
+        {
+            GestionMedicos.actualizarMedicos(medico);
+        }
     }
 }

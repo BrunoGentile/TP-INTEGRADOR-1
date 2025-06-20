@@ -199,7 +199,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Direccion">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txtDireccion" runat="server" Height="20px" Text='<%# Bind("Direccion_Medico") %>' Width="100px"></asp:TextBox>
+                                        <asp:TextBox ID="txtDireccion" runat="server" Height="20px" Text='<%# Bind("Direccion_Medico") %>' Width="200px"></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Direccion" runat="server" Text='<%# Bind("Direccion_Medico") %>'></asp:Label>
