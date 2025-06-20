@@ -153,6 +153,33 @@
         .auto-style48 {
             height: 26px;
         }
+        .auto-style49 {
+            width: 9px;
+            height: 42px;
+        }
+        .auto-style50 {
+            width: 136px;
+            height: 42px;
+        }
+        .auto-style51 {
+            width: 215px;
+            height: 42px;
+        }
+        .auto-style52 {
+            height: 42px;
+        }
+        .auto-style53 {
+            width: 150px;
+            height: 23px;
+        }
+        .auto-style54 {
+            width: 225px;
+            height: 23px;
+        }
+        .auto-style55 {
+            width: 205px;
+            height: 23px;
+        }
     </style>
 </head>
 <body class="Body">
@@ -178,12 +205,12 @@
                     <td class="auto-style8"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">Número de Legajo:</td>
-                    <td class="auto-style4">
+                    <td class="auto-style49"></td>
+                    <td class="auto-style50">Número de Legajo:</td>
+                    <td class="auto-style51">
                         <asp:TextBox ID="TB_Legajo" runat="server" Width="200px"></asp:TextBox>
                     </td>
-                    <td class="auto-style44" colspan="2">
+                    <td class="auto-style52" colspan="2">
                         <asp:RequiredFieldValidator ID="RFV_Legajo" runat="server" ControlToValidate="TB_Legajo" ForeColor="#CC0000">Ingrese un Legajo</asp:RequiredFieldValidator>
                         <br />
                         <asp:Label ID="LBL_Error" runat="server" ForeColor="#CC0000"></asp:Label>
@@ -251,14 +278,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style28">&nbsp;</td>
-                    <td class="auto-style27">&nbsp;</td>
-                    <td class="auto-style24">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style53"></td>
+                    <td class="auto-style54"></td>
+                    <td class="auto-style55"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
