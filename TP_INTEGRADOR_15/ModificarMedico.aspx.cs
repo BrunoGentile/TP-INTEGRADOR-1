@@ -25,14 +25,28 @@ namespace TP_INTEGRADOR_15
             }
         }
 
+        //CANCELAR
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            gvMedico.EditIndex = e.NewEditIndex;
 
+            // Volver a cargar los datos al editar
+            gvMedico.DataBind();
         }
 
+        //EDITAR
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvMedico.EditIndex = -1;
+
+            // Volver a cargar los datos al cancelar la edición
+            gvMedico.DataBind();
+        }
+
+        //ACTUALIZAR
+        protected void gvMedico_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
         }
     }
 }
