@@ -92,7 +92,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Nombre:</td>
                     <td class="auto-style20">
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_nombrePaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
@@ -106,7 +106,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Apellido:</td>
                     <td class="auto-style20">
-                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_apellidoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
@@ -120,7 +120,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">DNI:</td>
                     <td class="auto-style20">
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_DniPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
@@ -134,14 +134,14 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Sexo:</td>
                     <td class="auto-style20">
-                        <asp:RadioButton ID="RadioButton1" runat="server" Text="Femenino" />
+                        <asp:RadioButton ID="rb_pacienteFem" runat="server" Text="Femenino" CausesValidation="True" GroupName="sexo_Paciente" />
                         <br />
-                        <asp:RadioButton ID="RadioButton2" runat="server" Text="Masculino" />
+                        <asp:RadioButton ID="rb_pacienteMasc" runat="server" Text="Masculino" CausesValidation="True" GroupName="sexo_Paciente" />
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">Nacionalidad:</td>
                     <td class="auto-style17">
-                        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_nacPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
@@ -152,7 +152,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Fecha de Nacimiento:</td>
                     <td class="auto-style20">
-                        <input type="date"/> 
+                        <input type="date" id="txt_FechaNacPaciente" runat="server"/> 
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
@@ -166,7 +166,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Dirección:</td>
                     <td class="auto-style20">
-                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_direccionPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
@@ -180,13 +180,13 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Provincia:</td>
                     <td class="auto-style20">
-                        <asp:DropDownList ID="DropDownList1" runat="server" Height="19px" Width="123px">
+                        <asp:DropDownList ID="ddl_ProvPaciente" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_ProvPaciente_SelectedIndexChanged" Width="125px">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">Localidad:</td>
                     <td class="auto-style17">
-                        <asp:DropDownList ID="DropDownList2" runat="server" Height="18px" Width="125px">
+                        <asp:DropDownList ID="ddl_LocPaciente" runat="server" Height="18px" Width="125px">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style18">&nbsp;</td>
@@ -198,7 +198,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Correo Electronico:</td>
                     <td class="auto-style20">
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_correoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
@@ -212,7 +212,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Teléfono</td>
                     <td class="auto-style20">
-                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_telefonoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
@@ -225,7 +225,9 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
+                    <td class="auto-style20">
+                        <asp:Label ID="lbl_fechaNac" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
@@ -246,7 +248,7 @@
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style20" colspan="3">
-                        <asp:Button ID="Button1" runat="server" Text="Aceptar" Width="145px" />
+                        <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" Width="145px" OnClick="btn_Aceptar_Click" />
                     </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>

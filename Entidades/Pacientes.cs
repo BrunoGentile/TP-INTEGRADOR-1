@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
     {
-        public class Clientes
+        public class Pacientes
         {
 
             // [+] ---------- PROPIEDADES ---------- [+]
@@ -25,7 +25,7 @@ namespace Entidades
             // [+] ---------- CONSTRUCTORES ---------- [+]
 
             // <+> CONSTRUCTOR POR DEFECTO
-            public Clientes()
+            public Pacientes()
             {
                 _Nombre_Paciente = string.Empty;
                 _Apellido_Paciente = string.Empty;
@@ -41,7 +41,7 @@ namespace Entidades
             }
 
             // <+> CONSTRUCTOR CON PARÁMETROS
-            Clientes(string Nombre_Paciente, string Apellido_Paciente, string DNI_Paciente, string Sexo_Paciente, string Nacionalidad_Paciente, string FechaNacimiento_Paciente, string Direccion_Paciente, string Provincia_Paciente, string Localidad_Paciente, string Correo_Paciente, string Telefono_Paciente)
+            Pacientes(string Nombre_Paciente, string Apellido_Paciente, string DNI_Paciente, string Sexo_Paciente, string Nacionalidad_Paciente, string FechaNacimiento_Paciente, string Direccion_Paciente, string Provincia_Paciente, string Localidad_Paciente, string Correo_Paciente, string Telefono_Paciente)
             {
                 _Nombre_Paciente = Nombre_Paciente;
                 _Apellido_Paciente = Apellido_Paciente;

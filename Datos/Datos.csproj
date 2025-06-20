@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="GestionAdministradores.cs" />
     <Compile Include="GestionMedicos.cs" />
+    <Compile Include="GestionPacientes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
