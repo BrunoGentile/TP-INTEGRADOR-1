@@ -82,5 +82,31 @@ namespace Datos
 
         }
 
+        // [+] ---------- OBTENER USUARIO MÉDICO ---------- [+]
+
+        public string ObtenerUsuario(string TB_Legajo)
+        {
+
+            string NombreCompleto = string.Empty;
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("SELECT Nombre_Medico, Apellido_Medico FROM Medicos WHERE Legajo_Medico = @Legajo", conexion);
+                comando.Parameters.AddWithValue("@Legajo", TB_Legajo);
+                
+                SqlDataReader reader = comando.ExecuteReader();
+                
+                if (reader.Read())
+                {
+                    NombreCompleto = $"{reader["Nombre_Medico"]}" + ", " + $"{reader["Apellido_Medico"]}";
+                }
+
+                reader.Close();
+            }
+            
+            return NombreCompleto;
+
+        }
+
     }
 }

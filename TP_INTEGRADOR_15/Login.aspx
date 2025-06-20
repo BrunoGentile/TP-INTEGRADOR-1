@@ -69,17 +69,9 @@
         width: 180px;
         height: 24px;
     }
-    .auto-style19 {
-        height: 23px;
-        width: 150px;
-    }
     .auto-style20 {
         height: 24px;
         width: 150px;
-    }
-    .auto-style22 {
-        height: 23px;
-        width: 205px;
     }
     .auto-style23 {
         height: 24px;
@@ -87,10 +79,6 @@
     }
     .auto-style24 {
         width: 205px;
-    }
-    .auto-style25 {
-        width: 225px;
-        height: 23px;
     }
     .auto-style26 {
         width: 225px;
@@ -138,7 +126,6 @@
         height: 24px;
     }
     .auto-style41 {
-        width: 151px;
         height: 23px;
     }
     .auto-style42 {
@@ -194,10 +181,10 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">Número de Legajo:</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TB_UserName" runat="server" Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="TB_Legajo" runat="server" Width="200px"></asp:TextBox>
                     </td>
                     <td class="auto-style44" colspan="2">
-                        <asp:RequiredFieldValidator ID="RFV_Legajo" runat="server" ControlToValidate="TB_UserName" ForeColor="#CC0000">Ingrese un Legajo</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RFV_Legajo" runat="server" ControlToValidate="TB_Legajo" ForeColor="#CC0000">Ingrese un Legajo</asp:RequiredFieldValidator>
                         <br />
                         <asp:Label ID="LBL_Error" runat="server" ForeColor="#CC0000"></asp:Label>
                     </td>
@@ -228,11 +215,9 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style19">Usuario:</td>
-                    <td class="auto-style25">
+                    <td class="auto-style8" colspan="3">Usuario:&nbsp;
                         <asp:Label ID="LBL_Admin_UserName" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style22"></td>
                     <td class="auto-style9"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style12">
@@ -348,11 +333,8 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style41">Usuario:</td>
-                    <td class="auto-style42">
-                        <asp:Label ID="LBL_Medico_UserName" runat="server"></asp:Label>
+                    <td class="auto-style41" colspan="3">Usuario:&nbsp; <asp:Label ID="LBL_Medico_UserName" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style8"></td>
                     <td class="auto-style8"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style12">

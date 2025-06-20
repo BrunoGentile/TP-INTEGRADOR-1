@@ -19,7 +19,7 @@ namespace TP_INTEGRADOR_15
 
         private void LimpiarCampos()
         {
-            TB_UserName.Text = string.Empty;
+            TB_Legajo.Text = string.Empty;
             TB_Password.Text = string.Empty;
         }
 
@@ -30,15 +30,23 @@ namespace TP_INTEGRADOR_15
             LBL_Error.Text = string.Empty;
 
             NegocioLogin NegLogin = new NegocioLogin();
-            int Respuesta = NegLogin.ValidarLogin(TB_UserName.Text, TB_Password.Text);
+            int Respuesta = NegLogin.ValidarLogin(TB_Legajo.Text, TB_Password.Text);
 
             if (Respuesta == 1) {
                 DIV_Login.Visible = false;
                 DIV_InterfazAdmin.Visible = true;
+                
+                // OBTENER NOMBRE Y APELLIDO DEL USUARIO ADMINISTRADOR
+                Session["Usuario"] = NegLogin.ObtenerUsuario(TB_Legajo.Text); 
+                LBL_Admin_UserName.Text = Session["Usuario"].ToString();
             }
             else if (Respuesta == 2){
                 DIV_Login.Visible = false;
                 DIV_InterfazMedico.Visible = true;
+
+                // OBTENER NOMBRE Y APELLIDO DEL USUARIO MEDICO 
+                Session["Usuario"] = NegLogin.ObtenerUsuario(TB_Legajo.Text); 
+                LBL_Medico_UserName.Text = Session["Usuario"].ToString();
             }
             else
             {

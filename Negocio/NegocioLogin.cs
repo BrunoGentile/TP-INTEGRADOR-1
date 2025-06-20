@@ -44,5 +44,26 @@ namespace Negocio
 
         }
 
+        // <+> OBTENER USUARIO ( SE ALMACENA EN UNA VARIABLE SESSIÓN PARA USARLA EN CUALQUIER ASPX )
+        public string ObtenerUsuario(string TB_Legajo)
+        {
+
+            string NombreCompleto = string.Empty;
+
+            if (TB_Legajo.StartsWith("ADM"))
+            {
+                GestionAdministradores _GestionAdmin = new GestionAdministradores();
+                NombreCompleto = _GestionAdmin.ObtenerUsuario(TB_Legajo);
+            }
+            else if (TB_Legajo.StartsWith("MED"))
+            {
+                GestionMedicos _GestionMedicos = new GestionMedicos();
+                NombreCompleto = _GestionMedicos.ObtenerUsuario(TB_Legajo);
+            }
+
+            return NombreCompleto;
+
+        }
+
     }
 }
