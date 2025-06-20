@@ -10,15 +10,16 @@ using Entidades;
 
 namespace Datos
 {
-    public class GestionMedicos
+    public class GestionAdministradores
     {
-        //CONEXION A LA BASE DE DATOS
-        private string Conexion = @"Data Source=localhost\SQLEXPRESS; Initial Catalog=ClinicaGrupo15;Integrated Security = True";
-        
-        //OBJETO DE LA CLASE MEDICOS
-        Medicos _Medico = new Medicos();
 
-        //OBTENER CONEXION
+        // [+] ---------- CONECCIÓN A LA BASE DE DATOS ---------- [+]
+        private string Conexion = @"Data Source=localhost\SQLEXPRESS; Initial Catalog=ClinicaGrupo15;Integrated Security = True";
+
+        // [+] ---------- OBJETO DE LA CLASE ADMINISTRADORES ---------- [+]
+        Administradores _Admin = new Administradores();
+
+        // [+] ---------- OBTENER CONEXIÓN ---------- [+]
         private SqlConnection ObtenerConexion()
         {
             SqlConnection conexion = new SqlConnection(Conexion);
@@ -28,42 +29,41 @@ namespace Datos
         // -------------------------------------------------------------------------------------------------
         // --------------------------------------------- LOGIN ---------------------------------------------
         // -------------------------------------------------------------------------------------------------
-
+        
         // [+] ---------- VERIFICACIÓN DE USUARIOS ---------- [+]
 
         public int ValidarLogin(string Legajo, string Password)
         {
-            
             int Respuesta = 0; // USUARIO NO VÁLIDO POR DEFECTO
 
             /* USING PARA MANEJAR LA CONEXIÓN Y CERRARLA LUEGO AUTOMÁTICAMENTE
             AL SALIR EJECUTA Dispose() DE SqlConnection QUE CONTIENE LLAMADA INTERNA A Close() */
-            using (SqlConnection conexion = ObtenerConexion())
+            using ( SqlConnection conexion = ObtenerConexion() )
             {
-                
+
                 conexion.Open();
                 
-                SqlCommand comando = new SqlCommand("SELECT * FROM Medicos WHERE Legajo_Medico = @Legajo AND Contraseña_Medico = @Password", conexion);
+                SqlCommand comando = new SqlCommand("SELECT * FROM Administradores WHERE Legajo_Admin = @Legajo AND Contraseña_Admin = @Password", conexion);
                 comando.Parameters.AddWithValue("@Legajo", Legajo);
                 comando.Parameters.AddWithValue("@Password", Password);
-                
+
                 // EJECUTAR COMANDO SQL Y OBTENER RESULTADO
                 SqlDataReader reader = comando.ExecuteReader();
-                
+
                 // VERIFICAR SI HAY FILAS QUE COINCIDEN CON LA CONSULTA
                 if (reader.HasRows)
                 {
-                    Respuesta = 2; // USUARIO MÉDICO VÁLIDO
+                    Respuesta = 1; // USUARIO ADMINISTRADOR VÁLIDO
                 }
                 else
                 {
                     Respuesta = 0; // USUARIO NO VÁLIDO
                 }
-
+                
                 reader.Close();
 
             }
-            
+
             return Respuesta;
 
         }

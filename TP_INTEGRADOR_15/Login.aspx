@@ -150,9 +150,23 @@
         width: 80px;
     }
     .auto-style44 {
-        width: 80px;
-    }
-</style>
+        }
+        .auto-style45 {
+            width: 9px;
+            height: 26px;
+        }
+        .auto-style46 {
+            width: 136px;
+            height: 26px;
+        }
+        .auto-style47 {
+            width: 215px;
+            height: 26px;
+        }
+        .auto-style48 {
+            height: 26px;
+        }
+    </style>
 </head>
 <body class="Body">
     <form id="form1" runat="server">
@@ -182,24 +196,25 @@
                     <td class="auto-style4">
                         <asp:TextBox ID="TB_UserName" runat="server" Width="200px"></asp:TextBox>
                     </td>
-                    <td class="auto-style44">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style44" colspan="2">
+                        <asp:Label ID="LBL_Error" runat="server" ForeColor="#CC0000"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">Contraseña:</td>
-                    <td class="auto-style4">
+                    <td class="auto-style45"></td>
+                    <td class="auto-style46">Contraseña:</td>
+                    <td class="auto-style47">
                         <asp:TextBox ID="TB_Password" runat="server" Width="200px"></asp:TextBox>
                     </td>
-                    <td class="auto-style44">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style48"></td>
+                    <td class="auto-style48"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style44">
-                        <asp:Button ID="BTN_Enviar" runat="server" Text="Enviar" />
+                        <asp:Button ID="BTN_Enviar" runat="server" Text="Enviar" OnClick="BTN_Enviar_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -218,7 +233,7 @@
                     <td class="auto-style9"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style12">
-                        &nbsp;</td>
+                        </td>
                     <td class="auto-style8"></td>
                 </tr>
                 <tr>
