@@ -21,16 +21,10 @@ namespace Datos
         //OBTENER CONEXION
         private SqlConnection ObtenerConexion()
         {
+
             SqlConnection conexion = new SqlConnection(Conexion);
-            try
-            {
-                conexion.Open();
-                return conexion;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            return conexion;
+
         }
 
         //MÉTODO PARA OBTENER TODOS LOS MÉDICOS
@@ -58,7 +52,7 @@ namespace Datos
 
             /* USING PARA MANEJAR LA CONEXIÓN Y CERRARLA LUEGO AUTOMÁTICAMENTE
             AL SALIR EJECUTA Dispose() DE SqlConnection QUE CONTIENE LLAMADA INTERNA A Close() */
-            using (SqlConnection conexion = ObtenerConexion())
+            using ( SqlConnection conexion = ObtenerConexion() )
             {
                 
                 conexion.Open();
