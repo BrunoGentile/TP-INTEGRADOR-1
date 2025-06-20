@@ -15,7 +15,7 @@
             width: 177px;
         }
         .auto-style3 {
-            width: 316px;
+            width: 399px;
         }
         .auto-style4 {
             width: 97px;
@@ -23,6 +23,21 @@
         .auto-style5 {
             width: 177px;
             margin-left: 40px;
+        }
+        .auto-style6 {
+            width: 177px;
+            height: 30px;
+        }
+        .auto-style7 {
+            width: 399px;
+            height: 30px;
+        }
+        .auto-style8 {
+            width: 97px;
+            height: 30px;
+        }
+        .auto-style9 {
+            height: 30px;
         }
     </style>
 </head>
@@ -63,19 +78,19 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style6">
                         <asp:Label ID="lblFiltrar" runat="server" Font-Size="Large" Text="Filtrar por legajo:"></asp:Label>
                     </td>
-                    <td class="auto-style3">
+                    <td class="auto-style7">
                         <asp:TextBox ID="txtFiltrado" runat="server" Width="283px"></asp:TextBox>
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style8">
                         <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="84px" />
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
@@ -89,27 +104,92 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing">
+                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo">
                                     <ItemTemplate>
-                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                        <asp:Label ID="lbl_It_Legajo" runat="server" Text='<%# Bind("Legajo_Medico") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="DNI"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Medico"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Especialidad"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Correo"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Telefono"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Sexo"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Nacimiento"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Nacionalidad"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Provincia"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Ciudad"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Direccion"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Dias de atencion"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Jornada"></asp:TemplateField>
+                                <asp:TemplateField HeaderText="DNI">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_DNI" runat="server" Text='<%# Bind("DNI_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Medico">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Nombre" runat="server" Text='<%# Bind("Nombre_Medico") %>'></asp:Label>
+                                        &nbsp;<asp:Label ID="lbl_It_Apellido" runat="server" Text='<%# Bind("Apellido_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Especialidad">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Especialidad" runat="server" Text='<%# Bind("CodEspecialidad_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Correo">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Correo" runat="server" Text='<%# Bind("Correo_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Telefono">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Telefono" runat="server" Text='<%# Bind("Telefono_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Sexo">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Sexo" runat="server" Text='<%# Bind("Sexo_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Nacimiento">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Nacimiento" runat="server" Text='<%# Bind("FechaNacimiento_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Nacionalidad">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Nacionalidad" runat="server" Text='<%# Bind("Nacionalidad_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Provincia">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Provincia" runat="server" Text='<%# Bind("Provincia_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Ciudad">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Ciudad" runat="server" Text='<%# Bind("Ciudad_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Direccion">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Direccion" runat="server" Text='<%# Bind("Direccion_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Dias de atencion">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_DiasAtencion" runat="server" Text='<%# Bind("DiasAtencion_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Jornada">
+                                    <ItemTemplate>
+                                        desde
+                                        <asp:Label ID="lbl_It_HoraInic" runat="server" Text='<%# Bind("HorarioInicio_Medico") %>'></asp:Label>
+                                        &nbsp;hasta las
+                                        <asp:Label ID="lbl_It_HoraFin" runat="server" Text='<%# Bind("HorarioFin_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
+                            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                            <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                            <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                            <RowStyle BackColor="White" ForeColor="#003399" />
+                            <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                            <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                            <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                            <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                            <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
