@@ -14,7 +14,7 @@ namespace TP_INTEGRADOR_15
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         private void LimpiarCampos()
@@ -26,6 +26,8 @@ namespace TP_INTEGRADOR_15
         // VALIDACIÓN DE DATOS INGRESADOS ( LOGUEO ADMIN & DOCTOR )
         protected void BTN_Enviar_Click(object sender, EventArgs e)
         {
+
+            LBL_Error.Text = string.Empty;
 
             NegocioLogin NegLogin = new NegocioLogin();
             int Respuesta = NegLogin.ValidarLogin(TB_UserName.Text, TB_Password.Text);

@@ -197,6 +197,8 @@
                         <asp:TextBox ID="TB_UserName" runat="server" Width="200px"></asp:TextBox>
                     </td>
                     <td class="auto-style44" colspan="2">
+                        <asp:RequiredFieldValidator ID="RFV_Legajo" runat="server" ControlToValidate="TB_UserName" ForeColor="#CC0000">Ingrese un Legajo</asp:RequiredFieldValidator>
+                        <br />
                         <asp:Label ID="LBL_Error" runat="server" ForeColor="#CC0000"></asp:Label>
                     </td>
                 </tr>
@@ -206,8 +208,9 @@
                     <td class="auto-style47">
                         <asp:TextBox ID="TB_Password" runat="server" Width="200px"></asp:TextBox>
                     </td>
-                    <td class="auto-style48"></td>
-                    <td class="auto-style48"></td>
+                    <td class="auto-style48" colspan="2">
+                        <asp:RequiredFieldValidator ID="RFV_Pass" runat="server" ControlToValidate="TB_Password" ForeColor="#CC0000">Ingrese una Contraseña</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>

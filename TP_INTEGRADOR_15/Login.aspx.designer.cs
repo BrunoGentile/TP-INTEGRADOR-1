@@ -51,6 +51,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox TB_UserName;
 
         /// <summary>
+        /// Control RFV_Legajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_Legajo;
+
+        /// <summary>
         /// Control LBL_Error.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TB_Password;
+
+        /// <summary>
+        /// Control RFV_Pass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_Pass;
 
         /// <summary>
         /// Control BTN_Enviar.
