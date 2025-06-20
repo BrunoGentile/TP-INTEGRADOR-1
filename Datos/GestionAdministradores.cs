@@ -85,13 +85,9 @@ namespace Datos
                 // EJECUTAR COMANDO SQL Y OBTENER RESULTADO
                 SqlDataReader reader = comando.ExecuteReader();
                 
-                // VERIFICAR SI HAY FILAS QUE COINCIDEN CON LA CONSULTA
-                if (reader.HasRows)
+                if ( reader.Read() )
                 {
-                    while ( reader.Read() ) // MIENTRAS HAYA FILAS QUE COINCIDAN
-                    {
-                        NombreCompleto = $"{reader["Nombre_Admin"]}" + ", " + $"{reader["Apellido_Admin"]}";
-                    }
+                    NombreCompleto = $"{reader["Nombre_Admin"]}" + ", " + $"{reader["Apellido_Admin"]}";
                 }
                 
                 reader.Close();
