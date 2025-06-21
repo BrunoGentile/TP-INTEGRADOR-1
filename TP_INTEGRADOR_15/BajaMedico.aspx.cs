@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Entidades;
+using Negocio;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +14,19 @@ namespace TP_INTEGRADOR_15
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                cargarGridView();
+            }
         }
+
+        public void cargarGridView()
+        {
+            NegocioMedicos negocioMedicos = new NegocioMedicos();
+            gvMedico.DataSource = negocioMedicos.ObtenerMedicos();
+            gvMedico.DataBind();
+        }
+
+        
     }
 }

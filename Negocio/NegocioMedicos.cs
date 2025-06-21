@@ -27,5 +27,7 @@ namespace Negocio
         {
             GestionMedicos.actualizarMedicos(medico);
         }
+
+      
     }
 }
