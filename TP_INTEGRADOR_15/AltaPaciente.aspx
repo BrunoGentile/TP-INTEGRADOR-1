@@ -8,7 +8,8 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 816px;
+            width: 1325px;
+            height: 521px;
         }
         .auto-style3 {
         }
@@ -46,6 +47,58 @@
         .auto-style24 {
             width: 100px;
         }
+        .auto-style25 {
+            width: 443px;
+            height: 36px;
+        }
+        .auto-style26 {
+            width: 443px;
+        }
+        .auto-style27 {
+            height: 36px;
+            width: 660px;
+        }
+        .auto-style28 {
+            width: 660px;
+        }
+        .auto-style29 {
+            height: 36px;
+            width: 606px;
+        }
+        .auto-style30 {
+            width: 606px;
+        }
+        .auto-style31 {
+            width: 81px;
+            height: 16px;
+        }
+        .auto-style32 {
+            height: 16px;
+        }
+        .auto-style33 {
+            width: 116px;
+            height: 16px;
+        }
+        .auto-style34 {
+            width: 443px;
+            height: 16px;
+        }
+        .auto-style35 {
+            width: 100px;
+            height: 16px;
+        }
+        .auto-style36 {
+            height: 16px;
+            width: 606px;
+        }
+        .auto-style37 {
+            height: 16px;
+            width: 82px;
+        }
+        .auto-style38 {
+            height: 16px;
+            width: 660px;
+        }
     </style>
 </head>
 <body>
@@ -53,40 +106,53 @@
         <div>
             <table class="auto-style1">
                 <tr>
+                    <td class="auto-style31"></td>
+                    <td class="auto-style32" colspan="2">
+                        <asp:Label ID="lbl_Usuario" runat="server"></asp:Label>
+                    </td>
+                    <td class="auto-style34"></td>
+                    <td class="auto-style35"></td>
+                    <td class="auto-style31"></td>
+                    <td class="auto-style36"></td>
+                    <td class="auto-style37"></td>
+                    <td class="auto-style37"></td>
+                    <td class="auto-style38"></td>
+                </tr>
+                <tr>
                     <td class="auto-style5"></td>
                     <td class="auto-style21"></td>
                     <td class="auto-style19"></td>
-                    <td class="auto-style5"></td>
+                    <td class="auto-style25"></td>
                     <td class="auto-style23"></td>
                     <td class="auto-style5"></td>
+                    <td class="auto-style29"></td>
                     <td class="auto-style16"></td>
                     <td class="auto-style16"></td>
-                    <td class="auto-style16"></td>
-                    <td class="auto-style16"></td>
+                    <td class="auto-style27">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style3" colspan="2">
                         <asp:Label ID="Label1" runat="server" Font-Bold="False" Font-Size="XX-Large" Text="Alta de Paciente"></asp:Label>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style3" colspan="2">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -94,13 +160,15 @@
                     <td class="auto-style20">
                         <asp:TextBox ID="txt_nombrePaciente" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RequiredFieldValidator ID="rfv_nombrePaciente" runat="server" ControlToValidate="txt_nombrePaciente">Ingresar el nombre del paciente</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -108,13 +176,15 @@
                     <td class="auto-style20">
                         <asp:TextBox ID="txt_apellidoPaciente" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RequiredFieldValidator ID="rfv_apellidoPaciente" runat="server" ControlToValidate="txt_apellidoPaciente">Ingresar el apellido del paciente</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -122,31 +192,37 @@
                     <td class="auto-style20">
                         <asp:TextBox ID="txt_DniPaciente" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RegularExpressionValidator ID="rev_DNIpaciente" runat="server" ControlToValidate="txt_DniPaciente" ValidationExpression="^\d{7,8}$">*</asp:RegularExpressionValidator>
+                        <br />
+                        <asp:RequiredFieldValidator ID="rfv_DNIpaciente" runat="server" ControlToValidate="txt_DniPaciente">Ingrese DNI del paciente</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Sexo:</td>
                     <td class="auto-style20">
-                        <asp:RadioButton ID="rb_pacienteFem" runat="server" Text="Femenino" CausesValidation="True" GroupName="sexo_Paciente" />
+                        <asp:RadioButton ID="rb_pacienteFem" runat="server" Text="Femenino" CausesValidation="True" GroupName="sexo_Paciente" Checked="True" />
                         <br />
                         <asp:RadioButton ID="rb_pacienteMasc" runat="server" Text="Masculino" CausesValidation="True" GroupName="sexo_Paciente" />
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style24">Nacionalidad:</td>
                     <td class="auto-style17">
                         <asp:TextBox ID="txt_nacPaciente" runat="server"></asp:TextBox>
                     </td>
+                    <td class="auto-style30">
+                        <asp:RequiredFieldValidator ID="rfv_NacionalidadPaciente" runat="server" ControlToValidate="txt_nacPaciente" ErrorMessage="Ingresar nacionalidad del paciente"></asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -154,13 +230,15 @@
                     <td class="auto-style20">
                         <input type="date" id="txt_FechaNacPaciente" runat="server"/> 
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RequiredFieldValidator ID="rfv_FechaNacPaciente" runat="server" ControlToValidate="txt_FechaNacPaciente">Ingresar Fecha de Nacimiento</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -168,13 +246,15 @@
                     <td class="auto-style20">
                         <asp:TextBox ID="txt_direccionPaciente" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RequiredFieldValidator ID="rfv_direccionPaciente" runat="server" ControlToValidate="txt_direccionPaciente" ErrorMessage="Ingresar direccion del paciente"></asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -183,16 +263,20 @@
                         <asp:DropDownList ID="ddl_ProvPaciente" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_ProvPaciente_SelectedIndexChanged" Width="125px">
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RequiredFieldValidator ID="rfv_provincia" runat="server" ControlToValidate="ddl_ProvPaciente" Display="Dynamic" InitialValue="-- Seleccionar --">Seleccionar provincia</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">Localidad:</td>
                     <td class="auto-style17">
                         <asp:DropDownList ID="ddl_LocPaciente" runat="server" Height="18px" Width="125px">
                         </asp:DropDownList>
                     </td>
+                    <td class="auto-style30">
+                        <asp:RequiredFieldValidator ID="rfv_localidad" runat="server" ControlToValidate="ddl_LocPaciente" Display="Dynamic" ErrorMessage="RequiredFieldValidator" InitialValue="-- Seleccionar --">Seleccionar localidad</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -200,13 +284,17 @@
                     <td class="auto-style20">
                         <asp:TextBox ID="txt_correoPaciente" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RegularExpressionValidator ID="rev_correoPaciente" runat="server" ControlToValidate="txt_correoPaciente" ErrorMessage="*" ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"></asp:RegularExpressionValidator>
+                        <br />
+                        <asp:RequiredFieldValidator ID="rfv_CorreoPaciente" runat="server" ControlToValidate="txt_correoPaciente">Ingrese correo del paciente</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -214,33 +302,36 @@
                     <td class="auto-style20">
                         <asp:TextBox ID="txt_telefonoPaciente" runat="server"></asp:TextBox>
                     </td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">
+                        <asp:RegularExpressionValidator ID="rev_TelefonoPaciente" runat="server" ControlToValidate="txt_telefonoPaciente" ErrorMessage="*"></asp:RegularExpressionValidator>
+                        <br />
+                        <asp:RequiredFieldValidator ID="rfv_telefonoPaciente" runat="server" ControlToValidate="txt_telefonoPaciente">Ingresar telefono del paciente</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style20">
-                        <asp:Label ID="lbl_fechaNac" runat="server"></asp:Label>
-                    </td>
-                    <td class="auto-style17">&nbsp;</td>
+                        &nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                 </tr>
@@ -251,22 +342,22 @@
                         <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" Width="145px" OnClick="btn_Aceptar_Click" />
                     </td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
                     <td class="auto-style20">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style28">&nbsp;</td>
                 </tr>
             </table>
         </div>

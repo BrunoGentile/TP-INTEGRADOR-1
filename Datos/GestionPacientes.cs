@@ -15,8 +15,8 @@ namespace Datos
         //CONEXION A LA BASE DE DATOS
         private string Conexion = @"Data Source=localhost\SQLEXPRESS; Initial Catalog=ClinicaGrupo15;Integrated Security = True";
 
-        //OBJETO DE LA CLASE MEDICOS
-        Pacientes _Paciente = new Pacientes();
+        //OBJETO DE LA CLASE PACIENTES
+        Pacientes Paciente = new Pacientes();
 
         //OBTENER CONEXION
         private SqlConnection ObtenerConexion()
@@ -28,9 +28,6 @@ namespace Datos
         }
 
         //Métodos
-
-
-
         public void insertarPaciente(string nombre, string apellido, string DNI, string Sexo, string Nacionalidad, string FechaNac, string Direc, string Prov, string Localidad, string Correo, string Telefono)
         {
             SqlConnection conexion = ObtenerConexion();

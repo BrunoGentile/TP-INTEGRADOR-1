@@ -24,6 +24,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control lbl_Usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Usuario;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox txt_nombrePaciente;
 
         /// <summary>
+        /// Control rfv_nombrePaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_nombrePaciente;
+
+        /// <summary>
         /// Control txt_apellidoPaciente.
         /// </summary>
         /// <remarks>
@@ -51,6 +69,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox txt_apellidoPaciente;
 
         /// <summary>
+        /// Control rfv_apellidoPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_apellidoPaciente;
+
+        /// <summary>
         /// Control txt_DniPaciente.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,24 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_DniPaciente;
+
+        /// <summary>
+        /// Control rev_DNIpaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_DNIpaciente;
+
+        /// <summary>
+        /// Control rfv_DNIpaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_DNIpaciente;
 
         /// <summary>
         /// Control rb_pacienteFem.
@@ -87,6 +132,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox txt_nacPaciente;
 
         /// <summary>
+        /// Control rfv_NacionalidadPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_NacionalidadPaciente;
+
+        /// <summary>
         /// Control txt_FechaNacPaciente.
         /// </summary>
         /// <remarks>
@@ -94,6 +148,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_FechaNacPaciente;
+
+        /// <summary>
+        /// Control rfv_FechaNacPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_FechaNacPaciente;
 
         /// <summary>
         /// Control txt_direccionPaciente.
@@ -105,6 +168,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox txt_direccionPaciente;
 
         /// <summary>
+        /// Control rfv_direccionPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_direccionPaciente;
+
+        /// <summary>
         /// Control ddl_ProvPaciente.
         /// </summary>
         /// <remarks>
@@ -112,6 +184,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_ProvPaciente;
+
+        /// <summary>
+        /// Control rfv_provincia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_provincia;
 
         /// <summary>
         /// Control ddl_LocPaciente.
@@ -123,6 +204,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.DropDownList ddl_LocPaciente;
 
         /// <summary>
+        /// Control rfv_localidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_localidad;
+
+        /// <summary>
         /// Control txt_correoPaciente.
         /// </summary>
         /// <remarks>
@@ -130,6 +220,24 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_correoPaciente;
+
+        /// <summary>
+        /// Control rev_correoPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_correoPaciente;
+
+        /// <summary>
+        /// Control rfv_CorreoPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_CorreoPaciente;
 
         /// <summary>
         /// Control txt_telefonoPaciente.
@@ -141,13 +249,22 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox txt_telefonoPaciente;
 
         /// <summary>
-        /// Control lbl_fechaNac.
+        /// Control rev_TelefonoPaciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_fechaNac;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_TelefonoPaciente;
+
+        /// <summary>
+        /// Control rfv_telefonoPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_telefonoPaciente;
 
         /// <summary>
         /// Control btn_Aceptar.

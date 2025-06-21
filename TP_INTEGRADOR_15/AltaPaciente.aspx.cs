@@ -48,7 +48,7 @@ namespace TP_INTEGRADOR_15
             ddl_ProvPaciente.DataTextField = "Desc_Provincia";
             ddl_ProvPaciente.DataValueField = "CodProvincia";
             ddl_ProvPaciente.DataBind();
-            ddl_ProvPaciente.Items.Insert(0, new ListItem("-- Seleccione una provincia --", "0"));
+            ddl_ProvPaciente.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
         }
 
         //Cargo dropDownList de Localidades
@@ -59,7 +59,7 @@ namespace TP_INTEGRADOR_15
              ddl_LocPaciente.DataTextField = "Desc_Ciudad";
              ddl_LocPaciente.DataValueField = "CodPostal_Ciudad";
              ddl_LocPaciente.DataBind();
-             ddl_LocPaciente.Items.Insert(0, new ListItem("-- Seleccione una provincia --", "0"));
+             ddl_LocPaciente.Items.Insert(0, new ListItem("-- Seleccionar --", "0"));
         }
 
         //Obtengo un string a partir de los radiobuttons
@@ -85,7 +85,9 @@ namespace TP_INTEGRADOR_15
 
             string fechaTexto = txt_FechaNacPaciente.Value; 
 
-            negocioPacientes.RegistrarPaciente(txt_nombrePaciente.Text, txt_apellidoPaciente.Text, txt_DniPaciente.Text, ObtenerGenero(rb_pacienteFem, rb_pacienteMasc), txt_nacPaciente.Text, fechaTexto, txt_direccionPaciente.Text, ddl_ProvPaciente.SelectedValue, ddl_LocPaciente.SelectedValue, txt_correoPaciente.Text, txt_telefonoPaciente.Text);
+            negocioPacientes.RegistrarPaciente(txt_nombrePaciente.Text, txt_apellidoPaciente.Text, txt_DniPaciente.Text, 
+                ObtenerGenero(rb_pacienteFem, rb_pacienteMasc), txt_nacPaciente.Text, fechaTexto, txt_direccionPaciente.Text, 
+                ddl_ProvPaciente.SelectedValue, ddl_LocPaciente.SelectedValue, txt_correoPaciente.Text, txt_telefonoPaciente.Text);
             LimpiarCampos();
         }
 
