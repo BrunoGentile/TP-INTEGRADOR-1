@@ -31,5 +31,12 @@ namespace Negocio
             return gestionPacientes.Localidades(CodProvincia);
         }
 
+        // [+] ---------- LISTAR PACIENTES ---------- [+]
+
+        public DataTable ListarPacientes()
+        {
+            return gestionPacientes.ListarPacientes();
+        }
+
     }
 }

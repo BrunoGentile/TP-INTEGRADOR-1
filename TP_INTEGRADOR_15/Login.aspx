@@ -243,7 +243,7 @@
                 <tr>
                     <td class="auto-style7"></td>
                     <td class="auto-style8" colspan="3">Usuario:&nbsp;
-                        <asp:Label ID="LBL_Admin_UserName" runat="server"></asp:Label>
+                        <asp:Label ID="LBL_Admin_UserName" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                     <td class="auto-style9"></td>
                     <td class="auto-style10"></td>
@@ -267,7 +267,7 @@
                         <asp:HyperLink ID="HL_AltaPaciente" runat="server" NavigateUrl="~/Login.aspx">Dar Alta a Paciente</asp:HyperLink>
                     </td>
                     <td class="auto-style27">
-                        <asp:HyperLink ID="HL_ModificarPaciente" runat="server" NavigateUrl="~/Login.aspx">Modificar Datos de Paciente</asp:HyperLink>
+                        <asp:HyperLink ID="HL_ModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx">Modificar Datos de Paciente</asp:HyperLink>
                     </td>
                     <td class="auto-style24">
                         <asp:HyperLink ID="HL_BajaPaciente" runat="server" NavigateUrl="~/Login.aspx">Dar de Baja a Paciente</asp:HyperLink>
@@ -360,7 +360,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style41" colspan="3">Usuario:&nbsp; <asp:Label ID="LBL_Medico_UserName" runat="server"></asp:Label>
+                    <td class="auto-style41" colspan="3">Usuario:&nbsp; <asp:Label ID="LBL_Medico_UserName" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                     <td class="auto-style8"></td>
                     <td class="auto-style10"></td>

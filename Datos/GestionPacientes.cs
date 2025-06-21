@@ -102,5 +102,42 @@ namespace Datos
             conexion.Close();
             return ddlLocalidades;
         }
-    }   
+
+        // [+] ---------- LISTAR PACIENTES ( TODOS LOS CAMPOS ) ---------- [+]
+
+        public DataTable ListarPacientes()
+        {
+            
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            string consultaSQL = @"
+            SELECT 
+                DNI_Paciente, 
+                Nombre_Paciente, 
+                Apellido_Paciente, 
+                Sexo_Paciente, 
+                FechaNacimiento_Paciente, 
+                Correo_Paciente, 
+                Telefono_Paciente, 
+                Direccion_Paciente, 
+                Desc_Ciudad, 
+                Desc_Provincia,
+                Nacionalidad_Paciente    
+            FROM Pacientes INNER JOIN Ciudades
+                ON CodCiudad_Paciente = CodPostal_Ciudad AND CodProvincia_Paciente = CodProvincia
+            INNER JOIN Provincias
+                ON Ciudades.CodProvincia = Provincias.CodProvincia";
+            
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            SqlDataReader sqlDataReader = comando.ExecuteReader(); // DEVUELVE OBJETO SQLDataReader - Apuntador
+            DataTable DTPacientes = new DataTable();
+            
+            DTPacientes.Load(sqlDataReader); // ALMACENO CADA FILA DEL SQLDataReader EN UN DataTable
+
+            conexion.Close();
+            return DTPacientes;
+        }
+
+    }
 }
