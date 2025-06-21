@@ -47,8 +47,10 @@ namespace Datos
         }
 
         //MÉTODO PARA FILTRAR MÉDICOS POR LEGAJO
-        public void FiltrarMedicosPorLegajo(DataTable dataTable, string legajo)
+        public DataTable FiltrarMedicosPorLegajo(string legajo)
         {
+            DataTable dataTable = new DataTable();
+
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
 
@@ -59,6 +61,8 @@ namespace Datos
             adaptador.Fill(dataTable);
             
             conexion.Close();
+
+            return dataTable;
         }
 
         //MÉTODO PARA ACTUALIZAR UN MÉDICO

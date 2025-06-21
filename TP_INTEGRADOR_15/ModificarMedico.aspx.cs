@@ -16,7 +16,16 @@ namespace TP_INTEGRADOR_15
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblNombreUsuario.Text = Session["Usuario"].ToString();
+            /* ACORDARSE DE DESCOMENTAR CUANDO TERMINE LAS PRUEBAS
+            if (Session["Usuario"] == null)
+            {
+                // Si el Session no contiene el usuario, redirigir a la página de inicio de sesión
+                Response.Redirect("Login.aspx");
+            } else
+            {
+                lblNombreUsuario.Text = Session["Usuario"].ToString();
+            }
+            */
 
             if (!IsPostBack)
             {
@@ -96,11 +105,15 @@ namespace TP_INTEGRADOR_15
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)
-        {     
+        {
             NegocioMedicos negocioMedicos = new NegocioMedicos();
-            negocioMedicos.filtrarMedicosPorLegajo(gvMedico.DataSource as DataTable, txtFiltrado.Text.Trim());
 
+            DataTable dtFiltrado = negocioMedicos.filtrarMedicosPorLegajo(txtFiltrado.Text.Trim());
+            gvMedico.DataSource = dtFiltrado;
+            gvMedico.DataBind();
+            
+            // Limpiar el textBox después de filtrar
             txtFiltrado.Text = string.Empty;           
-        }
+        }       
     }
 }
