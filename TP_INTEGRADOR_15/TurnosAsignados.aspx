@@ -11,10 +11,6 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style6 {
-            width: 143px;
-            height: 23px;
-        }
         .auto-style7 {
             width: 371px;
             height: 23px;
@@ -26,14 +22,18 @@
         .auto-style9 {
             height: 23px;
         }
-        .auto-style5 {
-            width: 143px;
-        }
         .auto-style3 {
             width: 371px;
         }
         .auto-style4 {
             width: 146px;
+        }
+        .auto-style10 {
+            width: 220px;
+            height: 23px;
+        }
+        .auto-style11 {
+            width: 220px;
         }
         </style>
 </head>
@@ -42,8 +42,9 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style6">
-                        <asp:Label ID="lblUsuario" runat="server" Text="Usuario: Lionel Messi"></asp:Label>
+                    <td class="auto-style10">
+                        <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
+                    &nbsp;<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style7"></td>
                     <td class="auto-style8"></td>
@@ -53,7 +54,7 @@
                     <td class="auto-style9"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">
                         <asp:Label ID="lblModificarMedico" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Turnos Asignados"></asp:Label>
                     </td>
@@ -64,7 +65,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -73,7 +74,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
+                    <td class="auto-style11">
                         <asp:Label ID="lblFiltrar" runat="server" Font-Size="Large" Text="Filtrar por paciente:"></asp:Label>
                     </td>
                     <td class="auto-style3">
@@ -88,7 +89,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -97,7 +98,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="367px">
                             <Columns>
@@ -116,7 +117,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>

@@ -38,7 +38,7 @@ namespace Datos
         public void ObtenerMedicos(DataTable dataTable)
         {
             SqlConnection conexion = ObtenerConexion();
-            string consultaSQL = "SELECT * FROM Medicos";
+            string consultaSQL = "SELECT * FROM Medicos WHERE Estado_Medico = 1";
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             adaptador.Fill(dataTable);
@@ -46,6 +46,22 @@ namespace Datos
             conexion.Close();
         }
 
+        //MÉTODO PARA FILTRAR MÉDICOS POR LEGAJO
+        public void FiltrarMedicosPorLegajo(DataTable dataTable, string legajo)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            string consultaSQL = "SELECT * FROM Medicos WHERE Legajo_Medico = @Legajo";
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@Legajo", legajo);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            adaptador.Fill(dataTable);
+            
+            conexion.Close();
+        }
+
+        //MÉTODO PARA ACTUALIZAR UN MÉDICO
         public void actualizarMedicos(Medicos medico) { 
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();

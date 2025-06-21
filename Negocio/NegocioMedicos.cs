@@ -28,6 +28,10 @@ namespace Negocio
             GestionMedicos.actualizarMedicos(medico);
         }
 
-      
+        public void filtrarMedicosPorLegajo(DataTable dataTable, string filtro)
+        {
+            GestionMedicos.FiltrarMedicosPorLegajo(dataTable, filtro);
+        }
+
     }
 }

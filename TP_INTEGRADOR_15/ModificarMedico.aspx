@@ -12,34 +12,31 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 177px;
+            width: 218px;
         }
         .auto-style3 {
-            width: 399px;
+            width: 410px;
         }
         .auto-style4 {
-            width: 97px;
+            width: 43px;
         }
         .auto-style5 {
-            width: 177px;
+            width: 218px;
             margin-left: 40px;
         }
         .auto-style6 {
-            width: 177px;
+            width: 218px;
             height: 30px;
         }
         .auto-style7 {
-            width: 399px;
+            width: 410px;
             height: 30px;
         }
         .auto-style8 {
-            width: 97px;
+            width: 43px;
             height: 30px;
         }
-        .auto-style9 {
-            height: 30px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -48,14 +45,10 @@
                 <tr>
                     <td class="auto-style5">
                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario: "></asp:Label>
-                        <asp:Label ID="nombreUsuario" runat="server"></asp:Label>
+                        <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
@@ -63,19 +56,11 @@
                         <asp:Label ID="lblModificarMedico" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Modificar Medico"></asp:Label>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">
@@ -83,20 +68,16 @@
                     </td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtFiltrado" runat="server" Width="283px"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="84px" OnClick="btnFiltrar_Click" />
                     </td>
                     <td class="auto-style8">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="84px" />
-                    </td>
-                    <td class="auto-style9"></td>
-                    <td class="auto-style9"></td>
-                    <td class="auto-style9"></td>
-                    <td class="auto-style9"></td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -239,19 +220,11 @@
                         </asp:GridView>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
             </table>
         </div>

@@ -16,6 +16,8 @@ namespace TP_INTEGRADOR_15
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblNombreUsuario.Text = Session["Usuario"].ToString();
+
             if (!IsPostBack)
             {
                 cargarGridView();
@@ -91,6 +93,14 @@ namespace TP_INTEGRADOR_15
 
             gvMedico.EditIndex = -1;
             cargarGridView();
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {     
+            NegocioMedicos negocioMedicos = new NegocioMedicos();
+            negocioMedicos.filtrarMedicosPorLegajo(gvMedico.DataSource as DataTable, txtFiltrado.Text.Trim());
+
+            txtFiltrado.Text = string.Empty;           
         }
     }
 }
