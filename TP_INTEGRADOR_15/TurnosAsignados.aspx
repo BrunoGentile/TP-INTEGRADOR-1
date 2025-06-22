@@ -12,7 +12,7 @@
             width: 100%;
         }
         .auto-style7 {
-            width: 400px;
+            width: 527px;
             height: 23px;
         }
         .auto-style8 {
@@ -23,7 +23,7 @@
             height: 23px;
         }
         .auto-style3 {
-            width: 400px;
+            width: 527px;
         }
         .auto-style4 {
             width: 146px;
@@ -40,7 +40,7 @@
             height: 137px;
         }
         .auto-style13 {
-            width: 400px;
+            width: 527px;
             height: 137px;
         }
         .auto-style14 {
@@ -88,10 +88,13 @@
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtFiltrado" runat="server" Width="283px"></asp:TextBox>
+                    &nbsp;
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" OnClick="btnFiltrar_Click" />
+                    &nbsp;
+                        <asp:Button ID="btnReiniciar" runat="server" Text="Reiniciar tabla" />
                     </td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" OnClick="btnFiltrar_Click" />
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -99,6 +102,8 @@
                     <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">
                         <asp:RequiredFieldValidator ID="rfvPacienteVacio" runat="server" ControlToValidate="txtFiltrado">Ingrese un paciente</asp:RequiredFieldValidator>
+                    &nbsp;
+                        <asp:Label ID="lblPacienteInexistente" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
