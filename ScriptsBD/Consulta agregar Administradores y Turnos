@@ -1,0 +1,39 @@
+USE ClinicaGrupo15
+GO
+
+INSERT INTO Administradores(
+    Legajo_Admin,
+    Contraseña_Admin,
+    Nombre_Admin,
+    Apellido_Admin,
+    Correo_Admin,
+    Telefono_Admin
+)
+VALUES
+('ADM00004', 'pass2025', 'Sofía', 'Martínez', 'sofia.martinez@clinica.com', '1167890123'),
+('ADM00005', 'adminpass', 'Tomás', 'López', 'tomas.lopez@clinica.com', '1178901234'),
+('ADM00006', 'clave1234', 'Camila', 'Ruiz', 'camila.ruiz@clinica.com', '1189012345'),
+('ADM00007', 'secure2025', 'Mateo', 'Díaz', 'mateo.diaz@clinica.com', '1190123456'),
+('ADM00008', 'clinica01', 'Valentina', 'Gómez', 'valentina.gomez@clinica.com', '1101234567'),
+('ADM00009', 'admclave', 'Benjamín', 'Fernández', 'benjamin.fernandez@clinica.com', '1112345678'),
+('ADM00010', 'contrasegura', 'Juana', 'Romero', 'juana.romero@clinica.com', '1123456789');
+
+INSERT INTO Turnos(
+    Cod_Turno,
+    LegajoMedico_Turnos,
+    DNIPaciente_Turnos,
+    LegajoAdmin_Turnos,
+    Dia_Turnos,
+    Horarios_Turnos
+)
+VALUES
+('TUR00001', 'MED00001', 20228704, 'ADM00001', '2025-06-24', '08:00:00.0000000'),
+('TUR00002', 'MED00002', 21008764, 'ADM00002', '2025-06-24', '08:30:00.0000000'),
+('TUR00003', 'MED00003', 21234780, 'ADM00003', '2025-06-25', '09:00:00.0000000'),
+('TUR00004', 'MED00004', 21456780, 'ADM00004', '2025-06-25', '09:30:00.0000000'),
+('TUR00005', 'MED00005', 22339163, 'ADM00005', '2025-06-26', '10:00:00.0000000'),
+('TUR00006', 'MED00006', 22376102, 'ADM00006', '2025-06-26', '10:30:00.0000000'),
+('TUR00007', 'MED00007', 34590001, 'ADM00007', '2025-06-27', '11:00:00.0000000'),
+('TUR00008', 'MED00008', 37981212, 'ADM00008', '2025-06-27', '11:30:00.0000000'),
+('TUR00009', 'MED00009', 38455678, 'ADM00009', '2025-06-28', '12:00:00.0000000'),
+('TUR00010', 'MED00010', 38912347, 'ADM00010', '2025-06-28', '12:30:00.0000000');
