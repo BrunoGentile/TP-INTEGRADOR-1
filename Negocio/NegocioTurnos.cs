@@ -11,7 +11,22 @@ using Entidades;
 
 namespace Negocio
 {
-    internal class NegocioTurnos
+    public class NegocioTurnos
     {
+        GestionTurnos gestionTurnos = new GestionTurnos();
+
+        public DataTable ObtenerTurnos()
+        {
+            DataTable dataTable = new DataTable();
+            gestionTurnos.ObtenerTurnos(dataTable);
+            return dataTable;
+        }
+
+        public DataTable filtrarTurnosPorPaciente(string filtro)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = gestionTurnos.FiltrarTurnosPorPaciente(filtro);
+            return dataTable;
+        }
     }
 }

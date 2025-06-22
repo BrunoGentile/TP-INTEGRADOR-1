@@ -90,14 +90,16 @@
                         <asp:TextBox ID="txtFiltrado" runat="server" Width="283px"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" OnClick="btnFiltrar_Click" />
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:RequiredFieldValidator ID="rfvPacienteVacio" runat="server" ControlToValidate="txtFiltrado">Ingrese un paciente</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -105,7 +107,7 @@
                 <tr>
                     <td class="auto-style12"></td>
                     <td class="auto-style13">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="538px" Height="106px">
+                        <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" Width="538px" Height="106px">
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI Paciente">
                                     <ItemTemplate>

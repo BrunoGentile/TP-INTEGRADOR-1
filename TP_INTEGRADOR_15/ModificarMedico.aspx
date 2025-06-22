@@ -77,7 +77,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:RequiredFieldValidator ID="rfvFiltroVacio" runat="server" ControlToValidate="txtFiltrado">Ingrese un legajo</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvLegajoVacio" runat="server" ControlToValidate="txtFiltrado">Ingrese un legajo</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
