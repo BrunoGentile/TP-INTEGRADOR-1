@@ -11,12 +11,13 @@ namespace TP_INTEGRADOR_15
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
                 // MUESTRA EL NOMBRE DEL USUARIO LOGUEADO
-                LBL_UserName.Text = Session["Usuario"].ToString(); 
+                LBL_UserName.Text = Session["Usuario"].ToString();
 
                 // CARGA EL GRIDVIEW CON LOS PACIENTES
                 CargarGridView();
@@ -27,9 +28,21 @@ namespace TP_INTEGRADOR_15
         // [+] ---------- CARGAR GRID VIEW ---------- [+]
         protected void CargarGridView()
         {
-            NegocioPacientes _NegPacientes = new NegocioPacientes();
-            GV_Pacientes.DataSource = _NegPacientes.ListarPacientes();
-            GV_Pacientes.DataBind();
+
+            if ( TB_UserName.Text == string.Empty )
+            {
+                NegocioPacientes _NegPacientes = new NegocioPacientes();
+                GV_Pacientes.DataSource = _NegPacientes.ListarPacientes();
+                GV_Pacientes.DataBind();
+            }
+            else
+            {
+                string Nombre = TB_UserName.Text.Trim();
+                NegocioPacientes _NegPacientes = new NegocioPacientes();
+                GV_Pacientes.DataSource = _NegPacientes.CargarGridViewPorNombre(Nombre);
+                GV_Pacientes.DataBind();
+            }
+                 
         }
 
         // [+] ---------- PAGINACIÓN ---------- [+]
@@ -134,6 +147,21 @@ namespace TP_INTEGRADOR_15
             ddlCiudad.DataValueField = "CodPostal_Ciudad";
             ddlCiudad.DataBind();
 
+        }
+
+        protected void BTN_Send_Click(object sender, EventArgs e)
+        {
+            string Nombre = TB_UserName.Text.Trim();
+
+            NegocioPacientes _NegPacientes = new NegocioPacientes();
+            GV_Pacientes.DataSource = _NegPacientes.CargarGridViewPorNombre(Nombre);
+            GV_Pacientes.DataBind();
+        }
+
+        protected void BTN_MostrarOriginal_Click(object sender, EventArgs e)
+        {
+            TB_UserName.Text = string.Empty;
+            CargarGridView();
         }
     }
 }
