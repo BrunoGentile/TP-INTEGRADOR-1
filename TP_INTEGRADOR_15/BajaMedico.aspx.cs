@@ -46,6 +46,21 @@ namespace TP_INTEGRADOR_15
             }
         }
 
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            NegocioMedicos negocioMedicos = new NegocioMedicos();
 
+            DataTable dtFiltrado = negocioMedicos.filtrarMedicosPorLegajo(txtLegajo.Text.Trim());
+            gvMedico.DataSource = dtFiltrado;
+            gvMedico.DataBind();
+
+            // Limpiar el textBox después de filtrar
+            txtLegajo.Text = string.Empty;
+        }
+
+        protected void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            CargarGridMedicos();
+        }
     }
 }
