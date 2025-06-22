@@ -38,5 +38,13 @@ namespace Negocio
             return gestionPacientes.ListarPacientes();
         }
 
+        // [+] ---------- ACTUALIZAR PACIENTE ---------- [+]
+
+        public void ActualizarPaciente(Pacientes Paciente)
+        {
+            Paciente = gestionPacientes.TraerDatosPaciente(Paciente);
+            gestionPacientes.ActualizarPaciente(Paciente);
+        }
+
     }
 }

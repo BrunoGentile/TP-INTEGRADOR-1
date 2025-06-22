@@ -21,7 +21,7 @@
         }
         .auto-style10 {
             height: 23px;
-            width: 172px;
+            width: 150px;
         }
         .auto-style13 {
             height: 23px;
@@ -40,7 +40,7 @@
         }
         .auto-style11 {
             height: 26px;
-            width: 172px;
+            width: 150px;
         }
         .auto-style14 {
             height: 26px;
@@ -52,7 +52,7 @@
         .auto-style2 {
         }
         .auto-style12 {
-            width: 172px;
+            width: 150px;
         }
         .auto-style15 {
             width: 75px;
@@ -62,7 +62,7 @@
         }
         .auto-style21 {
             height: 25px;
-            width: 172px;
+            width: 150px;
         }
         .auto-style22 {
             height: 25px;
@@ -122,59 +122,92 @@
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="8">
-                        <asp:GridView ID="GV_Pacientes" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" style="margin-top: 0px">
+                        <asp:GridView ID="GV_Pacientes" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" style="margin-top: 0px" AllowPaging="True" OnPageIndexChanging="GV_Pacientes_PageIndexChanging" OnRowCancelingEdit="GV_Pacientes_RowCancelingEdit" OnRowEditing="GV_Pacientes_RowEditing" OnRowUpdating="GV_Pacientes_RowUpdating" PageSize="8">
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="LBL_EIT_DNI" runat="server" Text='<%# Bind("DNI_Paciente") %>'></asp:Label>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_DNI" runat="server" Text='<%# Bind("DNI_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Nombre">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TB_EIT_Nombre" runat="server"></asp:TextBox>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Nombre" runat="server" Text='<%# Bind("Nombre_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Apellido">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TB_EIT_Apellido" runat="server"></asp:TextBox>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Apellido" runat="server" Text='<%# Bind("Apellido_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Sexo">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="LBL_EIT_Sexo" runat="server" Text='<%# Bind("Sexo_Paciente") %>'></asp:Label>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Sexo" runat="server" Text='<%# Bind("Sexo_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Fecha de Nacimiento">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="LBL_EIT_FechaNacimiento" runat="server" Text='<%# Bind("FechaNacimiento_Paciente") %>'></asp:Label>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_FDN" runat="server" Text='<%# Bind("FechaNacimiento_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Correo">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TB_EIT_Correo" runat="server"></asp:TextBox>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Correo" runat="server" Text='<%# Bind("Correo_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Teléfono">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TB_EIT_Telefono" runat="server"></asp:TextBox>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Tel" runat="server" Text='<%# Bind("Telefono_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Direccion">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TB_EIT_Direccion" runat="server"></asp:TextBox>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Direccion" runat="server" Text='<%# Bind("Direccion_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Ciudad">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="LBL_EIT_Ciudad" runat="server" Text='<%# Bind("Desc_Ciudad") %>'></asp:Label>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Ciudad" runat="server" Text='<%# Bind("Desc_Ciudad") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Provincia">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="LBL_EIT_Provincia" runat="server" Text='<%# Bind("Desc_Provincia") %>'></asp:Label>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Provincia" runat="server" Text='<%# Bind("Desc_Provincia") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Nacionalidad">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TB_EIT_Nacionalidad" runat="server"></asp:TextBox>
+                                    </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_Nacionalidad" runat="server" Text='<%# Bind("Nacionalidad_Paciente") %>'></asp:Label>
                                     </ItemTemplate>
