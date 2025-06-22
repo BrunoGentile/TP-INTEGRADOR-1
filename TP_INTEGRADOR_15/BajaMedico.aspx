@@ -123,7 +123,7 @@
                     <td class="auto-style12">
                         <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                     </td>
-                    <td class="auto-style12"></td>
+                    <td class="auto-style12">&nbsp;</td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
@@ -152,27 +152,29 @@
             <Columns>
                 <asp:TemplateField HeaderText="Legajo">
                     <ItemTemplate>
-                        <asp:Label ID="lblLegajo" runat="server" Text='<%# Bind("Legajo_Medico") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_Legajo" runat="server" Text='<%# Bind("Legajo_Medico") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="DNI">
                     <ItemTemplate>
-                        <asp:Label ID="lblDNI" runat="server" Text='<%# Bind("DNI_Medico") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_DNI" runat="server" Text='<%# Bind("DNI_Medico") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Nombre y Apellido">
                     <ItemTemplate>
-                        <asp:Label ID="lblNombre" runat="server" Text='<%# Bind("Nombre_Medico") + " " + Bind("Apellido_Medico") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("Nombre_Medico") %>'></asp:Label>
+                        <br />
+                        <asp:Label ID="lbl_it_Apellido" runat="server" Text='<%# Bind("Apellido_Medico") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Correo">
                     <ItemTemplate>
-                        <asp:Label ID="lblCorreo" runat="server" Text='<%# Bind("Correo_Medico") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_Correo" runat="server" Text='<%# Bind("Correo_Medico") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Teléfono">
                     <ItemTemplate>
-                        <asp:Label ID="lblTelefono" runat="server" Text='<%# Bind("Telefono_Medico") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_Telefono" runat="server" Text='<%# Bind("Telefono_Medico") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField>
