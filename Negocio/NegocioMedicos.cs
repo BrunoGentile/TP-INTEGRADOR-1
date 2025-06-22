@@ -40,6 +40,35 @@ namespace Negocio
             GestionMedicos.DarDeBajaMedico(legajo);
         }
 
+        // [+] ---------- LISTAR PROVINCIAS ---------- [+]
+
+        public DataTable ListarProvincias()
+        {
+            return GestionMedicos.Provincias();
+        }
+
+        // [+] ---------- LISTAR LOCALIDADES ---------- [+]
+
+        public DataTable ListarLocalidades(string CodProvincia)
+        {
+            return GestionMedicos.Localidades(CodProvincia);
+        }
+
+        // [+] ---------- LISTAR ESPECIALIDADES ---------- [+]
+
+        public DataTable ListarEspecialidad()
+        {
+            return GestionMedicos.Especialidades();
+        }
+
+        // [+] ---------- REGISTRAR MÉDICO ---------- [+]
+
+        public void RegistrarMedico(Medicos _Medico)
+        {
+            GestionMedicos _GestionMedicos = new GestionMedicos();
+            _GestionMedicos.RegistrarMedico(_Medico);
+        }
+
     }
 
 }

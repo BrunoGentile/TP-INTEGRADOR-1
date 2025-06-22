@@ -57,8 +57,9 @@ namespace TP_INTEGRADOR_15
         protected void GV_Pacientes_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
 
-            Pacientes _Paciente = new Pacientes();
+            Pacientes _Paciente = new Pacientes(); // CREO UN OBJETO PACIENTE
 
+            // ASIGNO LOS VALORES DE LOS CONTROLES DEL GRIDVIEW AL OBJETO PACIENTE
             _Paciente.DNI_Paciente = ((Label)GV_Pacientes.Rows[e.RowIndex].FindControl("LBL_EIT_DNI")).Text;
             _Paciente.Nombre_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Nombre")).Text;
             _Paciente.Apellido_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Apellido")).Text;
@@ -83,11 +84,16 @@ namespace TP_INTEGRADOR_15
         // AL EDITAR CARGAR LOS DROPDOWNLISTS DE PROVINCIAS Y LOCALIDADES
         protected void GV_Pacientes_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            
+
+            // VERIFICA SI LA FILA ES UNA FILA DE DATOS Y SE ESTÁ EN MODO EDICIÓN
+            /*
+             e.Row.RowType: Verifica si la fila es de tipo DataRow (fila de datos).
+             e.Row.RowState.HasFlag(DataControlRowState.Edit): Verifica si la fila está en modo edición.
+             */
             if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowState.HasFlag(DataControlRowState.Edit))
             {
-                
-                // Cargar Provincias
+
+                // CARGAR PROVINCIAS
                 NegocioPacientes _NegPacientes = new NegocioPacientes();
 
                 DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("DDL_EIT_Provincia");
@@ -95,8 +101,8 @@ namespace TP_INTEGRADOR_15
                 ddlProvincias.DataTextField = "Desc_Provincia";
                 ddlProvincias.DataValueField = "CodProvincia";
                 ddlProvincias.DataBind();
-                
-                // Cargar Localidades
+
+                // CARGAR LOCALIDADES SEGÚN LA PROVINCIA SELECCIONADA
                 DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("DDL_EIT_Ciudad");
                 string codProvincia = ((DropDownList)e.Row.FindControl("DDL_EIT_Provincia")).Text;
                 ddlLocalidades.DataSource = _NegPacientes.listarLocalidades(codProvincia);
@@ -109,11 +115,14 @@ namespace TP_INTEGRADOR_15
 
         }
 
+        // [+] ---------- BOTÓN ACTUALIZAR ---------- [+]
+            // - sender: CONTROL QUE DISPARA EL EVENTO
         protected void DDL_EIT_Provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             DropDownList ddlProvincia = (DropDownList)sender;
 
-            // Busco la fila actual del GridView
+            // BUSCO LA FILA DEL GRIDVIEW QUE CONTIENE EL DROPDOWNLIST
             GridViewRow fila = (GridViewRow)ddlProvincia.NamingContainer;
 
             DropDownList ddlCiudad = (DropDownList)fila.FindControl("DDL_EIT_Ciudad");
@@ -121,9 +130,10 @@ namespace TP_INTEGRADOR_15
             // Cargo las ciudades correspondientes
             NegocioPacientes _Neg = new NegocioPacientes();
             ddlCiudad.DataSource = _Neg.listarLocalidades(ddlProvincia.SelectedValue);
-            ddlCiudad.DataTextField = "Desc_Ciudad";     // o como se llame la descripción
+            ddlCiudad.DataTextField = "Desc_Ciudad";
             ddlCiudad.DataValueField = "CodPostal_Ciudad";
             ddlCiudad.DataBind();
+
         }
     }
 }

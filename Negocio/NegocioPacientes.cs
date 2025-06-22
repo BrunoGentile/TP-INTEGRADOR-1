@@ -42,7 +42,9 @@ namespace Negocio
 
         public void ActualizarPaciente(Pacientes Paciente)
         {
+            // TRAIGO LOS DATOS DEL PACIENTE A ACTUALIZAR
             Paciente = gestionPacientes.TraerDatosPaciente(Paciente);
+            // ACTUALIZO LOS DATOS DEL PACIENTE
             gestionPacientes.ActualizarPaciente(Paciente);
         }
 

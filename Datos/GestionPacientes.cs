@@ -218,6 +218,8 @@ namespace Datos
             if (sqlDataReader.Read())
             {
 
+                // ASIGNO LOS VALORES DEL SQLDataReader AL OBJETO PACIENTE SI LOS TEXTBOX QUEDARON VACÍOS
+
                 Paciente.DNI_Paciente = Paciente.DNI_Paciente == string.Empty ? sqlDataReader["DNI_Paciente"].ToString() :  Paciente.DNI_Paciente;
                 Paciente.Nombre_Paciente = Paciente.Nombre_Paciente == string.Empty ? sqlDataReader["Nombre_Paciente"].ToString() : Paciente.Nombre_Paciente;
                 Paciente.Apellido_Paciente = Paciente.Apellido_Paciente == string.Empty ? sqlDataReader["Apellido_Paciente"].ToString() : Paciente.Apellido_Paciente;

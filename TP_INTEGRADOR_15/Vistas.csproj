@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AltaMedico.aspx" />
+    <Content Include="AltaPaciente.aspx" />
     <Content Include="BajaMedico.aspx" />
     <Content Include="CargarPresente.aspx" />
+    <Content Include="Informe1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="ModificarPaciente.aspx" />
@@ -84,6 +86,13 @@
     <Compile Include="AltaMedico.aspx.designer.cs">
       <DependentUpon>AltaMedico.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AltaPaciente.aspx.cs">
+      <DependentUpon>AltaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaPaciente.aspx.designer.cs">
+      <DependentUpon>AltaPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BajaMedico.aspx.cs">
       <DependentUpon>BajaMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,6 +106,12 @@
     </Compile>
     <Compile Include="CargarPresente.aspx.designer.cs">
       <DependentUpon>CargarPresente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informe1.aspx.cs">
+      <DependentUpon>Informe1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informe1.aspx.designer.cs">
+      <DependentUpon>Informe1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

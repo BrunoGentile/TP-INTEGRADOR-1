@@ -75,10 +75,6 @@
         .auto-style32 {
             height: 16px;
         }
-        .auto-style33 {
-            width: 116px;
-            height: 16px;
-        }
         .auto-style34 {
             width: 443px;
             height: 16px;
@@ -98,6 +94,41 @@
         .auto-style38 {
             height: 16px;
             width: 660px;
+        }
+        .auto-style39 {
+            width: 81px;
+            height: 23px;
+        }
+        .auto-style40 {
+            width: 227px;
+            height: 23px;
+        }
+        .auto-style41 {
+            height: 23px;
+            width: 116px;
+        }
+        .auto-style42 {
+            width: 443px;
+            height: 23px;
+        }
+        .auto-style43 {
+            width: 100px;
+            height: 23px;
+        }
+        .auto-style44 {
+            width: 606px;
+            height: 23px;
+        }
+        .auto-style45 {
+            width: 82px;
+            height: 23px;
+        }
+        .auto-style46 {
+            width: 660px;
+            height: 23px;
+        }
+        .auto-style47 {
+            width: 116px;
         }
     </style>
 </head>
@@ -157,7 +188,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Nombre:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:TextBox ID="txt_nombrePaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
@@ -173,7 +204,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Apellido:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:TextBox ID="txt_apellidoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
@@ -189,7 +220,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">DNI:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:TextBox ID="txt_DniPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
@@ -207,7 +238,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Sexo:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:RadioButton ID="rb_pacienteFem" runat="server" Text="Femenino" CausesValidation="True" GroupName="sexo_Paciente" Checked="True" />
                         <br />
                         <asp:RadioButton ID="rb_pacienteMasc" runat="server" Text="Masculino" CausesValidation="True" GroupName="sexo_Paciente" />
@@ -227,7 +258,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Fecha de Nacimiento:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <input type="date" id="txt_FechaNacPaciente" runat="server"/> 
                     </td>
                     <td class="auto-style26">
@@ -243,7 +274,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Dirección:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:TextBox ID="txt_direccionPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
@@ -259,7 +290,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Provincia:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:DropDownList ID="ddl_ProvPaciente" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_ProvPaciente_SelectedIndexChanged" Width="125px">
                         </asp:DropDownList>
                     </td>
@@ -281,7 +312,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Correo Electronico:</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:TextBox ID="txt_correoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
@@ -299,7 +330,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">Teléfono</td>
-                    <td class="auto-style20">
+                    <td class="auto-style47">
                         <asp:TextBox ID="txt_telefonoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
@@ -315,22 +346,22 @@
                     <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style20">
-                        &nbsp;</td>
-                    <td class="auto-style26">&nbsp;</td>
-                    <td class="auto-style24">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style30">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style28">&nbsp;</td>
+                    <td class="auto-style39"></td>
+                    <td class="auto-style40"></td>
+                    <td class="auto-style41">
+                        </td>
+                    <td class="auto-style42"></td>
+                    <td class="auto-style43"></td>
+                    <td class="auto-style39"></td>
+                    <td class="auto-style44"></td>
+                    <td class="auto-style45"></td>
+                    <td class="auto-style45"></td>
+                    <td class="auto-style46"></td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
+                    <td class="auto-style47">&nbsp;</td>
                     <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
@@ -350,7 +381,7 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style20">&nbsp;</td>
+                    <td class="auto-style47">&nbsp;</td>
                     <td class="auto-style26">&nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
