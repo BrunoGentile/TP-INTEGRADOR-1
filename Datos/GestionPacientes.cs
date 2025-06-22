@@ -124,7 +124,8 @@ namespace Datos
             FROM Pacientes INNER JOIN Ciudades
                 ON CodCiudad_Paciente = CodPostal_Ciudad AND CodProvincia_Paciente = CodProvincia
             INNER JOIN Provincias
-                ON Ciudades.CodProvincia = Provincias.CodProvincia";
+                ON Ciudades.CodProvincia = Provincias.CodProvincia
+            WHERE Estado_Paciente = 1";
 
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             SqlDataReader sqlDataReader = comando.ExecuteReader(); // DEVUELVE OBJETO SQLDataReader - Apuntador
@@ -142,7 +143,7 @@ namespace Datos
         {
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
-            
+
             string consultaSQL = @"
             SELECT CodProvincia 
             FROM Provincias 
@@ -151,9 +152,9 @@ namespace Datos
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             comando.Parameters.AddWithValue("@NombreProvincia", NombreProvincia);
             SqlDataReader sqlDataReader = comando.ExecuteReader();
-            
+
             string codProvincia = string.Empty;
-            
+
             if (sqlDataReader.Read())
             {
                 codProvincia = sqlDataReader["CodProvincia"].ToString();
@@ -190,7 +191,7 @@ namespace Datos
 
         public Pacientes TraerDatosPaciente(Pacientes Paciente)
         {
-            
+
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
 
@@ -209,7 +210,7 @@ namespace Datos
                 Nacionalidad_Paciente
             FROM Pacientes
             WHERE DNI_Paciente = @DNI";
-            
+
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             comando.Parameters.AddWithValue("@DNI", Paciente.DNI_Paciente);
 
@@ -220,7 +221,7 @@ namespace Datos
 
                 // ASIGNO LOS VALORES DEL SQLDataReader AL OBJETO PACIENTE SI LOS TEXTBOX QUEDARON VACÍOS
 
-                Paciente.DNI_Paciente = Paciente.DNI_Paciente == string.Empty ? sqlDataReader["DNI_Paciente"].ToString() :  Paciente.DNI_Paciente;
+                Paciente.DNI_Paciente = Paciente.DNI_Paciente == string.Empty ? sqlDataReader["DNI_Paciente"].ToString() : Paciente.DNI_Paciente;
                 Paciente.Nombre_Paciente = Paciente.Nombre_Paciente == string.Empty ? sqlDataReader["Nombre_Paciente"].ToString() : Paciente.Nombre_Paciente;
                 Paciente.Apellido_Paciente = Paciente.Apellido_Paciente == string.Empty ? sqlDataReader["Apellido_Paciente"].ToString() : Paciente.Apellido_Paciente;
                 Paciente.Sexo_Paciente = Paciente.Sexo_Paciente == string.Empty ? sqlDataReader["Sexo_Paciente"].ToString() : Paciente.Sexo_Paciente;
@@ -228,14 +229,14 @@ namespace Datos
                 Paciente.Correo_Paciente = Paciente.Correo_Paciente == string.Empty ? sqlDataReader["Correo_Paciente"].ToString() : Paciente.Correo_Paciente;
                 Paciente.Telefono_Paciente = Paciente.Telefono_Paciente == string.Empty ? sqlDataReader["Telefono_Paciente"].ToString() : Paciente.Telefono_Paciente;
                 Paciente.Direccion_Paciente = Paciente.Direccion_Paciente == string.Empty ? sqlDataReader["Direccion_Paciente"].ToString() : Paciente.Direccion_Paciente;
-                
+
                 Paciente.Provincia_Paciente = ObtenerProvinciaXNombre(Paciente.Provincia_Paciente);
                 Paciente.Localidad_Paciente = ObtenerLocalidadXNombre(Paciente.Localidad_Paciente, Paciente.Provincia_Paciente);
-                
+
                 Paciente.Nacionalidad_Paciente = Paciente.Nacionalidad_Paciente == string.Empty ? sqlDataReader["Nacionalidad_Paciente"].ToString() : Paciente.Nacionalidad_Paciente;
 
             }
-            
+
             conexion.Close();
             return Paciente;
         }
@@ -278,9 +279,47 @@ namespace Datos
             comando.Parameters.AddWithValue("@Direccion", Paciente.Direccion_Paciente);
             comando.Parameters.AddWithValue("@Ciudad", Paciente.Localidad_Paciente);
             comando.Parameters.AddWithValue("@Provincia", Paciente.Provincia_Paciente);
-            
+
             comando.ExecuteNonQuery();
             conexion.Close();
+
+        }
+
+        // [+] ---------- CARGAR GRIDVIEW POR NOMBRE ---------- [+]
+
+        public DataTable CargarGridViewPorNombre(string nombre)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            string consultaSQL = @"
+            SELECT 
+                DNI_Paciente, 
+                Nombre_Paciente, 
+                Apellido_Paciente, 
+                Sexo_Paciente, 
+                FechaNacimiento_Paciente, 
+                Correo_Paciente, 
+                Telefono_Paciente, 
+                Direccion_Paciente, 
+                Desc_Ciudad, 
+                Desc_Provincia,
+                Nacionalidad_Paciente    
+            FROM Pacientes INNER JOIN Ciudades
+                ON CodCiudad_Paciente = CodPostal_Ciudad AND CodProvincia_Paciente = CodProvincia
+            INNER JOIN Provincias
+                ON Ciudades.CodProvincia = Provincias.CodProvincia
+            WHERE Estado_Paciente = 1 AND Nombre_Paciente LIKE @Nombre";
+
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
+            SqlDataReader sqlDataReader = comando.ExecuteReader();
+            
+            DataTable DTPacientes = new DataTable();
+            DTPacientes.Load(sqlDataReader);
+
+            conexion.Close();
+            return DTPacientes;
 
         }
     }

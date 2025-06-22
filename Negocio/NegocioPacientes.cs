@@ -48,5 +48,12 @@ namespace Negocio
             gestionPacientes.ActualizarPaciente(Paciente);
         }
 
+        // [+] ---------- CARGAR GRIDVIEW POR NOMBRE ---------- [+]
+
+        public DataTable CargarGridViewPorNombre(string nombre)
+        {
+            return gestionPacientes.CargarGridViewPorNombre(nombre);
+        }
+
     }
 }
