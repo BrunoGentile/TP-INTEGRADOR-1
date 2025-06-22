@@ -164,6 +164,18 @@ namespace Datos
 
         }
 
+        public void DarDeBajaMedico(string legajo)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                string consultaSQL = "UPDATE Medicos SET Estado_Medico = 0 WHERE Legajo_Medico = @Legajo";
+                SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+                comando.Parameters.AddWithValue("@Legajo", legajo);
+                comando.ExecuteNonQuery();
+            }
+        }
+
 
     }
 }

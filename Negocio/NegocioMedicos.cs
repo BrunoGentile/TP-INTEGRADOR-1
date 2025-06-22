@@ -35,5 +35,10 @@ namespace Negocio
             return dataTable;
         }
 
+        public void DarDeBajaMedico(string legajo)
+        {
+            GestionMedicos.DarDeBajaMedico(legajo);
+        }
+
     }
 }
