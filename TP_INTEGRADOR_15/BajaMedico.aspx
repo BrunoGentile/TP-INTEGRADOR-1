@@ -121,7 +121,7 @@
                         <asp:TextBox ID="txtLegajo" runat="server" Width="319px"></asp:TextBox>
                     </td>
                     <td class="auto-style12">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
                     </td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
@@ -134,7 +134,9 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click" Text="Mostrar Todos" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
