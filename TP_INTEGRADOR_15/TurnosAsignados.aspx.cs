@@ -41,9 +41,18 @@ namespace TP_INTEGRADOR_15
         {
             NegocioTurnos negocioTurnos = new NegocioTurnos();
 
-            DataTable dtFiltrado = negocioTurnos.filtrarTurnosPorPaciente(txtFiltrado.Text.Trim());
-            gvTurnos.DataSource = dtFiltrado;
-            gvTurnos.DataBind();
+            if (negocioTurnos.existeDNIPaciente(txtFiltrado.Text.Trim()))
+            {
+                DataTable dtFiltrado = negocioTurnos.filtrarTurnosPorPaciente(txtFiltrado.Text.Trim());
+                gvTurnos.DataSource = dtFiltrado;
+                gvTurnos.DataBind();
+
+                lblPacienteInexistente.Text = string.Empty; // Limpiar mensaje de error si se encuentra el DNI del paciente
+            }
+            else 
+            { 
+                lblPacienteInexistente.Text = "El DNI del paciente no existe."; // Mostrar mensaje de error si no se encuentra el DNI del paciente
+            }
 
             // Limpiar el textBox después de filtrar
             txtFiltrado.Text = string.Empty;

@@ -28,5 +28,11 @@ namespace Negocio
             dataTable = gestionTurnos.FiltrarTurnosPorPaciente(filtro);
             return dataTable;
         }
+
+        public bool existeDNIPaciente(string DNIPaciente)
+        {
+            bool existe = gestionTurnos.ExisteDNIPaciente(DNIPaciente);
+            return existe;
+        }
     }
 }

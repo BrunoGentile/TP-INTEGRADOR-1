@@ -46,6 +46,7 @@ namespace Datos
             conexion.Close();
         }
 
+        //MÉTODO PARA FILTRAR TURNOS POR PACIENTE
         public DataTable FiltrarTurnosPorPaciente(string DNIPaciente)
         {
             DataTable dataTable = new DataTable();
@@ -62,6 +63,20 @@ namespace Datos
             conexion.Close();
 
             return dataTable;
+        }
+
+        public bool ExisteDNIPaciente(string DNIpaciente)
+        {
+            SqlConnection conexion = new SqlConnection(Conexion);
+            conexion.Open();
+
+            string consulta = "SELECT COUNT(*) FROM Turnos WHERE DNIPaciente_Turnos = @DNIPaciente";
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("@DNIPaciente", DNIpaciente);
+
+            int cantidad = (int)comando.ExecuteScalar();
+            conexion.Close();
+            return cantidad > 0;
         }
     }
 }
