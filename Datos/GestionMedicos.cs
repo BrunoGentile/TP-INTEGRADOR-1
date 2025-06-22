@@ -109,6 +109,21 @@ namespace Datos
             }
         }
 
+        // VERIFICAR SI EXISTE UN MÉDICO POR LEGAJO 
+        public bool ExisteLegajoMedico(string Legajo)
+        {
+            SqlConnection conexion = new SqlConnection(Conexion);
+            conexion.Open();
+
+            string consulta = "SELECT COUNT(*) FROM Medicos WHERE Legajo_Medico = @Legajo";
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("@Legajo", Legajo);
+
+            int cantidad = (int)comando.ExecuteScalar();
+            conexion.Close();
+            return cantidad > 0; 
+        }
+
         // -------------------------------------------------------------------------------------------------
         // --------------------------------------------- LOGIN ---------------------------------------------
         // -------------------------------------------------------------------------------------------------

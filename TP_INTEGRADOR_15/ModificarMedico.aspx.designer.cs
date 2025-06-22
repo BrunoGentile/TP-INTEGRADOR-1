@@ -78,6 +78,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
 
         /// <summary>
+        /// Control btnReiniciar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReiniciar;
+
+        /// <summary>
         /// Control rfvLegajoVacio.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLegajoVacio;
+
+        /// <summary>
+        /// Control lblLegajoInexistente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLegajoInexistente;
 
         /// <summary>
         /// Control gvMedico.

@@ -108,10 +108,19 @@ namespace TP_INTEGRADOR_15
         {
             NegocioMedicos negocioMedicos = new NegocioMedicos();
 
-            DataTable dtFiltrado = negocioMedicos.filtrarMedicosPorLegajo(txtFiltrado.Text.Trim());
-            gvMedico.DataSource = dtFiltrado;
-            gvMedico.DataBind();
-            
+            if (negocioMedicos.existeLegajoMedico(txtFiltrado.Text.Trim()))
+            {
+                DataTable dtFiltrado = negocioMedicos.filtrarMedicosPorLegajo(txtFiltrado.Text.Trim());
+                gvMedico.DataSource = dtFiltrado;
+                gvMedico.DataBind();
+
+                lblLegajoInexistente.Text = string.Empty; // Limpiar mensaje de error si el legajo si existe
+            }
+            else
+            {
+                lblLegajoInexistente.Text = "El legajo ingresado no existe.";
+            }
+
             // Limpiar el textBox después de filtrar
             txtFiltrado.Text = string.Empty;           
         }
@@ -119,6 +128,11 @@ namespace TP_INTEGRADOR_15
         protected void gvMedico_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            cargarGridView();
         }
     }
 }

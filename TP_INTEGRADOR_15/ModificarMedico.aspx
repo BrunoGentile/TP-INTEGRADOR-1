@@ -12,28 +12,29 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 218px;
-        }
-        .auto-style3 {
-            width: 410px;
+            width: 80px;
         }
         .auto-style4 {
-            width: 43px;
+            width: 117px;
         }
         .auto-style5 {
-            width: 218px;
+            width: 80px;
             margin-left: 40px;
-        }
-        .auto-style6 {
-            width: 218px;
             height: 30px;
         }
-        .auto-style7 {
-            width: 410px;
+        .auto-style6 {
+            width: 80px;
             height: 30px;
         }
         .auto-style8 {
-            width: 43px;
+            width: 117px;
+            height: 30px;
+        }
+        .auto-style9 {
+            width: 640px;
+        }
+        .auto-style10 {
+            width: 640px;
             height: 30px;
         }
         </style>
@@ -44,40 +45,47 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style5">
+                        &nbsp;</td>
+                    <td class="auto-style10">
                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario: "></asp:Label>
-                        <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+                        &nbsp;<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">
+                    <td class="auto-style9">
                         <asp:Label ID="lblModificarMedico" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Modificar Medico"></asp:Label>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style9">&nbsp;&nbsp;&nbsp; </td>
                     <td class="auto-style4">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">
+                        &nbsp;</td>
+                    <td class="auto-style10">
                         <asp:Label ID="lblFiltrar" runat="server" Font-Size="Large" Text="Filtrar por legajo:"></asp:Label>
-                    </td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtFiltrado" runat="server" Width="283px"></asp:TextBox>
-                    &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="84px" OnClick="btnFiltrar_Click" />
+                        &nbsp;
+                        <asp:TextBox ID="txtFiltrado" runat="server" Width="248px"></asp:TextBox>
+                    &nbsp;
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="84px" OnClick="btnFiltrar_Click" ValidationGroup="grupo1" />
+                    &nbsp;&nbsp;
+                        <asp:Button ID="btnReiniciar" runat="server" OnClick="btnReiniciar_Click" Text="Reiniciar tabla" ValidationGroup="grupo2" />
                     </td>
                     <td class="auto-style8">
-                        &nbsp;</td>
+                        </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">
-                        <asp:RequiredFieldValidator ID="rfvLegajoVacio" runat="server" ControlToValidate="txtFiltrado">Ingrese un legajo</asp:RequiredFieldValidator>
+                    <td class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                    <td class="auto-style9">
+                        <asp:RequiredFieldValidator ID="rfvLegajoVacio" runat="server" ControlToValidate="txtFiltrado" ValidationGroup="grupo1">Ingrese un legajo</asp:RequiredFieldValidator>
+                    &nbsp;
+                        <asp:Label ID="lblLegajoInexistente" runat="server"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -86,7 +94,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">
+                    <td class="auto-style9">
                         <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowUpdating="gvMedico_RowUpdating" OnSelectedIndexChanged="gvMedico_SelectedIndexChanged">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo">
@@ -225,7 +233,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                 </tr>
             </table>
