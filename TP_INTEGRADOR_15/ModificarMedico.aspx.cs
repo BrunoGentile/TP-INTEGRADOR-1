@@ -114,6 +114,11 @@ namespace TP_INTEGRADOR_15
             
             // Limpiar el textBox después de filtrar
             txtFiltrado.Text = string.Empty;           
-        }       
+        }
+
+        protected void gvMedico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Entidades;
 using System.Runtime.CompilerServices;
+using System.IO;
 
 namespace Datos
 {
