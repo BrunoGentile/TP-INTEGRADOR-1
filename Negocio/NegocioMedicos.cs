@@ -35,6 +35,12 @@ namespace Negocio
             return dataTable;
         }
 
+        public bool existeLegajoMedico(string legajo)
+        { 
+            bool existe = GestionMedicos.ExisteLegajoMedico(legajo);
+            return existe;
+        }
+
         public void DarDeBajaMedico(string legajo)
         {
             GestionMedicos.DarDeBajaMedico(legajo);
