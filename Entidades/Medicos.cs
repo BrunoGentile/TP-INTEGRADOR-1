@@ -26,6 +26,7 @@ namespace Entidades
         private string _HorarioInicio_Medico;
         private string _HorarioFin_Medico;
         private string _Contrasenia_Medico;
+        private bool _Estado_Medico;
 
         // ---------- CONSTRUCTORES ----------
 
@@ -201,5 +202,12 @@ namespace Entidades
             get { return _Contrasenia_Medico; }
             set { _Contrasenia_Medico = value; }
         }
+
+        public bool Estado_Medico
+        {
+            get { return _Estado_Medico; }
+            set { _Estado_Medico = value; }
+        }
+
     }
 }

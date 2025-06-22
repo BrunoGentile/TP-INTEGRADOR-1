@@ -66,10 +66,11 @@ namespace TP_INTEGRADOR_15
             _Paciente.Nacionalidad_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Nacionalidad")).Text;
             _Paciente.FechaNacimiento_Paciente = ((Label)GV_Pacientes.Rows[e.RowIndex].FindControl("LBL_EIT_FechaNacimiento")).Text;
             _Paciente.Direccion_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Direccion")).Text;
-            _Paciente.Provincia_Paciente = ((Label)GV_Pacientes.Rows[e.RowIndex].FindControl("LBL_EIT_Provincia")).Text;
-            _Paciente.Localidad_Paciente = ((Label)GV_Pacientes.Rows[e.RowIndex].FindControl("LBL_EIT_Ciudad")).Text;
             _Paciente.Correo_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Correo")).Text;
             _Paciente.Telefono_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Telefono")).Text;
+
+            _Paciente.Provincia_Paciente = ((DropDownList)GV_Pacientes.Rows[e.RowIndex].FindControl("DDL_EIT_Provincia")).SelectedItem.Text;
+            _Paciente.Localidad_Paciente = ((DropDownList)GV_Pacientes.Rows[e.RowIndex].FindControl("DDL_EIT_Ciudad")).SelectedItem.Text;
 
             NegocioPacientes _NegPacientes = new NegocioPacientes();
             _NegPacientes.ActualizarPaciente(_Paciente);
@@ -77,6 +78,52 @@ namespace TP_INTEGRADOR_15
             GV_Pacientes.EditIndex = -1;
             CargarGridView();   
 
+        }
+
+        // AL EDITAR CARGAR LOS DROPDOWNLISTS DE PROVINCIAS Y LOCALIDADES
+        protected void GV_Pacientes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowState.HasFlag(DataControlRowState.Edit))
+            {
+                
+                // Cargar Provincias
+                NegocioPacientes _NegPacientes = new NegocioPacientes();
+
+                DropDownList ddlProvincias = (DropDownList)e.Row.FindControl("DDL_EIT_Provincia");
+                ddlProvincias.DataSource = _NegPacientes.listarProvincias();
+                ddlProvincias.DataTextField = "Desc_Provincia";
+                ddlProvincias.DataValueField = "CodProvincia";
+                ddlProvincias.DataBind();
+                
+                // Cargar Localidades
+                DropDownList ddlLocalidades = (DropDownList)e.Row.FindControl("DDL_EIT_Ciudad");
+                string codProvincia = ((DropDownList)e.Row.FindControl("DDL_EIT_Provincia")).Text;
+                ddlLocalidades.DataSource = _NegPacientes.listarLocalidades(codProvincia);
+                ddlLocalidades.DataTextField = "Desc_Ciudad";
+                ddlLocalidades.DataValueField = "CodPostal_Ciudad";
+                
+                ddlLocalidades.DataBind();
+
+            }
+
+        }
+
+        protected void DDL_EIT_Provincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList ddlProvincia = (DropDownList)sender;
+
+            // Busco la fila actual del GridView
+            GridViewRow fila = (GridViewRow)ddlProvincia.NamingContainer;
+
+            DropDownList ddlCiudad = (DropDownList)fila.FindControl("DDL_EIT_Ciudad");
+
+            // Cargo las ciudades correspondientes
+            NegocioPacientes _Neg = new NegocioPacientes();
+            ddlCiudad.DataSource = _Neg.listarLocalidades(ddlProvincia.SelectedValue);
+            ddlCiudad.DataTextField = "Desc_Ciudad";     // o como se llame la descripción
+            ddlCiudad.DataValueField = "CodPostal_Ciudad";
+            ddlCiudad.DataBind();
         }
     }
 }

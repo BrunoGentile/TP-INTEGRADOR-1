@@ -1,32 +1,51 @@
-﻿using Entidades;
-using Negocio;
+﻿using Negocio;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+
+using Entidades;
 
 namespace TP_INTEGRADOR_15
 {
     public partial class BajaMedico : System.Web.UI.Page
     {
+        NegocioMedicos negocio = new NegocioMedicos();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                cargarGridView();
+                CargarGridMedicos();
             }
         }
 
-        public void cargarGridView()
+        private void CargarGridMedicos()
         {
-            NegocioMedicos negocioMedicos = new NegocioMedicos();
-            gvMedico.DataSource = negocioMedicos.ObtenerMedicos();
+            DataTable dt = negocio.ObtenerMedicos(); // trae todos los médicos activos
+            gvMedico.DataSource = dt;
             gvMedico.DataBind();
         }
 
-        
+        protected void gvMedico_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "DarDeBaja")
+            {
+                string legajo = e.CommandArgument.ToString();
+                try
+                {
+                    negocio.DarDeBajaMedico(legajo);
+                    lblMensaje.ForeColor = System.Drawing.Color.Green;
+                    lblMensaje.Text = "Médico dado de baja correctamente.";
+                    CargarGridMedicos();
+                }
+                catch (Exception ex)
+                {
+                    lblMensaje.ForeColor = System.Drawing.Color.Red;
+                    lblMensaje.Text = "Error al dar de baja: " + ex.Message;
+                }
+            }
+        }
+
+
     }
 }

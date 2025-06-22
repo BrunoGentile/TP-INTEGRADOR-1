@@ -136,6 +136,56 @@ namespace Datos
             return DTPacientes;
         }
 
+        // [+] ---------- CONSEGUIR CÓDIGO DE PROVINCIA ---------- [+]
+
+        public string ObtenerProvinciaXNombre(string NombreProvincia)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+            
+            string consultaSQL = @"
+            SELECT CodProvincia 
+            FROM Provincias 
+            WHERE Desc_Provincia = @NombreProvincia";
+
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@NombreProvincia", NombreProvincia);
+            SqlDataReader sqlDataReader = comando.ExecuteReader();
+            
+            string codProvincia = string.Empty;
+            
+            if (sqlDataReader.Read())
+            {
+                codProvincia = sqlDataReader["CodProvincia"].ToString();
+            }
+
+            conexion.Close();
+            return codProvincia;
+        }
+
+        // [+] ---------- CONSEGUIR CÓDIGO DE CIUDAD ---------- [+]
+
+        public string ObtenerLocalidadXNombre(string NombreCiudad, string CodProvincia)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+            string consultaSQL = @"
+            SELECT CodPostal_Ciudad 
+            FROM Ciudades 
+            WHERE Desc_Ciudad = @NombreCiudad AND CodProvincia = @CodProvincia";
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@NombreCiudad", NombreCiudad);
+            comando.Parameters.AddWithValue("@CodProvincia", CodProvincia);
+            SqlDataReader sqlDataReader = comando.ExecuteReader();
+            string codCiudad = string.Empty;
+            if (sqlDataReader.Read())
+            {
+                codCiudad = sqlDataReader["CodPostal_Ciudad"].ToString();
+            }
+            conexion.Close();
+            return codCiudad;
+        }
+
         // [+] ---------- TRAER DATOS DEL PACIENTE ---------- [+]
 
         public Pacientes TraerDatosPaciente(Pacientes Paciente)
@@ -155,7 +205,8 @@ namespace Datos
                 Telefono_Paciente, 
                 Direccion_Paciente, 
                 CodCiudad_Paciente, 
-                CodProvincia_Paciente
+                CodProvincia_Paciente,
+                Nacionalidad_Paciente
             FROM Pacientes
             WHERE DNI_Paciente = @DNI";
             
@@ -166,6 +217,7 @@ namespace Datos
 
             if (sqlDataReader.Read())
             {
+
                 Paciente.DNI_Paciente = Paciente.DNI_Paciente == string.Empty ? sqlDataReader["DNI_Paciente"].ToString() :  Paciente.DNI_Paciente;
                 Paciente.Nombre_Paciente = Paciente.Nombre_Paciente == string.Empty ? sqlDataReader["Nombre_Paciente"].ToString() : Paciente.Nombre_Paciente;
                 Paciente.Apellido_Paciente = Paciente.Apellido_Paciente == string.Empty ? sqlDataReader["Apellido_Paciente"].ToString() : Paciente.Apellido_Paciente;
@@ -174,8 +226,11 @@ namespace Datos
                 Paciente.Correo_Paciente = Paciente.Correo_Paciente == string.Empty ? sqlDataReader["Correo_Paciente"].ToString() : Paciente.Correo_Paciente;
                 Paciente.Telefono_Paciente = Paciente.Telefono_Paciente == string.Empty ? sqlDataReader["Telefono_Paciente"].ToString() : Paciente.Telefono_Paciente;
                 Paciente.Direccion_Paciente = Paciente.Direccion_Paciente == string.Empty ? sqlDataReader["Direccion_Paciente"].ToString() : Paciente.Direccion_Paciente;
-                Paciente.Provincia_Paciente = Paciente.Provincia_Paciente == string.Empty ? sqlDataReader["CodProvincia_Paciente"].ToString() : Paciente.Provincia_Paciente;
-                Paciente.Localidad_Paciente = Paciente.Localidad_Paciente == string.Empty ? sqlDataReader["CodCiudad_Paciente"].ToString() : Paciente.Localidad_Paciente;
+                
+                Paciente.Provincia_Paciente = ObtenerProvinciaXNombre(Paciente.Provincia_Paciente);
+                Paciente.Localidad_Paciente = ObtenerLocalidadXNombre(Paciente.Localidad_Paciente, Paciente.Provincia_Paciente);
+                
+                Paciente.Nacionalidad_Paciente = Paciente.Nacionalidad_Paciente == string.Empty ? sqlDataReader["Nacionalidad_Paciente"].ToString() : Paciente.Nacionalidad_Paciente;
 
             }
             
@@ -198,9 +253,12 @@ namespace Datos
                 Apellido_Paciente = @Apellido, 
                 Sexo_Paciente = @Sexo, 
                 FechaNacimiento_Paciente = @FechaNac, 
+                Nacionalidad_Paciente = @Nacionalidad,
                 Correo_Paciente = @Correo, 
                 Telefono_Paciente = @Telefono, 
-                Direccion_Paciente = @Direccion
+                Direccion_Paciente = @Direccion,
+                CodCiudad_Paciente = @Ciudad,
+                CodProvincia_Paciente = @Provincia
             WHERE DNI_Paciente = @DNI";
 
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
@@ -212,12 +270,13 @@ namespace Datos
             comando.Parameters.AddWithValue("@Apellido", Paciente.Apellido_Paciente);
             comando.Parameters.AddWithValue("@Sexo", Paciente.Sexo_Paciente);
             comando.Parameters.AddWithValue("@FechaNac", fechaNac);
-            //comando.Parameters.AddWithValue("@Nacionalidad", Paciente.Nacionalidad_Paciente);
+            comando.Parameters.AddWithValue("@Nacionalidad", Paciente.Nacionalidad_Paciente);
             comando.Parameters.AddWithValue("@Correo", Paciente.Correo_Paciente);
             comando.Parameters.AddWithValue("@Telefono", Paciente.Telefono_Paciente);
             comando.Parameters.AddWithValue("@Direccion", Paciente.Direccion_Paciente);
-            // comando.Parameters.AddWithValue("@Ciudad", Paciente.Localidad_Paciente);
-            // comando.Parameters.AddWithValue("@Provincia", Paciente.Provincia_Paciente);
+            comando.Parameters.AddWithValue("@Ciudad", Paciente.Localidad_Paciente);
+            comando.Parameters.AddWithValue("@Provincia", Paciente.Provincia_Paciente);
+            
             comando.ExecuteNonQuery();
             conexion.Close();
 

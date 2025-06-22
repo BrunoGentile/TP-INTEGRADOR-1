@@ -122,7 +122,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="8">
-                        <asp:GridView ID="GV_Pacientes" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" style="margin-top: 0px" AllowPaging="True" OnPageIndexChanging="GV_Pacientes_PageIndexChanging" OnRowCancelingEdit="GV_Pacientes_RowCancelingEdit" OnRowEditing="GV_Pacientes_RowEditing" OnRowUpdating="GV_Pacientes_RowUpdating" PageSize="8">
+                        <asp:GridView ID="GV_Pacientes" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" style="margin-top: 0px" AllowPaging="True" OnPageIndexChanging="GV_Pacientes_PageIndexChanging" OnRowCancelingEdit="GV_Pacientes_RowCancelingEdit" OnRowEditing="GV_Pacientes_RowEditing" OnRowUpdating="GV_Pacientes_RowUpdating" PageSize="8" OnRowDataBound="GV_Pacientes_RowDataBound">
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI">
                                     <EditItemTemplate>
@@ -190,7 +190,8 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Ciudad">
                                     <EditItemTemplate>
-                                        <asp:Label ID="LBL_EIT_Ciudad" runat="server" Text='<%# Bind("Desc_Ciudad") %>'></asp:Label>
+                                        <asp:DropDownList ID="DDL_EIT_Ciudad" runat="server">
+                                        </asp:DropDownList>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Ciudad" runat="server" Text='<%# Bind("Desc_Ciudad") %>'></asp:Label>
@@ -198,7 +199,8 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Provincia">
                                     <EditItemTemplate>
-                                        <asp:Label ID="LBL_EIT_Provincia" runat="server" Text='<%# Bind("Desc_Provincia") %>'></asp:Label>
+                                        <asp:DropDownList ID="DDL_EIT_Provincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDL_EIT_Provincia_SelectedIndexChanged">
+                                        </asp:DropDownList>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Provincia" runat="server" Text='<%# Bind("Desc_Provincia") %>'></asp:Label>
