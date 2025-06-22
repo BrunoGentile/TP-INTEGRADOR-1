@@ -12,7 +12,7 @@
             width: 100%;
         }
         .auto-style7 {
-            width: 371px;
+            width: 400px;
             height: 23px;
         }
         .auto-style8 {
@@ -23,17 +23,32 @@
             height: 23px;
         }
         .auto-style3 {
-            width: 371px;
+            width: 400px;
         }
         .auto-style4 {
             width: 146px;
         }
         .auto-style10 {
-            width: 220px;
+            width: 223px;
             height: 23px;
         }
         .auto-style11 {
-            width: 220px;
+            width: 223px;
+        }
+        .auto-style12 {
+            width: 223px;
+            height: 137px;
+        }
+        .auto-style13 {
+            width: 400px;
+            height: 137px;
+        }
+        .auto-style14 {
+            width: 146px;
+            height: 137px;
+        }
+        .auto-style15 {
+            height: 137px;
         }
         </style>
 </head>
@@ -50,8 +65,6 @@
                     <td class="auto-style8"></td>
                     <td class="auto-style9"></td>
                     <td class="auto-style9"></td>
-                    <td class="auto-style9"></td>
-                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style11">&nbsp;</td>
@@ -61,15 +74,11 @@
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -85,8 +94,6 @@
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style11">&nbsp;</td>
@@ -94,34 +101,53 @@
                     <td class="auto-style4">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style3">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="367px">
+                    <td class="auto-style12"></td>
+                    <td class="auto-style13">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="538px" Height="106px">
                             <Columns>
-                                <asp:TemplateField HeaderText="Paciente"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Especialidad"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Medico"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Dia"></asp:TemplateField>
-                                <asp:TemplateField HeaderText="Horario"></asp:TemplateField>
+                                <asp:TemplateField HeaderText="DNI Paciente">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Paciente" runat="server" Text='<%# Bind("DNIPaciente_Turnos") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Turno">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Turno" runat="server" Text='<%# Bind("Cod_Turno") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Especialidad">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Especialidad" runat="server" Text='<%# Bind("CodEspecialidad_Medico") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Legajo Medico">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Medico" runat="server" Text='<%# Bind("LegajoMedico_Turnos") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Dia">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Dia" runat="server" Text='<%# Bind("Dia_Turnos") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Horario">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lbl_It_Horario" runat="server" Text='<%# Bind("Horarios_Turnos") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style15"></td>
                 </tr>
                 <tr>
                     <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
