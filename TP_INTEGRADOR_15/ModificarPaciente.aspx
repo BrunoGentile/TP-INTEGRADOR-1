@@ -81,7 +81,9 @@
                     </td>
                     <td class="auto-style10">&nbsp;</td>
                     <td class="auto-style13"></td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="HL_Volver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
+                    </td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
