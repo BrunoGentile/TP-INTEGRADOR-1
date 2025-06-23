@@ -11,13 +11,13 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 124px;
+            width: 114px;
         }
         .auto-style3 {
             width: 205px;
         }
         .auto-style4 {
-            width: 124px;
+            width: 114px;
             height: 266px;
         }
         .auto-style5 {
@@ -28,7 +28,7 @@
             height: 266px;
         }
         .auto-style7 {
-            width: 124px;
+            width: 114px;
             height: 30px;
         }
         .auto-style8 {
@@ -39,7 +39,7 @@
             height: 30px;
         }
         .auto-style10 {
-            width: 124px;
+            width: 114px;
             height: 25px;
         }
         .auto-style11 {
@@ -49,6 +49,24 @@
         .auto-style12 {
             height: 25px;
         }
+        .auto-style13 {
+            width: 205px;
+            height: 8px;
+        }
+        .auto-style14 {
+            height: 8px;
+        }
+        .auto-style15 {
+            width: 114px;
+            height: 23px;
+        }
+        .auto-style16 {
+            width: 205px;
+            height: 23px;
+        }
+        .auto-style17 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -56,30 +74,31 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+                    <td class="auto-style15"><strong>Usuario</strong>:</td>
+                    <td class="auto-style16"><asp:Label ID="lblNombreUsuario" runat="server" Font-Bold="True"></asp:Label>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>
+                    <td class="auto-style17">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style13"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
@@ -148,6 +167,9 @@
                              ControlToValidate="txtLegajo">
 
                          </asp:RequiredFieldValidator>
+                       
+                         <br />
+                        <asp:Label ID="lblResultado" runat="server"></asp:Label>
                        
                     </td>
                     <td>
@@ -224,8 +246,7 @@
                 <tr>
                     <td class="auto-style7"></td>
                     <td class="auto-style8">
-                        <asp:Label ID="lblResultado" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style9">
                         &nbsp;</td>
                     <td class="auto-style9"></td>

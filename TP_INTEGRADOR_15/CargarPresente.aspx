@@ -38,7 +38,9 @@
 <form id="form1" runat="server">
     <table class="auto-style1">
         <tr>
-            <td class="auto-style4"></td>
+            <td class="auto-style4">Usuario:&nbsp;
+                <asp:Label ID="LBL_Usuario" runat="server" Font-Bold="True"></asp:Label>
+            </td>
             <td class="auto-style2">
                 <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
             </td>

@@ -41,7 +41,7 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style3" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+                    <td class="auto-style3" rowspan="2"><strong>Usuario</strong>:&nbsp; <asp:Label ID="lblNombreUsuario" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                     <td class="auto-style5">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>

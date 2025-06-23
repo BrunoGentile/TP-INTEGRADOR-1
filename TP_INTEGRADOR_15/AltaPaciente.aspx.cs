@@ -19,10 +19,11 @@ namespace TP_INTEGRADOR_15
         {
             if (!IsPostBack)
             {
-                if (Session["Administrador"] != null)
+                if (Session["Usuario"] != null)
                 {
-                    lbl_Admin.Text = "Administrador: " + Session["Administrador"].ToString();
+                    lbl_Admin.Text = Session["Usuario"].ToString();
                 }
+
                 cargarProvincias();
                 cargarProvincias();
                 cargarLocalidades("0");

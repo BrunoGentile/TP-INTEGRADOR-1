@@ -13,15 +13,15 @@ namespace TP_INTEGRADOR_15
         NegocioTurnos negocioTurnos = new NegocioTurnos();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["Usuario"] == null)
-            //{
-            //    // Si el Session no contiene el usuario, redirigir a la página de inicio de sesión
-            //   Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //    lblNombreUsuario.Text = Session["Usuario"].ToString();
-            //}
+            if (Session["Usuario"] == null)
+            {
+                // Si el Session no contiene el usuario, redirigir a la página de inicio de sesión
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                lblNombreUsuario.Text = Session["Usuario"].ToString();
+            }
 
             if (!IsPostBack)
             {

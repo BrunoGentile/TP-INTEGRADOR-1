@@ -70,11 +70,14 @@
         <table class="auto-style1">
             <tr>
                 <td>&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style3">Usuario:&nbsp;
+                    <asp:Label ID="LBL_Usuario" runat="server" Font-Bold="True"></asp:Label>
+                </td>
                 <td class="auto-style7">
+                    &nbsp;</td>
+                <td class="auto-style10">
                     <asp:HyperLink ID="hyVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
                 </td>
-                <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td class="auto-style13">&nbsp;</td>

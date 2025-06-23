@@ -19,6 +19,12 @@ namespace TP_INTEGRADOR_15
 
             if (!IsPostBack)
             {
+
+                if ( Session["Usuario"] != null )
+                {
+                    LBL_Usuario.Text = Session["Usuario"].ToString();
+                }
+
                 CargarProvincias();
                 cargarEspecialidad();
             }

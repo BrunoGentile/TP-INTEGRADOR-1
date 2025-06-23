@@ -48,7 +48,7 @@
                         &nbsp;</td>
                     <td class="auto-style10">
                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario: "></asp:Label>
-                        &nbsp;<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+                        &nbsp;<asp:Label ID="lblNombreUsuario" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                     <td class="auto-style8">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>

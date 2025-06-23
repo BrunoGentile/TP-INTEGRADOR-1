@@ -23,8 +23,8 @@
         width: 10px;
     }
     .auto-style6 {
-        width: 25px;
-    }
+            width: 27px;
+        }
     .auto-style7 {
         width: 10px;
         height: 23px;
@@ -33,9 +33,9 @@
         height: 23px;
     }
     .auto-style9 {
-        width: 25px;
-        height: 23px;
-    }
+            width: 27px;
+            height: 23px;
+        }
     .auto-style10 {
         height: 23px;
         width: 70px;
@@ -58,7 +58,7 @@
         height: 24px;
     }
     .auto-style16 {
-        width: 25px;
+        width: 27px;
         height: 24px;
     }
     .auto-style17 {

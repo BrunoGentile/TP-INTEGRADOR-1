@@ -18,9 +18,9 @@ namespace TP_INTEGRADOR_15
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Administrador"] != null)
+            if (Session["Usuario"] != null)
             {
-                lbl_Admin.Text = "Administrador: " + Session["Administrador"].ToString();
+                lbl_Admin.Text = Session["Usuario"].ToString();
             }
 
             CargarPacientes();

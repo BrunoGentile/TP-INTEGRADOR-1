@@ -29,14 +29,14 @@
             width: 146px;
         }
         .auto-style10 {
-            width: 223px;
+            width: 261px;
             height: 23px;
         }
         .auto-style11 {
-            width: 223px;
+            width: 261px;
         }
         .auto-style12 {
-            width: 223px;
+            width: 261px;
             height: 137px;
         }
         .auto-style13 {
@@ -59,7 +59,7 @@
                 <tr>
                     <td class="auto-style10">
                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
-                    &nbsp;<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+                    &nbsp;<asp:Label ID="lblNombreUsuario" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                     <td class="auto-style7">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>

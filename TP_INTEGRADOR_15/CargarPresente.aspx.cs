@@ -21,13 +21,18 @@ namespace TP_INTEGRADOR_15
             if (!IsPostBack)
             {
 
+                if (Session["Usuario"] != null)
+                {
+                    LBL_Usuario.Text = Session["Usuario"].ToString();
+                }
+
                 DataTable dt = negocio.cargarPresente(); // este es tu método que ya hiciste
                 gvTurnos.DataSource = dt;
                
-                    gvTurnos.DataBind();
-                }
-                
+                gvTurnos.DataBind();
             }
+                
+        }
            
 
             

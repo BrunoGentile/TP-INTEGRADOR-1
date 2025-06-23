@@ -158,7 +158,8 @@
                 <tr>
                     <td class="auto-style31"></td>
                     <td class="auto-style32" colspan="2">
-                        <asp:Label ID="lbl_Admin" runat="server"></asp:Label>
+                        Usuario:
+                        <asp:Label ID="lbl_Admin" runat="server" Font-Bold="True"></asp:Label>
                     </td>
                     <td class="auto-style34">
                         <asp:HyperLink ID="hyLogin" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>

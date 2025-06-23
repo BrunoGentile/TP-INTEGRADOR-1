@@ -15,7 +15,6 @@
         }
         .auto-style3 {
             height: 23px;
-            width: 235px;
             font-size:24px;
         }
         .auto-style5 {
@@ -61,10 +60,21 @@
         <div>
             <table class="auto-style1">
                 <tr>
+                    <td class="auto-style3" colspan="2">Usuario:&nbsp;
+                        <asp:Label ID="lbl_Usuario" runat="server" Font-Bold="True"></asp:Label>
+                    </td>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style3"><strong>Presencia: </strong></td>
                     <td class="auto-style6">
-                        <asp:Label ID="lbl_Usuario" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style2">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
                     </td>
