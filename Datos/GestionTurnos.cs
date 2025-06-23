@@ -1,12 +1,13 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.CompilerServices;
-using System.Data;
 
 
 namespace Datos
@@ -262,26 +263,30 @@ namespace Datos
 
                 SqlCommand cmd = new SqlCommand(consultaSQL, conexion);
                 cmd.Parameters.AddWithValue("@Legajo", legajoMedico);
-                cmd.Parameters.AddWithValue("@Dia", Fecha); // formato: "2025-06-25"
+
+                // Convertir string de fecha a DateTime seguro
+                if (!DateTime.TryParseExact(Fecha, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaValida))
+                    return false; // fecha no válida
+
+                cmd.Parameters.AddWithValue("@Dia", fechaValida);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (!TimeSpan.TryParse(HorarioTurno, out TimeSpan horarioNuevo))
-                    return false; // o lanzar excepción si querés validar
+                    return false;
 
-                while ( reader.Read() )
+                while (reader.Read())
                 {
                     TimeSpan horarioExistente = (TimeSpan)reader["Horarios_Turnos"];
                     TimeSpan diferencia = (horarioExistente - horarioNuevo).Duration();
 
                     if (diferencia < TimeSpan.FromMinutes(30))
                     {
-                        // Ya hay un turno que se superpone o es muy cercano
-                        return true;
+                        return true; // Turno conflictivo
                     }
                 }
 
-                return false; // Ningún turno conflictivo
+                return false; // Todo ok
             }
         }
 
@@ -343,9 +348,11 @@ namespace Datos
                     comando.Parameters.AddWithValue("@DNI", turno._DNIPaciente_Turno);
                     comando.Parameters.AddWithValue("@CodAdmin", turno._LegajoAdmin_Turno);
 
-                    comando.Parameters.AddWithValue("@Dia", turno._Dia_Turno); // tipo DATE
-    
-                    comando.Parameters.AddWithValue("@Horario", turno._Horarios_Turno); // tipo TIME
+                    DateTime.TryParseExact(turno._Dia_Turno, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaTurno);
+                    comando.Parameters.AddWithValue("@Dia", fechaTurno); // tipo DATE
+
+                    TimeSpan.TryParse(turno._Horarios_Turno, out TimeSpan horarioTurno);
+                    comando.Parameters.AddWithValue("@Horario", horarioTurno); // tipo TIME
 
                     comando.ExecuteNonQuery(); // Ejecuta el insert
                 }
