@@ -108,20 +108,22 @@
                 <td class="auto-style2"></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style3">Nombre</td>
-                <td class="auto-style7">
+                <td class="auto-style5"></td>
+                <td class="auto-style6">Nombre</td>
+                <td class="auto-style9">
                     <asp:TextBox ID="TB_Nombre" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style10">&nbsp;</td>
-                <td class="auto-style10">
+                <td class="auto-style12">
                     <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="TB_Nombre" ValidationGroup="agregar"></asp:RequiredFieldValidator>
                   
                 </td>
-                <td>&nbsp;</td>
-                <td class="auto-style13">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style12">
+                  
+                </td>
+                <td class="auto-style5"></td>
+                <td class="auto-style15"></td>
+                <td class="auto-style5"></td>
+                <td class="auto-style5"></td>
             </tr>
             <tr>
                 <td class="auto-style5"></td>
@@ -129,9 +131,10 @@
                 <td class="auto-style9">
                     <asp:TextBox ID="TB_Apellido" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style12">&nbsp;</td>
                 <td class="auto-style12">
                     <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="TB_Apellido"  ValidationGroup="agregar"></asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style12">
                 </td>
                 <td class="auto-style5"></td>
                 <td class="auto-style15"></td>
@@ -145,10 +148,10 @@
                     <asp:TextBox ID="TB_DNI" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style10">
-                    &nbsp;</td>
-                <td class="auto-style10">
                     <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="TB_DNI" ErrorMessage="*"  ValidationGroup="agregar">Ingrese un DNI</asp:RequiredFieldValidator>
                 </td>
+                <td class="auto-style10">
+                    &nbsp;</td>
                 <td>&nbsp;</td>
                 <td class="auto-style13">&nbsp;</td>
                 <td>&nbsp;</td>
