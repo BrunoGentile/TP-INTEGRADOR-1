@@ -270,7 +270,7 @@
                         <asp:HyperLink ID="HL_ModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx">Modificar Datos de Paciente</asp:HyperLink>
                     </td>
                     <td class="auto-style55">
-                        <asp:HyperLink ID="HL_BajaPaciente" runat="server" NavigateUrl="~/Login.aspx">Dar de Baja a Paciente</asp:HyperLink>
+                        <asp:HyperLink ID="HL_BajaPaciente" runat="server" NavigateUrl="~/BajaPaciente.aspx">Dar de Baja a Paciente</asp:HyperLink>
                     </td>
                     <td class="auto-style9"></td>
                     <td class="auto-style10"></td>
@@ -340,7 +340,7 @@
                 <tr>
                     <td class="auto-style29"></td>
                     <td class="auto-style30" colspan="4">
-                        <asp:HyperLink ID="HL_Informe1" runat="server" NavigateUrl="~/Login.aspx">Ver Médico con mayor número de pacientes en determinado mes</asp:HyperLink>
+                        <asp:HyperLink ID="HL_Informe1" runat="server" NavigateUrl="~/Informe1.aspx">Ver Médico con mayor número de pacientes en determinado mes</asp:HyperLink>
                     </td>
                     <td class="auto-style31"></td>
                     <td class="auto-style32"></td>
@@ -383,7 +383,7 @@
                 <tr>
                     <td class="auto-style14"></td>
                     <td class="auto-style39">
-                        <asp:HyperLink ID="HL_TurnosAsignados" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Ver Turnos Asignados</asp:HyperLink>
+                        <asp:HyperLink ID="HL_TurnosAsignados" runat="server" NavigateUrl="~/CargarPresente.aspx">Cargar Presentes</asp:HyperLink>
                     </td>
                     <td class="auto-style40"></td>
                     <td class="auto-style15"></td>
