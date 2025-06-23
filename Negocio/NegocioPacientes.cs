@@ -72,6 +72,6 @@ namespace Negocio
         {
             return gestionPacientes.CargarGridViewPorNombre(nombre);
         }
-
+       
     }
 }

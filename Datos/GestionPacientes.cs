@@ -352,5 +352,41 @@ namespace Datos
             comando.ExecuteNonQuery();
             conexion.Close();
         }
+
+        public DataTable CargarGridViewPorNombre(string nombre)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            string consultaSQL = @"
+            SELECT 
+                DNI_Paciente, 
+                Nombre_Paciente, 
+                Apellido_Paciente, 
+                Sexo_Paciente, 
+                FechaNacimiento_Paciente, 
+                Correo_Paciente, 
+                Telefono_Paciente, 
+                Direccion_Paciente, 
+                Desc_Ciudad, 
+                Desc_Provincia,
+                Nacionalidad_Paciente
+            FROM Pacientes INNER JOIN Ciudades
+                ON CodCiudad_Paciente = CodPostal_Ciudad AND CodProvincia_Paciente = CodProvincia
+            INNER JOIN Provincias
+                ON Ciudades.CodProvincia = Provincias.CodProvincia
+            WHERE Estado_Paciente = 1 AND Nombre_Paciente LIKE @Nombre";
+
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
+            SqlDataReader sqlDataReader = comando.ExecuteReader();
+
+            DataTable DTPacientes = new DataTable();
+            DTPacientes.Load(sqlDataReader);
+
+            conexion.Close();
+            return DTPacientes;
+
+        }
     }
 }
