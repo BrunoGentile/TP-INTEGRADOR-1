@@ -34,5 +34,25 @@ namespace Negocio
             bool existe = gestionTurnos.ExisteDNIPaciente(DNIPaciente);
             return existe;
         }
+
+        // [+] ---------- CARGAR ESPECIALIDADES ---------- [+]
+        public DataTable CargarEspecialidades()
+        {
+            return gestionTurnos.CargarEspecialidades();
+        }
+
+        // [+] ---------- CARGAR MÉDICOS POR ESPECIALIDAD ---------- [+]
+
+        public DataTable CargarMedicosPorEspecialidad(string CodEspecialidad)
+        {
+            return gestionTurnos.CargarMedicosPorEspecialidad(CodEspecialidad);
+        }
+
+        // [+] ---------- CARGAR DÍAS DISPONIBLES POR MÉDICO ---------- [+]
+        public DataTable CargarDiasDisponibles(string LegajoMedico)
+        {
+            return gestionTurnos.CargarDiasDisponibles(LegajoMedico);
+        }
+
     }
 }
