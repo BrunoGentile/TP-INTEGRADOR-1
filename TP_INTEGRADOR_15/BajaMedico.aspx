@@ -146,7 +146,9 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style5">
                                      <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" DataKeyNames="Legajo_Medico" OnRowCommand="gvMedico_RowCommand" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" >
             <Columns>
@@ -206,7 +208,7 @@
                 <tr>
                     <td class="auto-style7"></td>
                     <td class="auto-style8">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                        <asp:Label ID="lblResultado" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style9">
                         &nbsp;</td>

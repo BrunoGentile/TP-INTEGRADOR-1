@@ -60,6 +60,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
 
         /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+
+        /// <summary>
         /// Control gvMedico.
         /// </summary>
         /// <remarks>
@@ -69,12 +78,12 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.GridView gvMedico;
 
         /// <summary>
-        /// Control lblMensaje.
+        /// Control lblResultado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        protected global::System.Web.UI.WebControls.Label lblResultado;
     }
 }

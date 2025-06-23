@@ -55,7 +55,7 @@ namespace Datos
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
 
-            string consultaSQL = "SELECT * FROM Medicos WHERE Legajo_Medico = @Legajo";
+            string consultaSQL = "SELECT * FROM Medicos WHERE Legajo_Medico = @Legajo AND Estado_Medico = 1";
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             comando.Parameters.AddWithValue("@Legajo", legajo);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -65,6 +65,7 @@ namespace Datos
 
             return dataTable;
         }
+
 
         //MÉTODO PARA ACTUALIZAR UN MÉDICO
         public void actualizarMedicos(Medicos medico)
