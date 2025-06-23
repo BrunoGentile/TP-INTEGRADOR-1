@@ -87,13 +87,13 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDNI;
 
         /// <summary>
-        /// Control cblSexo.
+        /// Control RBL_Sexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblSexo;
+        protected global::System.Web.UI.WebControls.RadioButtonList RBL_Sexo;
 
         /// <summary>
         /// Control TB_Nacionalidad.
@@ -132,7 +132,6 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox TB_Direccio;
 
         /// <summary>
-        /// Control DDL_Provincias.
         /// Control rfvDireccion.
         /// </summary>
         /// <remarks>
@@ -140,16 +139,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDireccion;
-        protected global::System.Web.UI.WebControls.DropDownList DDL_Provincias;
 
         /// <summary>
-        /// Control RequiredFieldValidator6.
+        /// Control DDL_Provincias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_Provincias;
 
         /// <summary>
         /// Control rfvProvincia.

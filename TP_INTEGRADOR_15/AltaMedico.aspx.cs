@@ -89,7 +89,7 @@ namespace TP_INTEGRADOR_15
             _Medicos.HorarioInicio_Medico = TB_HS_Inicio.Text;
             _Medicos.HorarioFin_Medico = TB_HS_Fin.Text;
             _Medicos.Contrasenia_Medico = TB_Password.Text;
-            _Medicos.Sexo_Medico = cblSexo.SelectedValue.ToString();
+            _Medicos.Sexo_Medico = RBL_Sexo.SelectedValue.ToString();
             _Medicos.Provincia_Medico = DDL_Provincias.SelectedItem.ToString();
             _Medicos.Ciudad_Medico = DDL_Ciudades.SelectedItem.ToString();
             _Medicos.CodEspecialidad_Medico = DDL_Especialidad.SelectedValue.ToString();
@@ -111,6 +111,7 @@ namespace TP_INTEGRADOR_15
                 lbl_Mensaje.Visible = true;
             }
         }
+
     }
 }
                 

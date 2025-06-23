@@ -153,10 +153,10 @@
                 <td>&nbsp;</td>
                 <td class="auto-style3">Sexo</td>
                 <td class="auto-style7">
-&nbsp;<asp:CheckBoxList ID="cblSexo" runat="server">
+                    <asp:RadioButtonList ID="RBL_Sexo" runat="server">
                         <asp:ListItem>Masculino</asp:ListItem>
                         <asp:ListItem>Femenino</asp:ListItem>
-                    </asp:CheckBoxList>
+                    </asp:RadioButtonList>
                     <br />
                 </td>
                 <td class="auto-style10">
