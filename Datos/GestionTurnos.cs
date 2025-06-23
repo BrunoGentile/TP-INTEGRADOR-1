@@ -193,5 +193,71 @@ namespace Datos
         // ----------------------------------------------- VERIFICAR DATOS -----------------------------------------------
         // ---------------------------------------------------------------------------------------------------------------
 
+        public DataTable ObtenerMeses()
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                string query = "SELECT DISTINCT MONTH(Dia_Turnos) AS Mes FROM Turnos ORDER BY Mes";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+        public DataTable ObtenerAnios()
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                string query = "SELECT DISTINCT YEAR(Dia_Turnos) AS Anio FROM Turnos ORDER BY Anio";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
+        public string ObtenerMedicosConMasTurnos(int mes, int anio)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            string consulta = @"
+             SELECT LegajoMedico_Turnos, COUNT(*) AS CantidadTurnos
+             FROM Turnos
+             WHERE MONTH(Dia_Turnos) = @Mes AND YEAR(Dia_Turnos) = @Anio
+             GROUP BY LegajoMedico_Turnos
+             HAVING COUNT(*) = (
+             SELECT MAX(CantidadTurnos)
+             FROM (
+             SELECT COUNT(*) AS CantidadTurnos
+             FROM Turnos
+             WHERE MONTH(Dia_Turnos) = @Mes AND YEAR(Dia_Turnos) = @Anio
+             GROUP BY LegajoMedico_Turnos
+             ) AS Subconsulta
+             )";
+
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("@Mes", mes);
+            comando.Parameters.AddWithValue("@Anio", anio);
+
+            SqlDataReader lector = comando.ExecuteReader();
+            List<string> resultados = new List<string>();
+
+            while (lector.Read())
+            {
+                string legajo = lector["LegajoMedico_Turnos"].ToString();
+                int cantidad = Convert.ToInt32(lector["CantidadTurnos"]);
+                resultados.Add($"{legajo} ({cantidad})");
+            }
+
+            conexion.Close();
+
+            return string.Join(" - ", resultados);
+        }
+
+
+
     }
 }

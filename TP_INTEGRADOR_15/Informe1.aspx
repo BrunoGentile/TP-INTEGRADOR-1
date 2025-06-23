@@ -29,10 +29,10 @@
         }
         .auto-style7 {
             height: 23px;
-            width: 65px;
+            width: 346px;
         }
         .auto-style8 {
-            width: 65px;
+            width: 346px;
         }
     </style>
 </head>
@@ -41,7 +41,7 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style3" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="nombreUsuario" runat="server"></asp:Label>
+                    <td class="auto-style3" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style5"></td>
                     <td class="auto-style7"></td>
@@ -99,10 +99,21 @@
                     <td class="auto-style4"></td>
                     <td class="auto-style5">Elegir mes:</td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="ddlMes" runat="server" ValidationGroup="GrupoInforme">
+                             <asp:ListItem Text="Elija un mes" Value="" Selected="True"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style2">
+                        <asp:RequiredFieldValidator 
+                            ID="rfvMes" 
+                            runat="server" 
+                            ControlToValidate="ddlMes"
+                            InitialValue="" 
+                            ErrorMessage="Debe elegir un mes" 
+                            ForeColor="Red" 
+                            Display="Dynamic"
+                            ValidationGroup="GrupoInforme"></asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
@@ -111,10 +122,23 @@
                     <td class="auto-style4"></td>
                     <td class="auto-style5">Elegir año:</td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:DropDownList ID="ddlAnio" runat="server" ValidationGroup="GrupoInforme">
+                            <asp:ListItem Text="Elija un año" Value="" Selected="True"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style2">
+                        <asp:RequiredFieldValidator 
+                            ID="rfvAnio" 
+                            runat="server" 
+                            ControlToValidate="ddlAnio"
+                            InitialValue="" 
+                            ErrorMessage="Debe elegir un año" 
+                            ForeColor="Red" 
+                            Display="Dynamic"
+                            ValidationGroup="GrupoInforme">
+
+                        </asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
@@ -124,7 +148,7 @@
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style2">
-                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" />
+                        <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" OnClick="btnGenerarInforme_Click"  ValidationGroup="GrupoInforme" CausesValidation="true"/>
                     </td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>

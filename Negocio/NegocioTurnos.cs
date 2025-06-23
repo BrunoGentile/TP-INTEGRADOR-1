@@ -61,5 +61,21 @@ namespace Negocio
             return gestionTurnos.CargarHorariosDisponibles(LegajoMedico);
         }
 
+        public DataTable ObtenerMeses()
+        {
+            return gestionTurnos.ObtenerMeses();
+        }
+
+        public DataTable ObtenerAnios()
+        {
+            return gestionTurnos.ObtenerAnios();
+        }
+        public string ObtenerMedicoConMasTurnos(int mes, int anio)
+        {
+            return gestionTurnos.ObtenerMedicosConMasTurnos(mes, anio);
+        }
+
+
+
     }
 }
