@@ -16,9 +16,6 @@
         .auto-style3 {
             height: 35px;
         }
-        .auto-style4 {
-            width: 50px;
-        }
         .auto-style5 {
         }
         .auto-style6 {
@@ -85,14 +82,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style16"></td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
@@ -132,12 +129,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style8">Seleccionar Día:</td>
+                    <td class="auto-style3">Seleccionar Día:</td>
                     <td class="auto-style11"></td>
-                    <td class="auto-style8">&nbsp;
-                        <input type="date" id="Input_FechaAtencion" name="fechaTurno" runat="server"/>
+                    <td class="auto-style3">&nbsp;
+                        <input type="date" id="Input_FechaAtencion" name="Input_FechaAtencion" runat="server"/>
                     </td>
-                    <td class="auto-style13">
+                    <td class="auto-style3">
                         <asp:DropDownList ID="DDL_Dias" runat="server">
                         </asp:DropDownList>
                     </td>
@@ -151,7 +148,7 @@
                     <td class="auto-style11"></td>
                     <td class="auto-style8">
                         &nbsp;
-                        <input type="time" id="Input_Horario" name="IN_Horario" runat="server"/>
+                        <input type="time" id="IN_Horario" name="IN_Horario" runat="server"/>
                     </td>
                     <td class="auto-style13" colspan="3">
                         <asp:Label ID="LBL_HSMedico" runat="server"></asp:Label>
@@ -173,7 +170,7 @@
                     <td class="auto-style19"></td>
                     <td class="auto-style20"></td>
                     <td class="auto-style19">
-                        <asp:Button ID="BTN_Enviar" runat="server" Text="Cargar Turno" />
+                        <asp:Button ID="BTN_Enviar" runat="server" Text="Cargar Turno" OnClick="BTN_Enviar_Click" />
                     </td>
                     <td class="auto-style19" colspan="3">
                         <asp:Label ID="LBL_Message" runat="server"></asp:Label>

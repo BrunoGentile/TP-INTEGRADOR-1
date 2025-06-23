@@ -78,13 +78,13 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.DropDownList DDL_Dias;
 
         /// <summary>
-        /// Control Input_Horario.
+        /// Control IN_Horario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Input_Horario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl IN_Horario;
 
         /// <summary>
         /// Control LBL_HSMedico.

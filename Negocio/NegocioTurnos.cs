@@ -61,6 +61,76 @@ namespace Negocio
             return gestionTurnos.CargarHorariosDisponibles(LegajoMedico);
         }
 
+        // [+] ---------- VERIFICAR EXISTENCIA DEL PACIENTE POR DNI ---------- [+]
+
+        public bool VerificarExistenciaPaciente(string DNIPaciente)
+        {
+            return gestionTurnos.VerificarExistenciaPaciente(DNIPaciente);
+        }
+
+        // [+] ---------- OBTENER NOMBRE DEL DÍA ---------- [+]
+
+        public string ObtenerNombreDia(string DiaTurno)
+        {
+
+            if (DateTime.TryParse(DiaTurno, out DateTime fecha))
+            {
+                // Obtener nombre del día en español
+                string nombreDia = fecha.ToString("dddd", new System.Globalization.CultureInfo("es-AR"));
+
+                // Capitalizar la primera letra (opcional)
+                nombreDia = char.ToUpper(nombreDia[0]) + nombreDia.Substring(1);
+
+                return nombreDia;
+            }
+            else
+            {
+                return "";
+            }
+
+        }
+
+        // [+] ---------- VERIFICAR DÍA DEL TURNO ---------- [+]
+
+        public bool VerificarDiaTurno(string LegajoMedico, string DiaTurno)
+        {
+            return gestionTurnos.VerificarDiaTurno(LegajoMedico, DiaTurno);
+        }
+
+        // [+] ---------- VERIFICAR HORARIO DEL TURNO ---------- [+]
+
+        public bool VerificarHorarioTurno(string LegajoMedico, string HorarioTurno, string Fecha)
+        {
+            if (gestionTurnos.VerificarHorarioTurno(LegajoMedico, HorarioTurno))
+            {
+
+                return VerificarRepeticionTurnos(LegajoMedico, HorarioTurno, Fecha);
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        // [+] ---------- VERIFICAR REPETICIÓN DE TURNOS ---------- [+]
+
+        public bool VerificarRepeticionTurnos(string LegajoMedico, string HorarioTurno, string Fecha)
+        {
+            // Verifica si ya existe un turno con el mismo médico, horario y fecha
+            return !gestionTurnos.VerificarRepeticionTurnos(LegajoMedico, HorarioTurno, Fecha);
+        }
+
+        // [+] ---------- ASIGNAR TURNO ---------- [+]
+
+        public void CargarTurnos(Turnos turno)
+        {
+
+            gestionTurnos.InsertarTurno(turno);
+
+        }
+
         public DataTable ObtenerMeses()
         {
             return gestionTurnos.ObtenerMeses();

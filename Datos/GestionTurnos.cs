@@ -193,6 +193,167 @@ namespace Datos
         // ----------------------------------------------- VERIFICAR DATOS -----------------------------------------------
         // ---------------------------------------------------------------------------------------------------------------
 
+        // [+] ---------- VERIFICAR EXISTENCIA DEL PACIENTE ---------- [+]
+
+        public bool VerificarExistenciaPaciente(string dniPaciente)
+        {
+
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            string consultaSQL = "SELECT COUNT(*) FROM Pacientes WHERE DNI_Paciente = @DNIPaciente";
+
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@DNIPaciente", dniPaciente);
+
+            int cantidad = (int)comando.ExecuteScalar();
+            conexion.Close();
+            return cantidad > 0;
+        }
+
+        // [+] ---------- VERIFICAR DÍA DEL TURNO ---------- [+]
+
+        public bool VerificarDiaTurno(string legajoMedico, string diaTurno)
+        {
+
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Medicos WHERE Legajo_Medico = @Legajo AND DiasAtencion_Medico LIKE @Dia", conexion);
+            cmd.Parameters.AddWithValue("@Legajo", legajoMedico);
+            cmd.Parameters.AddWithValue("@Dia", "%" + diaTurno + "%");
+
+            int cantidad = (int)cmd.ExecuteScalar(); // devuelve el número de coincidencias
+
+            conexion.Close();
+            return cantidad > 0; // si hay al menos una, devuelve true
+
+        }
+
+        // [+] ---------- VERIFICAR HORARIO DEL TURNO ---------- [+]
+
+        public bool VerificarHorarioTurno(string legajoMedico, string horarioTurno)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Medicos WHERE Legajo_Medico = @Legajo AND HorarioInicio_Medico <= @Horario AND HorarioFin_Medico >= @Horario", conexion);
+
+            cmd.Parameters.AddWithValue("@Legajo", legajoMedico);
+            cmd.Parameters.AddWithValue("@Horario", horarioTurno);
+
+            int cantidad = (int)cmd.ExecuteScalar(); // devuelve el número de coincidencias
+
+            conexion.Close();
+            return cantidad > 0; // si hay al menos una, devuelve true
+
+        }
+
+        // [+] ---------- VERIFICAR REPETICIÓN DE TURNOS ---------- [+]
+
+        public bool VerificarRepeticionTurnos(string legajoMedico, string HorarioTurno, string Fecha)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                string consultaSQL = @"SELECT Horarios_Turnos 
+                               FROM Turnos 
+                               WHERE LegajoMedico_Turnos = @Legajo AND Dia_Turnos = @Dia";
+
+                SqlCommand cmd = new SqlCommand(consultaSQL, conexion);
+                cmd.Parameters.AddWithValue("@Legajo", legajoMedico);
+                cmd.Parameters.AddWithValue("@Dia", Fecha); // formato: "2025-06-25"
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (!TimeSpan.TryParse(HorarioTurno, out TimeSpan horarioNuevo))
+                    return false; // o lanzar excepción si querés validar
+
+                while ( reader.Read() )
+                {
+                    TimeSpan horarioExistente = (TimeSpan)reader["Horarios_Turnos"];
+                    TimeSpan diferencia = (horarioExistente - horarioNuevo).Duration();
+
+                    if (diferencia < TimeSpan.FromMinutes(30))
+                    {
+                        // Ya hay un turno que se superpone o es muy cercano
+                        return true;
+                    }
+                }
+
+                return false; // Ningún turno conflictivo
+            }
+        }
+
+
+        // [+] ---------- ASIGNAR LEGAJO --------- [+]
+
+        public string ObtenerSiguienteCodigoTurno(){ 
+                
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                // Traer el último código insertado (mayor valor numérico)
+                string consultaSQL = "SELECT MAX(Cod_Turno) FROM Turnos";
+                SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+
+                object resultado = comando.ExecuteScalar();
+
+                if (resultado != null && resultado != DBNull.Value)
+                {
+                    string ultimoCodigo = resultado.ToString(); // ej: "TUR00014"
+
+                    // Extraer parte numérica → "00014"
+                    string parteNumerica = ultimoCodigo.Substring(3);
+
+                    // Convertir a int, sumar 1
+                    int numero = int.Parse(parteNumerica) + 1;
+
+                    // Reconstruir nuevo código con ceros adelante
+                    return "TUR" + numero.ToString("D5"); // D5 → 5 dígitos con ceros
+                }
+                else
+                {
+                    // Si no hay ningún registro, comenzar en TUR00001
+                    return "TUR00001";
+                 }
+            }
+        }
+
+            // [+] ---------- ASIGNAR TURNO ---------- [+]
+
+        public void InsertarTurno(Turnos turno)
+        {
+
+            turno._Cod_Turno = ObtenerSiguienteCodigoTurno();
+
+             using (SqlConnection conexion = ObtenerConexion())
+             {
+                conexion.Open();
+
+                string consultaSQL = @"INSERT INTO Turnos 
+                (Cod_Turno, LegajoMedico_Turnos, DNIPaciente_Turnos, LegajoAdmin_Turnos, Dia_Turnos, Horarios_Turnos)
+                 VALUES (@Cod_Turno, @LegajoMedico, @DNI, @CodAdmin, @Dia, @Horario)";
+
+                using (SqlCommand comando = new SqlCommand(consultaSQL, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Cod_Turno", turno._Cod_Turno);
+                    comando.Parameters.AddWithValue("@LegajoMedico", turno._LegajoMedico_Turno);
+                    comando.Parameters.AddWithValue("@DNI", turno._DNIPaciente_Turno);
+                    comando.Parameters.AddWithValue("@CodAdmin", turno._LegajoAdmin_Turno);
+
+                    comando.Parameters.AddWithValue("@Dia", turno._Dia_Turno); // tipo DATE
+    
+                    comando.Parameters.AddWithValue("@Horario", turno._Horarios_Turno); // tipo TIME
+
+                    comando.ExecuteNonQuery(); // Ejecuta el insert
+                }
+             }
+        }
+
+        // ------------------------
+
         public DataTable ObtenerMeses()
         {
             using (SqlConnection conexion = ObtenerConexion())

@@ -78,5 +78,51 @@ namespace TP_INTEGRADOR_15
             CargarHorarios();
         }
 
+        protected void BTN_Enviar_Click(object sender, EventArgs e)
+        {
+
+            Turnos _Turno = new Turnos();
+            NegocioTurnos _NegocioTurnos = new NegocioTurnos();
+
+            // _Turno._Cod_Turno =
+            _Turno._LegajoMedico_Turno = DDL_Medicos.SelectedValue.ToString(); // NO NECESITA VALIDACIÓN
+            _Turno._DNIPaciente_Turno = TB_DNI.Text.Trim(); // VERIFICADO
+            _Turno._LegajoAdmin_Turno = Session["LegajoUsuario"].ToString(); // NO NECESITA VALIDACIÓN
+
+            _Turno._Dia_Turno = Request.Form["Input_FechaAtencion"]; // YYYY-MM-DD | VERIFICADO
+            _Turno._Dia_Turno = _NegocioTurnos.ObtenerNombreDia(_Turno._Dia_Turno);
+
+            _Turno._Horarios_Turno = Request.Form["IN_Horario"]; // HH:MM |
+
+            if (_NegocioTurnos.VerificarExistenciaPaciente(_Turno._DNIPaciente_Turno))
+            {
+
+                if (_NegocioTurnos.VerificarDiaTurno(_Turno._LegajoMedico_Turno, _Turno._Dia_Turno))
+                {
+
+                    if (_NegocioTurnos.VerificarHorarioTurno(_Turno._LegajoMedico_Turno, _Turno._Horarios_Turno, Request.Form["Input_FechaAtencion"]))
+                    {
+                        _Turno._Dia_Turno = Request.Form["Input_FechaAtencion"];
+                        _NegocioTurnos.CargarTurnos(_Turno);
+                        LBL_Message.Text = "Turno Asignado";
+                    }
+                    else
+                    {
+                        LBL_Message.Text = "El horario seleccionado no está disponible. Por favor, elija otro horario.";
+                    }
+
+                }
+                else
+                {
+                    LBL_Message.Text = "El médico no atiende el día seleccionado. Por favor, elija otro día.";
+                }
+
+            }
+            else
+            {
+                LBL_Message.Text = "El paciente no existe. Por favor, verifique el DNI ingresado.";
+            }
+
+        }
     }
 }
