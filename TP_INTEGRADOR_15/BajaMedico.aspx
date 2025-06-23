@@ -40,14 +40,14 @@
         }
         .auto-style10 {
             width: 124px;
-            height: 26px;
+            height: 25px;
         }
         .auto-style11 {
             width: 205px;
-            height: 26px;
+            height: 25px;
         }
         .auto-style12 {
-            height: 26px;
+            height: 25px;
         }
     </style>
 </head>
@@ -120,10 +120,11 @@
                     <td class="auto-style11">
                         <asp:TextBox ID="txtLegajo" runat="server" Width="319px"></asp:TextBox>
                     </td>
+          
                     <td class="auto-style12">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" ValidationGroup="Filtro" />
                     </td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
@@ -133,7 +134,20 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                       
+                         <asp:RequiredFieldValidator 
+                             ID="rfvLegajo" 
+                             runat="server" 
+                             ErrorMessage="Debe ingresar un legajo"
+                             ForeColor="Red"
+                             Display="Dynamic" 
+                             ValidationGroup="Filtro" 
+                             ControlToValidate="txtLegajo">
+
+                         </asp:RequiredFieldValidator>
+                       
+                    </td>
                     <td>
                         <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click" Text="Mostrar Todos" />
                     </td>
