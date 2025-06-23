@@ -154,7 +154,7 @@
                                         <asp:TextBox ID="txtTelefono" runat="server" Height="18px" Text='<%# Bind("Telefono_Medico") %>' Width="100px"></asp:TextBox>
                                         <br />
                                         <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono">Falta Telefono</asp:RequiredFieldValidator>
-                                        &nbsp;<asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ValidationExpression="&quot;^[\d\W]+$&quot;">Sin letras</asp:RegularExpressionValidator>
+                                        &nbsp;<asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ValidationExpression="^[\d\W+]+$">Sin letras</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Telefono" runat="server" Text='<%# Bind("Telefono_Medico") %>'></asp:Label>
@@ -237,8 +237,8 @@
                                         <asp:RequiredFieldValidator ID="rfvHoraInicio" runat="server" ControlToValidate="txtHoraInicio">Falta hora inicio</asp:RequiredFieldValidator>
                                         &nbsp;<asp:RequiredFieldValidator ID="rfvHoraFin" runat="server" ControlToValidate="txtHoraFin">Falta hora fin</asp:RequiredFieldValidator>
 &nbsp;<br />
-                                        <asp:RegularExpressionValidator ID="revHoraInicio" runat="server" ControlToValidate="txtHoraInicio" ValidationExpression="&quot;^[\d\W]+$&quot;">Sin letras</asp:RegularExpressionValidator>
-                                        &nbsp;<asp:RegularExpressionValidator ID="revHoraFin" runat="server" ControlToValidate="txtHoraFin" ValidationExpression="&quot;^[\d\W]+$&quot;">Sin letras</asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="revHoraInicio" runat="server" ControlToValidate="txtHoraInicio" ValidationExpression="^\d{2}:\d{2}:\d{2}$">Sin letras</asp:RegularExpressionValidator>
+                                        &nbsp;<asp:RegularExpressionValidator ID="revHoraFin" runat="server" ControlToValidate="txtHoraFin" ValidationExpression="^\d{2}:\d{2}:\d{2}$">Sin letras</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         desde
