@@ -392,19 +392,19 @@ namespace Datos
             conexion.Open();
 
             string consulta = @"
-             SELECT LegajoMedico_Turnos, COUNT(*) AS CantidadTurnos
-             FROM Turnos
-             WHERE MONTH(Dia_Turnos) = @Mes AND YEAR(Dia_Turnos) = @Anio
-             GROUP BY LegajoMedico_Turnos
-             HAVING COUNT(*) = (
-             SELECT MAX(CantidadTurnos)
-             FROM (
-             SELECT COUNT(*) AS CantidadTurnos
-             FROM Turnos
-             WHERE MONTH(Dia_Turnos) = @Mes AND YEAR(Dia_Turnos) = @Anio
-             GROUP BY LegajoMedico_Turnos
-             ) AS Subconsulta
-             )";
+        SELECT LegajoMedico_Turnos, COUNT(DISTINCT DNIPaciente_Turnos) AS CantidadPacientes
+        FROM Turnos
+        WHERE MONTH(Dia_Turnos) = @Mes AND YEAR(Dia_Turnos) = @Anio
+        GROUP BY LegajoMedico_Turnos
+        HAVING COUNT(DISTINCT DNIPaciente_Turnos) = (
+            SELECT MAX(CantidadPacientes)
+            FROM (
+                SELECT COUNT(DISTINCT DNIPaciente_Turnos) AS CantidadPacientes
+                FROM Turnos
+                WHERE MONTH(Dia_Turnos) = @Mes AND YEAR(Dia_Turnos) = @Anio
+                GROUP BY LegajoMedico_Turnos
+            ) AS Subconsulta
+        )";
 
             SqlCommand comando = new SqlCommand(consulta, conexion);
             comando.Parameters.AddWithValue("@Mes", mes);
@@ -416,7 +416,7 @@ namespace Datos
             while (lector.Read())
             {
                 string legajo = lector["LegajoMedico_Turnos"].ToString();
-                int cantidad = Convert.ToInt32(lector["CantidadTurnos"]);
+                int cantidad = Convert.ToInt32(lector["CantidadPacientes"]);
                 resultados.Add($"{legajo} ({cantidad})");
             }
 
