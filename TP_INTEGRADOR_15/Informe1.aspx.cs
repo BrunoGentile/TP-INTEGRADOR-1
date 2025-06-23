@@ -1,5 +1,6 @@
 ﻿using Negocio;
 using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,7 +16,7 @@ namespace TP_INTEGRADOR_15
             //if (Session["Usuario"] == null)
             //{
             //    // Si el Session no contiene el usuario, redirigir a la página de inicio de sesión
-            //    Response.Redirect("Login.aspx");
+            //   Response.Redirect("Login.aspx");
             //}
             //else
             //{
@@ -49,30 +50,34 @@ namespace TP_INTEGRADOR_15
 
         protected void btnGenerarInforme_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                lblResultado.Text = ""; // Borra el mensaje anterior si no valida
+                return;
+            }
+
             if (!string.IsNullOrEmpty(ddlMes.SelectedValue) && !string.IsNullOrEmpty(ddlAnio.SelectedValue))
             {
                 int mes = int.Parse(ddlMes.SelectedValue);
                 int anio = int.Parse(ddlAnio.SelectedValue);
-
-                // Acá implementarías la lógica para obtener el médico con más turnos en ese mes/año
-                // Podés seguir usando la capa de Datos o crear una nueva función en Negocio
 
                 string legajoMedico = negocioTurnos.ObtenerMedicoConMasTurnos(mes, anio);
 
 
                 if (!string.IsNullOrEmpty(legajoMedico))
                 {
-                    lblResultado.Text = $"Legajo del médico con más turnos en {mes}/{anio}: {legajoMedico}";
+                    lblResultado.Text = $"Legajo/s de el/los médico/s con más turnos en el mes {mes} del año {anio}: {legajoMedico}";
                 }
                 else
                 {
-                    lblResultado.Text = $"No hay turnos registrados en {mes}/{anio}.";
+                    lblResultado.Text = $"No hay turnos registrados en esa fecha.";
                 }
+
             }
 
-            CargarMeses();
-            CargarAnios();
-
+            ddlMes.ClearSelection();
+            ddlAnio.ClearSelection();
         }
+  
     }
 }

@@ -96,7 +96,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">Elegir mes:</td>
                     <td class="auto-style7">
                         <asp:DropDownList ID="ddlMes" runat="server" ValidationGroup="GrupoInforme">
@@ -119,7 +119,7 @@
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">Elegir año:</td>
                     <td class="auto-style7">
                         <asp:DropDownList ID="ddlAnio" runat="server" ValidationGroup="GrupoInforme">
@@ -144,15 +144,15 @@
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style7"></td>
                     <td class="auto-style2">
                         <asp:Button ID="btnGenerarInforme" runat="server" Text="Generar Informe" OnClick="btnGenerarInforme_Click"  ValidationGroup="GrupoInforme" CausesValidation="true"/>
                     </td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
                 </tr>
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
