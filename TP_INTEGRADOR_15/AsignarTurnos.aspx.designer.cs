@@ -60,6 +60,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox TB_DNI;
 
         /// <summary>
+        /// Control Input_FechaAtencion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Input_FechaAtencion;
+
+        /// <summary>
         /// Control DDL_Dias.
         /// </summary>
         /// <remarks>
@@ -69,13 +78,22 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.DropDownList DDL_Dias;
 
         /// <summary>
-        /// Control DDL_HorariosTurnos.
+        /// Control Input_Horario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDL_HorariosTurnos;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Input_Horario;
+
+        /// <summary>
+        /// Control LBL_HSMedico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_HSMedico;
 
         /// <summary>
         /// Control BTN_Enviar.
@@ -85,5 +103,14 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_Enviar;
+
+        /// <summary>
+        /// Control LBL_Message.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_Message;
     }
 }

@@ -21,6 +21,7 @@ namespace TP_INTEGRADOR_15
                 CargarEspecialidades();
                 CargarMedicos();
                 CargarDiasDisponibles();
+                CargarHorarios();
             }
 
         }
@@ -45,6 +46,15 @@ namespace TP_INTEGRADOR_15
             DDL_Medicos.DataBind();
         }
 
+        // [+] ---------- CARGAR HORARIOS DISPONIBLES DEL MÉDICO ---------- [+]
+
+        protected void CargarHorarios()
+        {
+            NegocioTurnos _NegTurnos = new NegocioTurnos();
+            LBL_HSMedico.Text = _NegTurnos.CargarHorariosDisponibles(DDL_Medicos.SelectedValue);
+        }
+
+
         // [+] ---------- MOSTRAR DÍAS EN EL QUE EL MÉDICO TIENE TURNOS DISPONIBLES ---------- [+]
 
         protected void CargarDiasDisponibles()
@@ -59,11 +69,14 @@ namespace TP_INTEGRADOR_15
         protected void DDL_Especialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarMedicos();
+            CargarHorarios();
         }
 
         protected void DDL_Medicos_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarDiasDisponibles();
+            CargarHorarios();
         }
+
     }
 }

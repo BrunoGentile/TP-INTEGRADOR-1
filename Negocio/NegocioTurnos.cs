@@ -54,5 +54,12 @@ namespace Negocio
             return gestionTurnos.CargarDiasDisponibles(LegajoMedico);
         }
 
+        // [+] ---------- CARGAR HORARIOS DISPONIBLES DEL MÉDICO ---------- [+]
+
+        public string CargarHorariosDisponibles(string LegajoMedico)
+        {
+            return gestionTurnos.CargarHorariosDisponibles(LegajoMedico);
+        }
+
     }
 }

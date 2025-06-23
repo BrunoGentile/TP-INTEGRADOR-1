@@ -154,5 +154,44 @@ namespace Datos
             return dataTable;
         }
 
+        // [+] ---------- CARGAR HORARIOS DISPONIBLES DEL MÉDICO ---------- [+]
+
+        public string CargarHorariosDisponibles(string LegajoMedico)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+
+            string consultaSQL = "SELECT * FROM Medicos WHERE Legajo_Medico = @LegajoMedico";
+
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@LegajoMedico", LegajoMedico);
+
+            string strInicio = string.Empty;
+            string strFin = string.Empty;
+
+            using (SqlDataReader reader = comando.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    // Asumo que tus columnas son tipo DATE o DATETIME
+                    TimeSpan horaInicio = (TimeSpan)(reader["HorarioInicio_Medico"]);
+                    TimeSpan horaFin = (TimeSpan)(reader["HorarioFin_Medico"]);
+
+                    // Convertir a string con formato hh:mm
+                    strInicio = horaInicio.ToString();
+                    strFin = horaFin.ToString();
+
+
+                }
+            }
+
+            return $"Horario Inicio: {strInicio} - Horario Fin: {strFin}";
+
+        }
+
+        // ---------------------------------------------------------------------------------------------------------------
+        // ----------------------------------------------- VERIFICAR DATOS -----------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------------
+
     }
 }

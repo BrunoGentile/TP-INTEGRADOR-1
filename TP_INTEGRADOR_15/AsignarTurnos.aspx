@@ -11,7 +11,7 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 10px;
+            width: 15px;
         }
         .auto-style3 {
             height: 35px;
@@ -25,7 +25,7 @@
             width: 160px;
         }
         .auto-style7 {
-            width: 10px;
+            width: 15px;
             height: 35px;
         }
         .auto-style8 {
@@ -37,10 +37,9 @@
         }
         .auto-style13 {
             height: 35px;
-            width: 160px;
-        }
+            }
         .auto-style14 {
-            width: 10px;
+            width: 15px;
             height: 23px;
         }
         .auto-style15 {
@@ -53,6 +52,20 @@
         }
         .auto-style17 {
             height: 23px;
+        }
+        .auto-style18 {
+            width: 15px;
+            height: 30px;
+        }
+        .auto-style19 {
+            height: 30px;
+        }
+        .auto-style20 {
+            width: 50px;
+            height: 30px;
+        }
+        .auto-style21 {
+            height: 30px;
         }
     </style>
 </head>
@@ -122,7 +135,7 @@
                     <td class="auto-style8">Seleccionar Día:</td>
                     <td class="auto-style11"></td>
                     <td class="auto-style8">&nbsp;
-                        <input type="date" id="Input_FechaAtencion"/>
+                        <input type="date" id="Input_FechaAtencion" name="fechaTurno" runat="server"/>
                     </td>
                     <td class="auto-style13">
                         <asp:DropDownList ID="DDL_Dias" runat="server">
@@ -137,12 +150,12 @@
                     <td class="auto-style8">Horario:</td>
                     <td class="auto-style11"></td>
                     <td class="auto-style8">
-                        <asp:DropDownList ID="DDL_HorariosTurnos" runat="server">
-                        </asp:DropDownList>
+                        &nbsp;
+                        <input type="time" id="Input_Horario" name="IN_Horario" runat="server"/>
                     </td>
-                    <td class="auto-style13"></td>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style3"></td>
+                    <td class="auto-style13" colspan="3">
+                        <asp:Label ID="LBL_HSMedico" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style3"></td>
                 </tr>
                 <tr>
@@ -156,16 +169,16 @@
                     <td class="auto-style17"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style6">
+                    <td class="auto-style18"></td>
+                    <td class="auto-style19"></td>
+                    <td class="auto-style20"></td>
+                    <td class="auto-style19">
                         <asp:Button ID="BTN_Enviar" runat="server" Text="Cargar Turno" />
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19" colspan="3">
+                        <asp:Label ID="LBL_Message" runat="server"></asp:Label>
+                    </td>
+                    <td class="auto-style21"></td>
                 </tr>
             </table>
         </div>
