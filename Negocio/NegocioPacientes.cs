@@ -38,6 +38,24 @@ namespace Negocio
             return gestionPacientes.ListarPacientes();
         }
 
+        //obtiene el estado del paciente
+        public DataTable ObtenerPaciente(string DNI_Paciente)
+        {
+            return gestionPacientes.ObtenerPaciente(DNI_Paciente);
+        }
+
+        //pasa el estado del paciente a 0
+        public void EliminarPaciente(string DNI_Paciente)
+        {
+            gestionPacientes.BajaLogicaPaciente(DNI_Paciente);
+        }
+
+        //si el esrtado del paciente estaba en 0, pasa a 1
+        public void ReactivarPaciente(string DNI_Paciente)
+        {
+            gestionPacientes.ReactivarPaciente(DNI_Paciente);
+        }
+
         // [+] ---------- ACTUALIZAR PACIENTE ---------- [+]
 
         public void ActualizarPaciente(Pacientes Paciente)

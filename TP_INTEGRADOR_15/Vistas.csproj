@@ -71,6 +71,7 @@
     <Content Include="AltaPaciente.aspx" />
     <Content Include="AsignarTurnos.aspx" />
     <Content Include="BajaMedico.aspx" />
+    <Content Include="BajaPaciente.aspx" />
     <Content Include="CargarPresente.aspx" />
     <Content Include="Informe1.aspx" />
     <Content Include="Login.aspx" />
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="BajaMedico.aspx.designer.cs">
       <DependentUpon>BajaMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BajaPaciente.aspx.cs">
+      <DependentUpon>BajaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BajaPaciente.aspx.designer.cs">
+      <DependentUpon>BajaPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="CargarPresente.aspx.cs">
       <DependentUpon>CargarPresente.aspx</DependentUpon>

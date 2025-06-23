@@ -97,38 +97,57 @@
         }
         .auto-style39 {
             width: 81px;
-            height: 23px;
+            height: 26px;
         }
         .auto-style40 {
             width: 227px;
-            height: 23px;
+            height: 26px;
         }
         .auto-style41 {
-            height: 23px;
-            width: 116px;
+            height: 26px;
         }
         .auto-style42 {
             width: 443px;
-            height: 23px;
+            height: 26px;
         }
         .auto-style43 {
             width: 100px;
-            height: 23px;
+            height: 26px;
         }
         .auto-style44 {
             width: 606px;
-            height: 23px;
+            height: 26px;
         }
         .auto-style45 {
             width: 82px;
-            height: 23px;
+            height: 26px;
         }
         .auto-style46 {
             width: 660px;
-            height: 23px;
+            height: 26px;
         }
         .auto-style47 {
-            width: 116px;
+            width: 81px;
+            height: 30px;
+        }
+        .auto-style48 {
+            width: 227px;
+            height: 30px;
+        }
+        .auto-style49 {
+            height: 30px;
+        }
+        .auto-style50 {
+            width: 606px;
+            height: 30px;
+        }
+        .auto-style51 {
+            width: 82px;
+            height: 30px;
+        }
+        .auto-style52 {
+            width: 660px;
+            height: 30px;
         }
     </style>
 </head>
@@ -139,7 +158,7 @@
                 <tr>
                     <td class="auto-style31"></td>
                     <td class="auto-style32" colspan="2">
-                        <asp:Label ID="lbl_Usuario" runat="server"></asp:Label>
+                        <asp:Label ID="lbl_Admin" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style34"></td>
                     <td class="auto-style35"></td>
@@ -224,8 +243,6 @@
                         <asp:TextBox ID="txt_DniPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
-                        <asp:RegularExpressionValidator ID="rev_DNIpaciente" runat="server" ControlToValidate="txt_DniPaciente" ValidationExpression="^\d{7,8}$">*</asp:RegularExpressionValidator>
-                        <br />
                         <asp:RequiredFieldValidator ID="rfv_DNIpaciente" runat="server" ControlToValidate="txt_DniPaciente">Ingrese DNI del paciente</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style24">&nbsp;</td>
@@ -288,26 +305,28 @@
                     <td class="auto-style28">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style22">Provincia:</td>
-                    <td class="auto-style47">
-                        <asp:DropDownList ID="ddl_ProvPaciente" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_ProvPaciente_SelectedIndexChanged" Width="125px">
+                    <td class="auto-style39"></td>
+                    <td class="auto-style40">Provincia:</td>
+                    <td class="auto-style41">
+                        <asp:DropDownList ID="ddl_ProvPaciente" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_ProvPaciente_SelectedIndexChanged" Width="125px">
+                            <asp:ListItem>-- Seleccionar --</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style26">
-                        <asp:RequiredFieldValidator ID="rfv_provincia" runat="server" ControlToValidate="ddl_ProvPaciente" Display="Dynamic" InitialValue="-- Seleccionar --">Seleccionar provincia</asp:RequiredFieldValidator>
+                    <td class="auto-style42">
+                        <asp:RequiredFieldValidator ID="rfv_provincia" runat="server" ControlToValidate="ddl_ProvPaciente" InitialValue="-- Seleccionar --">Seleccionar provincia</asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style24">Localidad:</td>
-                    <td class="auto-style17">
-                        <asp:DropDownList ID="ddl_LocPaciente" runat="server" Height="18px" Width="125px">
+                    <td class="auto-style43">Localidad:</td>
+                    <td class="auto-style39">
+                        <asp:DropDownList ID="ddl_LocPaciente" runat="server" Height="18px" Width="125px" CausesValidation="True">
+                            <asp:ListItem>-- Seleccionar --</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td class="auto-style30">
-                        <asp:RequiredFieldValidator ID="rfv_localidad" runat="server" ControlToValidate="ddl_LocPaciente" Display="Dynamic" ErrorMessage="RequiredFieldValidator" InitialValue="-- Seleccionar --">Seleccionar localidad</asp:RequiredFieldValidator>
+                    <td class="auto-style44">
+                        <asp:RequiredFieldValidator ID="rfv_localidad" runat="server" ControlToValidate="ddl_LocPaciente" InitialValue="-- Seleccionar --">Seleccionar localidad</asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style18">&nbsp;</td>
-                    <td class="auto-style28">&nbsp;</td>
+                    <td class="auto-style45"></td>
+                    <td class="auto-style45"></td>
+                    <td class="auto-style46"></td>
                 </tr>
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
@@ -316,8 +335,6 @@
                         <asp:TextBox ID="txt_correoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
-                        <asp:RegularExpressionValidator ID="rev_correoPaciente" runat="server" ControlToValidate="txt_correoPaciente" ErrorMessage="*" ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"></asp:RegularExpressionValidator>
-                        <br />
                         <asp:RequiredFieldValidator ID="rfv_CorreoPaciente" runat="server" ControlToValidate="txt_correoPaciente">Ingrese correo del paciente</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style24">&nbsp;</td>
@@ -334,8 +351,6 @@
                         <asp:TextBox ID="txt_telefonoPaciente" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style26">
-                        <asp:RegularExpressionValidator ID="rev_TelefonoPaciente" runat="server" ControlToValidate="txt_telefonoPaciente" ErrorMessage="*"></asp:RegularExpressionValidator>
-                        <br />
                         <asp:RequiredFieldValidator ID="rfv_telefonoPaciente" runat="server" ControlToValidate="txt_telefonoPaciente">Ingresar telefono del paciente</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style24">&nbsp;</td>
@@ -367,11 +382,23 @@
                     <td class="auto-style18">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style20" colspan="3">
+                    <td class="auto-style47"></td>
+                    <td class="auto-style48"></td>
+                    <td class="auto-style49" colspan="3">
                         <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" Width="145px" OnClick="btn_Aceptar_Click" />
                     </td>
+                    <td class="auto-style47"></td>
+                    <td class="auto-style50"></td>
+                    <td class="auto-style51"></td>
+                    <td class="auto-style51"></td>
+                    <td class="auto-style52"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style22">&nbsp;</td>
+                    <td class="auto-style20">&nbsp;</td>
+                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style30">&nbsp;</td>
                     <td class="auto-style18">&nbsp;</td>
@@ -381,8 +408,11 @@
                 <tr>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style22">&nbsp;</td>
-                    <td class="auto-style47">&nbsp;</td>
-                    <td class="auto-style26">&nbsp;</td>
+                    <td class="auto-style20">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
+                    <td class="auto-style26">
+                        &nbsp;</td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style30">&nbsp;</td>

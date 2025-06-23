@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using Entidades;
+using System.Net;
 
 namespace Datos
 {
@@ -32,32 +33,57 @@ namespace Datos
         {
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
-            string consultaSQL = @"
+
+            string buscarSQL = "SELECT Estado_Paciente FROM Pacientes WHERE DNI_Paciente = @DNI";
+            SqlCommand comandoBuscar = new SqlCommand(buscarSQL, conexion);
+            comandoBuscar.Parameters.AddWithValue("@DNI", DNI);
+
+            object estadoEncontrado = comandoBuscar.ExecuteScalar();
+
+            if (estadoEncontrado != null)
+            {
+                // Ya existe, lo reactivamos
+                bool estado = Convert.ToBoolean(estadoEncontrado);
+                if (!estado)
+                {
+                    string reactivarSQL = "UPDATE Pacientes SET Estado_Paciente = 1 WHERE DNI_Paciente = @DNI";
+                    SqlCommand comandoReactivar = new SqlCommand(reactivarSQL, conexion);
+                    comandoReactivar.Parameters.AddWithValue("@DNI", DNI);
+                    comandoReactivar.ExecuteNonQuery();
+                }
+            }
+            else
+            // No existe, lo cargamos
+            {
+
+                string consultaSQL = @"
             INSERT INTO Pacientes 
-            (DNI_Paciente, Nombre_Paciente, Apellido_Paciente, Sexo_Paciente, FechaNacimiento_Paciente, Correo_Paciente, Telefono_Paciente, Direccion_Paciente, CodCiudad_Paciente, CodProvincia_Paciente)
+            (DNI_Paciente, Nombre_Paciente, Apellido_Paciente, Sexo_Paciente, FechaNacimiento_Paciente, Nacionalidad_Paciente, Correo_Paciente, Telefono_Paciente, Direccion_Paciente, CodCiudad_Paciente, CodProvincia_Paciente, Estado_Paciente)
             VALUES 
-            (@DNI, @Nombre, @Apellido, @Sexo, @FechaNac, @Correo, @Telefono, @Direccion, @Ciudad, @Provincia)";
+            (@DNI, @Nombre, @Apellido, @Sexo, @FechaNac, @Nacionalidad, @Correo, @Telefono, @Direccion, @Ciudad, @Provincia, 1)";
 
-            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+                SqlCommand comando = new SqlCommand(consultaSQL, conexion);
 
-            DateTime fechaNac;
+                DateTime fechaNac;
 
-            DateTime.TryParse(FechaNac, out fechaNac);
+                DateTime.TryParse(FechaNac, out fechaNac);
 
-            comando.Parameters.AddWithValue("@DNI", DNI);
-            comando.Parameters.AddWithValue("@Nombre", nombre);
-            comando.Parameters.AddWithValue("@Apellido", apellido);
-            comando.Parameters.AddWithValue("@Sexo", Sexo);
-            comando.Parameters.AddWithValue("@FechaNac", fechaNac);
-            //comando.Parameters.AddWithValue("@Nacionalidad", Nacionalidad);
-            comando.Parameters.AddWithValue("@Correo", Correo);
-            comando.Parameters.AddWithValue("@Telefono", Telefono);
-            comando.Parameters.AddWithValue("@Direccion", Direc);
-            comando.Parameters.AddWithValue("@Ciudad", Localidad);
-            comando.Parameters.AddWithValue("@Provincia", Prov);
+                comando.Parameters.AddWithValue("@DNI", DNI);
+                comando.Parameters.AddWithValue("@Nombre", nombre);
+                comando.Parameters.AddWithValue("@Apellido", apellido);
+                comando.Parameters.AddWithValue("@Sexo", Sexo);
+                comando.Parameters.AddWithValue("@FechaNac", fechaNac);
+                comando.Parameters.AddWithValue("@Nacionalidad", Nacionalidad);
+                comando.Parameters.AddWithValue("@Correo", Correo);
+                comando.Parameters.AddWithValue("@Telefono", Telefono);
+                comando.Parameters.AddWithValue("@Direccion", Direc);
+                comando.Parameters.AddWithValue("@Ciudad", Localidad);
+                comando.Parameters.AddWithValue("@Provincia", Prov);
 
-            comando.ExecuteNonQuery();
-            conexion.Close();
+
+                comando.ExecuteNonQuery();
+                conexion.Close();
+            }
         }
 
         //DropDownList Provincias
@@ -124,8 +150,7 @@ namespace Datos
             FROM Pacientes INNER JOIN Ciudades
                 ON CodCiudad_Paciente = CodPostal_Ciudad AND CodProvincia_Paciente = CodProvincia
             INNER JOIN Provincias
-                ON Ciudades.CodProvincia = Provincias.CodProvincia
-            WHERE Estado_Paciente = 1";
+                ON Ciudades.CodProvincia = Provincias.CodProvincia";
 
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             SqlDataReader sqlDataReader = comando.ExecuteReader(); // DEVUELVE OBJETO SQLDataReader - Apuntador
@@ -135,6 +160,23 @@ namespace Datos
 
             conexion.Close();
             return DTPacientes;
+        }
+
+        //Veo si el paciente está cargado y activo
+        public DataTable ObtenerPaciente(string DNI_Paciente)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+            string consultaSQL = "SELECT * FROM Pacientes WHERE DNI_Paciente = @DNI AND Estado_Paciente = 1";
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@DNI", DNI_Paciente);
+
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            conexion.Close();
+            return tabla;
+
         }
 
         // [+] ---------- CONSEGUIR CÓDIGO DE PROVINCIA ---------- [+]
@@ -285,42 +327,30 @@ namespace Datos
 
         }
 
-        // [+] ---------- CARGAR GRIDVIEW POR NOMBRE ---------- [+]
 
-        public DataTable CargarGridViewPorNombre(string nombre)
+        //Cambio el estado del paciente a 0
+        public void BajaLogicaPaciente(string dni)
         {
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
-
-            string consultaSQL = @"
-            SELECT 
-                DNI_Paciente, 
-                Nombre_Paciente, 
-                Apellido_Paciente, 
-                Sexo_Paciente, 
-                FechaNacimiento_Paciente, 
-                Correo_Paciente, 
-                Telefono_Paciente, 
-                Direccion_Paciente, 
-                Desc_Ciudad, 
-                Desc_Provincia,
-                Nacionalidad_Paciente    
-            FROM Pacientes INNER JOIN Ciudades
-                ON CodCiudad_Paciente = CodPostal_Ciudad AND CodProvincia_Paciente = CodProvincia
-            INNER JOIN Provincias
-                ON Ciudades.CodProvincia = Provincias.CodProvincia
-            WHERE Estado_Paciente = 1 AND Nombre_Paciente LIKE @Nombre";
-
-            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
-            comando.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
-            SqlDataReader sqlDataReader = comando.ExecuteReader();
-            
-            DataTable DTPacientes = new DataTable();
-            DTPacientes.Load(sqlDataReader);
-
+            string consulta = "UPDATE Pacientes SET Estado_Paciente = 0 WHERE DNI_Paciente = @DNI";
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("@DNI", dni);
+            comando.ExecuteNonQuery();
             conexion.Close();
-            return DTPacientes;
 
+        }
+
+        //Cambio el estado del paciente a 1
+        public void ReactivarPaciente(string DNI_Paciente)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            conexion.Open();
+            string consulta = "UPDATE Pacientes SET Estado_Paciente = 1 WHERE DNI_Paciente = @DNI";
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("@DNI", DNI_Paciente);
+            comando.ExecuteNonQuery();
+            conexion.Close();
         }
     }
 }

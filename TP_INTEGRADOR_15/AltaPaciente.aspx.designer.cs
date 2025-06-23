@@ -24,13 +24,13 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lbl_Usuario.
+        /// Control lbl_Admin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Usuario;
+        protected global::System.Web.UI.WebControls.Label lbl_Admin;
 
         /// <summary>
         /// Control Label1.
@@ -85,15 +85,6 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_DniPaciente;
-
-        /// <summary>
-        /// Control rev_DNIpaciente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_DNIpaciente;
 
         /// <summary>
         /// Control rfv_DNIpaciente.
@@ -222,15 +213,6 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox txt_correoPaciente;
 
         /// <summary>
-        /// Control rev_correoPaciente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_correoPaciente;
-
-        /// <summary>
         /// Control rfv_CorreoPaciente.
         /// </summary>
         /// <remarks>
@@ -249,15 +231,6 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox txt_telefonoPaciente;
 
         /// <summary>
-        /// Control rev_TelefonoPaciente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_TelefonoPaciente;
-
-        /// <summary>
         /// Control rfv_telefonoPaciente.
         /// </summary>
         /// <remarks>
@@ -274,5 +247,14 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Aceptar;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }
