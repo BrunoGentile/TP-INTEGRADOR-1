@@ -150,7 +150,8 @@ namespace Datos
             FROM Pacientes INNER JOIN Ciudades
                 ON CodCiudad_Paciente = CodPostal_Ciudad AND CodProvincia_Paciente = CodProvincia
             INNER JOIN Provincias
-                ON Ciudades.CodProvincia = Provincias.CodProvincia";
+                ON Ciudades.CodProvincia = Provincias.CodProvincia
+            WHERE Estado_Paciente = 1";
 
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             SqlDataReader sqlDataReader = comando.ExecuteReader(); // DEVUELVE OBJETO SQLDataReader - Apuntador
