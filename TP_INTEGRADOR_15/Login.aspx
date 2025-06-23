@@ -314,18 +314,18 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style28">
+                    <td class="auto-style7"></td>
+                    <td class="auto-style53">
                         <asp:HyperLink ID="HL_AsignarTurnos" runat="server" NavigateUrl="~/AsignarTurnos.aspx">Asignar Turnos</asp:HyperLink>
                     </td>
-                    <td class="auto-style27">
-                        <asp:HyperLink ID="HL_VerAsignacionTurnos" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Turnos Asignados</asp:HyperLink>
+                    <td class="auto-style54">
+                        <asp:HyperLink ID="HL_TurnosAsignados2" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Turnos Asignados</asp:HyperLink>
                     </td>
-                    <td class="auto-style24">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style55"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
@@ -349,7 +349,7 @@
                 <tr>
                     <td class="auto-style29"></td>
                     <td class="auto-style30" colspan="4">
-                        <asp:HyperLink ID="HL_Informe2" runat="server" NavigateUrl="~/Login.aspx">Ver Porcentaje de Ausentes y Presentes</asp:HyperLink>
+                        <asp:HyperLink ID="HL_Informe2" runat="server" NavigateUrl="~/Informe2.aspx">Ver Porcentaje de Ausentes y Presentes</asp:HyperLink>
                     </td>
                     <td class="auto-style31"></td>
                     <td class="auto-style32"></td>
@@ -372,7 +372,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style41"></td>
+                    <td class="auto-style8"></td>
                     <td class="auto-style42"></td>
                     <td class="auto-style8"></td>
                     <td class="auto-style8"></td>
@@ -385,7 +385,9 @@
                     <td class="auto-style39">
                         <asp:HyperLink ID="HL_TurnosAsignados" runat="server" NavigateUrl="~/CargarPresente.aspx">Cargar Presentes</asp:HyperLink>
                     </td>
-                    <td class="auto-style40"></td>
+                    <td class="auto-style40">
+                        <asp:HyperLink ID="HL_VerAsignacionTurnos" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Turnos Asignados</asp:HyperLink>
+                    </td>
                     <td class="auto-style15"></td>
                     <td class="auto-style15"></td>
                     <td class="auto-style17"></td>
