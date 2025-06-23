@@ -12,7 +12,7 @@
             width: 100%;
         }
         .auto-style7 {
-            width: 400px;
+            width: 527px;
             height: 23px;
         }
         .auto-style8 {
@@ -23,7 +23,7 @@
             height: 23px;
         }
         .auto-style3 {
-            width: 400px;
+            width: 527px;
         }
         .auto-style4 {
             width: 146px;
@@ -40,7 +40,7 @@
             height: 137px;
         }
         .auto-style13 {
-            width: 400px;
+            width: 527px;
             height: 137px;
         }
         .auto-style14 {
@@ -88,26 +88,31 @@
                     </td>
                     <td class="auto-style3">
                         <asp:TextBox ID="txtFiltrado" runat="server" Width="283px"></asp:TextBox>
+                    &nbsp;
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" OnClick="btnFiltrar_Click" ValidationGroup="Grupo1" />
+                    &nbsp;
+                        <asp:Button ID="btnReiniciar" runat="server" OnClick="btnReiniciar_Click" Text="Reiniciar tabla" ValidationGroup="Grupo2" />
                     </td>
                     <td class="auto-style4">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" OnClick="btnFiltrar_Click" />
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style3">
-                        <asp:RequiredFieldValidator ID="rfvPacienteVacio" runat="server" ControlToValidate="txtFiltrado">Ingrese un paciente</asp:RequiredFieldValidator>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style7">
+                        <asp:RequiredFieldValidator ID="rfvPacienteVacio" runat="server" ControlToValidate="txtFiltrado" ValidationGroup="Grupo1">Ingrese un paciente</asp:RequiredFieldValidator>
+                    &nbsp;
+                        <asp:Label ID="lblPacienteInexistente" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style12"></td>
                     <td class="auto-style13">
-                        <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" Width="538px" Height="106px">
+                        <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" Width="538px" Height="106px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI Paciente">
                                     <ItemTemplate>
@@ -131,7 +136,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Dia">
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_It_Dia" runat="server" Text='<%# Bind("Dia_Turnos") %>'></asp:Label>
+                                        <asp:Label ID="lbl_It_Dia" runat="server" Text='<%# Convert.ToDateTime(Eval("Dia_Turnos")).ToString("dd/MM/yyyy") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Horario">
@@ -140,6 +145,15 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
+                            <FooterStyle BackColor="White" ForeColor="#000066" />
+                            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                            <RowStyle ForeColor="#000066" />
+                            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#00547E" />
                         </asp:GridView>
                     </td>
                     <td class="auto-style14"></td>

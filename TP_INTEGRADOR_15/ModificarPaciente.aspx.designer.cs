@@ -33,6 +33,24 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.Label LBL_UserName;
 
         /// <summary>
+        /// Control HL_Volver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HL_Volver;
+
+        /// <summary>
+        /// Control RFV_IngresoObligatorio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_IngresoObligatorio;
+
+        /// <summary>
         /// Control TB_UserName.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_Send;
+
+        /// <summary>
+        /// Control BTN_MostrarOriginal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_MostrarOriginal;
 
         /// <summary>
         /// Control GV_Pacientes.

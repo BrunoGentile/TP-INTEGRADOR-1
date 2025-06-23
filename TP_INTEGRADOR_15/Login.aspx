@@ -262,20 +262,20 @@
                     <td class="auto-style15"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style28">
-                        <asp:HyperLink ID="HL_AltaPaciente" runat="server" NavigateUrl="~/Login.aspx">Dar Alta a Paciente</asp:HyperLink>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style53">
+                        <asp:HyperLink ID="HL_AltaPaciente" runat="server" NavigateUrl="~/AltaPaciente.aspx">Dar Alta a Paciente</asp:HyperLink>
                     </td>
-                    <td class="auto-style27">
+                    <td class="auto-style54">
                         <asp:HyperLink ID="HL_ModificarPaciente" runat="server" NavigateUrl="~/ModificarPaciente.aspx">Modificar Datos de Paciente</asp:HyperLink>
                     </td>
-                    <td class="auto-style24">
-                        <asp:HyperLink ID="HL_BajaPaciente" runat="server" NavigateUrl="~/Login.aspx">Dar de Baja a Paciente</asp:HyperLink>
+                    <td class="auto-style55">
+                        <asp:HyperLink ID="HL_BajaPaciente" runat="server" NavigateUrl="~/BajaPaciente.aspx">Dar de Baja a Paciente</asp:HyperLink>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
@@ -290,13 +290,13 @@
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style28">
-                        <asp:HyperLink ID="HL_AltaMedico" runat="server" NavigateUrl="~/Login.aspx">Dar Alta a Médico</asp:HyperLink>
+                        <asp:HyperLink ID="HL_AltaMedico" runat="server" NavigateUrl="~/AltaMedico.aspx">Dar Alta a Médico</asp:HyperLink>
                     </td>
                     <td class="auto-style27">
                         <asp:HyperLink ID="HL_ModificarMedico" runat="server" NavigateUrl="~/ModificarMedico.aspx">Modificar Datos de Médico</asp:HyperLink>
                     </td>
                     <td class="auto-style24">
-                        <asp:HyperLink ID="HL_BajaMedico" runat="server" NavigateUrl="~/Login.aspx">Dar de Baja a Médico</asp:HyperLink>
+                        <asp:HyperLink ID="HL_BajaMedico" runat="server" NavigateUrl="~/BajaMedico.aspx">Dar de Baja a Médico</asp:HyperLink>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
@@ -316,9 +316,11 @@
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style28">
-                        <asp:HyperLink ID="HL_AsignarTurnos" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Asignar Turnos</asp:HyperLink>
+                        <asp:HyperLink ID="HL_AsignarTurnos" runat="server" NavigateUrl="~/AsignarTurnos.aspx">Asignar Turnos</asp:HyperLink>
                     </td>
-                    <td class="auto-style27">&nbsp;</td>
+                    <td class="auto-style27">
+                        <asp:HyperLink ID="HL_VerAsignacionTurnos" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Turnos Asignados</asp:HyperLink>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
@@ -338,7 +340,7 @@
                 <tr>
                     <td class="auto-style29"></td>
                     <td class="auto-style30" colspan="4">
-                        <asp:HyperLink ID="HL_Informe1" runat="server" NavigateUrl="~/Login.aspx">Ver Médico con mayor número de pacientes en determinado mes</asp:HyperLink>
+                        <asp:HyperLink ID="HL_Informe1" runat="server" NavigateUrl="~/Informe1.aspx">Ver Médico con mayor número de pacientes en determinado mes</asp:HyperLink>
                     </td>
                     <td class="auto-style31"></td>
                     <td class="auto-style32"></td>
@@ -381,7 +383,7 @@
                 <tr>
                     <td class="auto-style14"></td>
                     <td class="auto-style39">
-                        <asp:HyperLink ID="HL_TurnosAsignados" runat="server" NavigateUrl="~/Login.aspx">Ver Turnos Asignados</asp:HyperLink>
+                        <asp:HyperLink ID="HL_TurnosAsignados" runat="server" NavigateUrl="~/CargarPresente.aspx">Cargar Presentes</asp:HyperLink>
                     </td>
                     <td class="auto-style40"></td>
                     <td class="auto-style15"></td>

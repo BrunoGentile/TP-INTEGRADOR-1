@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -18,7 +19,13 @@ namespace TP_INTEGRADOR_15
         {
             if (!IsPostBack)
             {
+                if (Session["Administrador"] != null)
+                {
+                    lbl_Admin.Text = "Administrador: " + Session["Administrador"].ToString();
+                }
                 cargarProvincias();
+                cargarProvincias();
+                cargarLocalidades("0");
             }
 
         }
@@ -34,7 +41,7 @@ namespace TP_INTEGRADOR_15
             txt_correoPaciente.Text = "";
             txt_telefonoPaciente.Text = "";
             txt_FechaNacPaciente.Value = "";
-            rb_pacienteFem.Checked = false;
+            rb_pacienteFem.Checked = true;
             rb_pacienteMasc.Checked = false;
             ddl_ProvPaciente.SelectedIndex = 0;
             ddl_LocPaciente.Items.Clear();
@@ -82,12 +89,27 @@ namespace TP_INTEGRADOR_15
         //botón aceptar, guardo los datos del paciente
         protected void btn_Aceptar_Click(object sender, EventArgs e)
         {
+            string DNI_Paciente = txt_DniPaciente.Text;
 
-            string fechaTexto = txt_FechaNacPaciente.Value; 
+            string fechaTexto = txt_FechaNacPaciente.Value;
 
-            negocioPacientes.RegistrarPaciente(txt_nombrePaciente.Text, txt_apellidoPaciente.Text, txt_DniPaciente.Text, 
-                ObtenerGenero(rb_pacienteFem, rb_pacienteMasc), txt_nacPaciente.Text, fechaTexto, txt_direccionPaciente.Text, 
-                ddl_ProvPaciente.SelectedValue, ddl_LocPaciente.SelectedValue, txt_correoPaciente.Text, txt_telefonoPaciente.Text);
+            DataTable paciente = negocioPacientes.ObtenerPaciente(DNI_Paciente);
+
+            //si existe, no se carga
+            if (paciente != null && paciente.Rows.Count > 0)
+            {
+                    lblMensaje.Text = "El paciente ya está dado de alta.";
+                    lblMensaje.ForeColor = System.Drawing.Color.OrangeRed;
+            }
+            else
+            {
+                //si no existe o si su estado es 0, se carga
+                    negocioPacientes.RegistrarPaciente(txt_nombrePaciente.Text, txt_apellidoPaciente.Text, txt_DniPaciente.Text,
+                    ObtenerGenero(rb_pacienteFem, rb_pacienteMasc), txt_nacPaciente.Text, fechaTexto, txt_direccionPaciente.Text,
+                    ddl_ProvPaciente.SelectedValue, ddl_LocPaciente.SelectedValue, txt_correoPaciente.Text, txt_telefonoPaciente.Text);
+                    lblMensaje.Text = "El paciente fue dado de alta con éxito.";
+                    lblMensaje.ForeColor = System.Drawing.Color.Green;
+            }
             LimpiarCampos();
         }
 
@@ -96,10 +118,15 @@ namespace TP_INTEGRADOR_15
         {
             string codProvincia = ddl_ProvPaciente.SelectedValue;
 
-            if (codProvincia != "0")
+            if ( codProvincia != "0" )
             {
-                cargarLocalidades(codProvincia); 
+                cargarLocalidades(codProvincia);
             }
+            else
+            {
+                cargarLocalidades("0");
+            }
+
         }
     }
 }

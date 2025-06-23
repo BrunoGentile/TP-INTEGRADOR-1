@@ -15,6 +15,28 @@ namespace TP_INTEGRADOR_15
         protected void Page_Load(object sender, EventArgs e)
         {
             this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
+            // VERIFICA SI EL USUARIO YA ESTÁ LOGUEADO
+            if (Session["LegajoUsuario"] != null )
+            {
+
+                string UserName = Session["LegajoUsuario"].ToString();
+
+                if ( UserName.StartsWith("ADM") )
+                {
+                    DIV_Login.Visible = false;
+                    DIV_InterfazAdmin.Visible = true;
+                    LBL_Admin_UserName.Text = Session["Usuario"].ToString();
+                }
+                else
+                {
+                    DIV_Login.Visible = false;
+                    DIV_InterfazMedico.Visible = true;
+                    LBL_Medico_UserName.Text = Session["Usuario"].ToString();
+                }
+
+            }
+
         }
 
         private void LimpiarCampos()
@@ -37,7 +59,8 @@ namespace TP_INTEGRADOR_15
                 DIV_InterfazAdmin.Visible = true;
                 
                 // OBTENER NOMBRE Y APELLIDO DEL USUARIO ADMINISTRADOR
-                Session["Usuario"] = NegLogin.ObtenerUsuario(TB_Legajo.Text); 
+                Session["Usuario"] = NegLogin.ObtenerUsuario(TB_Legajo.Text);
+                Session["LegajoUsuario"] = TB_Legajo.Text;
                 LBL_Admin_UserName.Text = Session["Usuario"].ToString();
             }
             else if (Respuesta == 2){
@@ -45,7 +68,8 @@ namespace TP_INTEGRADOR_15
                 DIV_InterfazMedico.Visible = true;
 
                 // OBTENER NOMBRE Y APELLIDO DEL USUARIO MEDICO 
-                Session["Usuario"] = NegLogin.ObtenerUsuario(TB_Legajo.Text); 
+                Session["Usuario"] = NegLogin.ObtenerUsuario(TB_Legajo.Text);
+                Session["LegajoUsuario"] = TB_Legajo.Text;
                 LBL_Medico_UserName.Text = Session["Usuario"].ToString();
             }
             else

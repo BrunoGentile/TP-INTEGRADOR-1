@@ -11,7 +11,7 @@ namespace TP_INTEGRADOR_15
 {
 
 
-    public partial class Informe1
+    public partial class BajaPaciente
     {
 
         /// <summary>
@@ -24,66 +24,66 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblNombreUsuario.
+        /// Control lbl_Admin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+        protected global::System.Web.UI.WebControls.Label lbl_Admin;
 
         /// <summary>
-        /// Control ddlMes.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMes;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control rfvMes.
+        /// Control txt_DniPaciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMes;
+        protected global::System.Web.UI.WebControls.TextBox txt_DniPaciente;
 
         /// <summary>
-        /// Control ddlAnio.
+        /// Control rev_DniPaciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAnio;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_DniPaciente;
 
         /// <summary>
-        /// Control rfvAnio.
+        /// Control btn_aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnio;
+        protected global::System.Web.UI.WebControls.Button btn_aceptar;
 
         /// <summary>
-        /// Control btnGenerarInforme.
+        /// Control gv_EliminarPaciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenerarInforme;
+        protected global::System.Web.UI.WebControls.GridView gv_EliminarPaciente;
 
         /// <summary>
-        /// Control lblResultado.
+        /// Control lbl_Mensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultado;
+        protected global::System.Web.UI.WebControls.Label lbl_Mensaje;
     }
 }

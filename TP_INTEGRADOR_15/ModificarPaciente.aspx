@@ -81,7 +81,9 @@
                     </td>
                     <td class="auto-style10">&nbsp;</td>
                     <td class="auto-style13"></td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="HL_Volver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
+                    </td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
                     <td class="auto-style6"></td>
@@ -89,7 +91,9 @@
                 <tr>
                     <td class="auto-style7"></td>
                     <td class="auto-style19"></td>
-                    <td class="auto-style11"></td>
+                    <td class="auto-style11">
+                        <asp:RequiredFieldValidator ID="RFV_IngresoObligatorio" runat="server" ControlToValidate="TB_UserName" ForeColor="#CC0000" ValidationGroup="Group1">*</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style14"></td>
                     <td class="auto-style9"></td>
                     <td class="auto-style9"></td>
@@ -100,12 +104,14 @@
                     <td class="auto-style7"></td>
                     <td class="auto-style9">Buscar Paciente por Nombre:</td>
                     <td class="auto-style11">
-                        <asp:TextBox ID="TB_UserName" runat="server" Width="180px"></asp:TextBox>
+                        <asp:TextBox ID="TB_UserName" runat="server" Width="180px" ValidationGroup="Group1"></asp:TextBox>
                     </td>
                     <td class="auto-style14">
-                        <asp:Button ID="BTN_Send" runat="server" Text="Buscar" />
+                        <asp:Button ID="BTN_Send" runat="server" Text="Buscar" OnClick="BTN_Send_Click" ValidationGroup="Group1" />
                     </td>
-                    <td class="auto-style9"></td>
+                    <td class="auto-style9">
+                        <asp:Button ID="BTN_MostrarOriginal" runat="server" OnClick="BTN_MostrarOriginal_Click" Text="Mostrar Todos los Pacientes" />
+                    </td>
                     <td class="auto-style9"></td>
                     <td class="auto-style9"></td>
                     <td class="auto-style9"></td>

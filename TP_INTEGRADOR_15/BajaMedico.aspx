@@ -40,14 +40,14 @@
         }
         .auto-style10 {
             width: 124px;
-            height: 26px;
+            height: 25px;
         }
         .auto-style11 {
             width: 205px;
-            height: 26px;
+            height: 25px;
         }
         .auto-style12 {
-            height: 26px;
+            height: 25px;
         }
     </style>
 </head>
@@ -56,7 +56,7 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="nombreUsuario" runat="server"></asp:Label>
+                    <td class="auto-style2" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -120,10 +120,11 @@
                     <td class="auto-style11">
                         <asp:TextBox ID="txtLegajo" runat="server" Width="319px"></asp:TextBox>
                     </td>
+          
                     <td class="auto-style12">
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" ValidationGroup="Filtro" />
                     </td>
-                    <td class="auto-style12">&nbsp;</td>
+                    <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
@@ -133,7 +134,20 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                       
+                         <asp:RequiredFieldValidator 
+                             ID="rfvLegajo" 
+                             runat="server" 
+                             ErrorMessage="Debe ingresar un legajo"
+                             ForeColor="Red"
+                             Display="Dynamic" 
+                             ValidationGroup="Filtro" 
+                             ControlToValidate="txtLegajo">
+
+                         </asp:RequiredFieldValidator>
+                       
+                    </td>
                     <td>
                         <asp:Button ID="btnMostrarTodos" runat="server" OnClick="btnMostrarTodos_Click" Text="Mostrar Todos" />
                     </td>
@@ -146,7 +160,9 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style5">
                                      <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" DataKeyNames="Legajo_Medico" OnRowCommand="gvMedico_RowCommand" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" >
             <Columns>
@@ -206,7 +222,7 @@
                 <tr>
                     <td class="auto-style7"></td>
                     <td class="auto-style8">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                        <asp:Label ID="lblResultado" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style9">
                         &nbsp;</td>

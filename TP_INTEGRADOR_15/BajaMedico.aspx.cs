@@ -13,6 +13,16 @@ namespace TP_INTEGRADOR_15
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                // Si el Session no contiene el usuario, redirigir a la página de inicio de sesión
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                lblNombreUsuario.Text = Session["Usuario"].ToString();
+            }
+
             if (!IsPostBack)
             {
                 CargarGridMedicos();
@@ -34,14 +44,14 @@ namespace TP_INTEGRADOR_15
                 try
                 {
                     negocio.DarDeBajaMedico(legajo);
-                    lblMensaje.ForeColor = System.Drawing.Color.Green;
-                    lblMensaje.Text = "Médico dado de baja correctamente.";
+                    lblResultado.ForeColor = System.Drawing.Color.Green;
+                    lblResultado.Text = "Médico dado de baja correctamente.";
                     CargarGridMedicos();
                 }
                 catch (Exception ex)
                 {
-                    lblMensaje.ForeColor = System.Drawing.Color.Red;
-                    lblMensaje.Text = "Error al dar de baja: " + ex.Message;
+                    lblResultado.ForeColor = System.Drawing.Color.Red;
+                    lblResultado.Text = "Error al dar de baja: " + ex.Message;
                 }
             }
         }
@@ -51,16 +61,29 @@ namespace TP_INTEGRADOR_15
             NegocioMedicos negocioMedicos = new NegocioMedicos();
 
             DataTable dtFiltrado = negocioMedicos.filtrarMedicosPorLegajo(txtLegajo.Text.Trim());
-            gvMedico.DataSource = dtFiltrado;
-            gvMedico.DataBind();
 
-            // Limpiar el textBox después de filtrar
+            if (dtFiltrado.Rows.Count > 0)
+            {
+                gvMedico.DataSource = dtFiltrado;
+                gvMedico.DataBind();
+                lblMensaje.Text = ""; // Limpia mensaje anterior
+            }
+            else
+            {
+                gvMedico.DataSource = null;
+                gvMedico.DataBind();
+                lblMensaje.Text = "No se encontró médico activo con ese legajo.";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+            }
+
             txtLegajo.Text = string.Empty;
         }
+
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CargarGridMedicos();
+            lblMensaje.Text = string.Empty;
         }
     }
 }

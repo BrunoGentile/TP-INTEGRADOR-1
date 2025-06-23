@@ -55,7 +55,7 @@ namespace Datos
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
 
-            string consultaSQL = "SELECT * FROM Medicos WHERE Legajo_Medico = @Legajo";
+            string consultaSQL = "SELECT * FROM Medicos WHERE Legajo_Medico = @Legajo AND Estado_Medico = 1";
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             comando.Parameters.AddWithValue("@Legajo", legajo);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -65,6 +65,7 @@ namespace Datos
 
             return dataTable;
         }
+
 
         //MÉTODO PARA ACTUALIZAR UN MÉDICO
         public void actualizarMedicos(Medicos medico)
@@ -107,6 +108,21 @@ namespace Datos
                 comando.Parameters.AddWithValue("@Legajo", legajo);
                 comando.ExecuteNonQuery();
             }
+        }
+
+        // VERIFICAR SI EXISTE UN MÉDICO POR LEGAJO 
+        public bool ExisteLegajoMedico(string Legajo)
+        {
+            SqlConnection conexion = new SqlConnection(Conexion);
+            conexion.Open();
+
+            string consulta = "SELECT COUNT(*) FROM Medicos WHERE Legajo_Medico = @Legajo";
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.AddWithValue("@Legajo", Legajo);
+
+            int cantidad = (int)comando.ExecuteScalar();
+            conexion.Close();
+            return cantidad > 0; 
         }
 
         // -------------------------------------------------------------------------------------------------
