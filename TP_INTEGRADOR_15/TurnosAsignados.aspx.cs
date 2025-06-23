@@ -12,8 +12,7 @@ namespace TP_INTEGRADOR_15
     public partial class WebForm3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            /* ACORDARSE DE DESCOMENTAR CUANDO TERMINE LAS PRUEBAS
+        {           
             if (Session["Usuario"] == null)
             {
                 // Si el Session no contiene el usuario, redirigir a la página de inicio de sesión
@@ -22,7 +21,6 @@ namespace TP_INTEGRADOR_15
             {
                 lblNombreUsuario.Text = Session["Usuario"].ToString();
             }
-            */
 
             if (!IsPostBack)
             {

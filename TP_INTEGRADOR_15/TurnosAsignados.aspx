@@ -136,7 +136,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Dia">
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_It_Dia" runat="server" Text='<%# Bind("Dia_Turnos") %>'></asp:Label>
+                                        <asp:Label ID="lbl_It_Dia" runat="server" Text='<%# Convert.ToDateTime(Eval("Dia_Turnos")).ToString("dd/MM/yyyy") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Horario">
