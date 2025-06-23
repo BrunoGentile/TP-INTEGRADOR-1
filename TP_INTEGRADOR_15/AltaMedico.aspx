@@ -59,6 +59,7 @@
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style7">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
+                <td class="auto-style10">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -69,6 +70,7 @@
                 <td class="auto-style2" colspan="2">
                     <asp:Label ID="lbl_AltaPaciente" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Alta de Medico"></asp:Label>
                 </td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style11"></td>
                 <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
@@ -79,6 +81,7 @@
                 <td class="auto-style2"></td>
                 <td class="auto-style4"></td>
                 <td class="auto-style8"></td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style11"></td>
                 <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
@@ -92,22 +95,28 @@
                     <asp:TextBox ID="TB_Nombre" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style10">&nbsp;</td>
+                <td class="auto-style10">
+                    <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="TB_Nombre"></asp:RequiredFieldValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style3">Apellido:</td>
-                <td class="auto-style7">
+                <td class="auto-style5"></td>
+                <td class="auto-style6">Apellido:</td>
+                <td class="auto-style9">
                     <asp:TextBox ID="TB_Apellido" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style10">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">
+                    <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="TB_Apellido"></asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style5"></td>
+                <td class="auto-style5"></td>
+                <td class="auto-style5"></td>
+                <td class="auto-style5"></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
@@ -115,6 +124,7 @@
                 <td class="auto-style7">
                     <asp:TextBox ID="TB_DNI" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -131,6 +141,7 @@
                     </asp:CheckBoxList>
                     <br />
                 </td>
+                <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style10">Nacionalidad</td>
                 <td>
                     <asp:TextBox ID="TB_Nacionalidad" runat="server"></asp:TextBox>
@@ -142,12 +153,11 @@
             <tr>
                 <td class="auto-style5"></td>
                 <td class="auto-style6">Fecha de Nacimiento</td>
-                <td class="auto-style5" colspan="2">
+                <td class="auto-style5" colspan="3">
                     <input type="date" name="fechaNacimiento" id="Input_FDN" runat="server" />
                 </td>
                 <td class="auto-style5">
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                </td>
+                    &nbsp;</td>
                 <td class="auto-style5"></td>
                 <td class="auto-style5"></td>
                 <td class="auto-style5"></td>
@@ -158,7 +168,8 @@
                 <td class="auto-style8">
                     <asp:TextBox ID="TB_Direccio" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style11"></td>
+                <td class="auto-style11">&nbsp;</td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
@@ -171,12 +182,15 @@
                     <asp:DropDownList ID="DDL_Provincias" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDL_Provincias_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
+                <td class="auto-style12">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="DDL_Provincias">Seleccione una Pronvincia</asp:RequiredFieldValidator>
+                </td>
                 <td class="auto-style12">Ciudad</td>
                 <td class="auto-style5">
                     <asp:DropDownList ID="DDL_Ciudades" runat="server">
                     </asp:DropDownList>
                 </td>
-                <td class="auto-style5"></td>
+                <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style5"></td>
                 <td class="auto-style5"></td>
             </tr>
@@ -186,6 +200,7 @@
                 <td class="auto-style7">
                     <asp:TextBox ID="TB_Correo" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -198,6 +213,7 @@
                 <td class="auto-style7">
                     <asp:TextBox ID="TB_Telefono" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -212,6 +228,7 @@
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style10">&nbsp;</td>
+                <td class="auto-style10">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -223,6 +240,7 @@
                 <td class="auto-style9">
                     <asp:TextBox ID="TB_Dias" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style12">&nbsp;</td>
                 <td class="auto-style12"></td>
                 <td class="auto-style5"></td>
                 <td class="auto-style5"></td>
@@ -235,6 +253,7 @@
                 <td class="auto-style8">
                     <asp:TextBox ID="TB_HS_Inicio" runat="server" TextMode="Time"></asp:TextBox>
                 </td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style11"></td>
                 <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
@@ -248,6 +267,7 @@
                     <asp:TextBox ID="TB_HS_Fin" runat="server" TextMode="Time"></asp:TextBox>
                 </td>
                 <td class="auto-style11">&nbsp;</td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
@@ -259,6 +279,7 @@
                 <td class="auto-style8">
                     <asp:TextBox ID="TB_Password" runat="server"></asp:TextBox>
                 </td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style11"></td>
                 <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
@@ -269,6 +290,8 @@
                 <td class="auto-style2"></td>
                 <td class="auto-style4"></td>
                 <td class="auto-style8"></td>
+                <td class="auto-style11">
+                    &nbsp;</td>
                 <td class="auto-style11">
                     <asp:Button ID="BTN_Enviar" runat="server" OnClick="BTN_Enviar_Click" Text="Enviar" />
                 </td>
@@ -282,6 +305,7 @@
                 <td class="auto-style4">&nbsp;</td>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style11">&nbsp;</td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
@@ -291,6 +315,7 @@
                 <td class="auto-style2"></td>
                 <td class="auto-style4"></td>
                 <td class="auto-style8"></td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style11"></td>
                 <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
@@ -301,6 +326,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style4">&nbsp;</td>
                 <td class="auto-style8">&nbsp;</td>
+                <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>

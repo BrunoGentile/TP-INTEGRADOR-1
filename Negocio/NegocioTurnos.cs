@@ -28,5 +28,12 @@ namespace Negocio
             dataTable = gestionTurnos.FiltrarTurnosPorPaciente(filtro);
             return dataTable;
         }
+
+        public DataTable cargarPresente()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = gestionTurnos.CargarPresente();
+            return dataTable;
+        }
     }
 }
