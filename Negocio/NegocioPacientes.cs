@@ -72,6 +72,13 @@ namespace Negocio
         {
             return gestionPacientes.CargarGridViewPorNombre(nombre);
         }
-       
+
+        // [+] ---------- OBTENER PACIENTES CON ALTA LÓGICA ---------- [+]
+
+        public DataTable ObtenerPacienteConAltaLogica()
+        {
+            return gestionPacientes.ObtenerPacienteConAltaLogica();
+        }
+
     }
 }

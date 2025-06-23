@@ -23,6 +23,27 @@ namespace TP_INTEGRADOR_15
                 lbl_Admin.Text = "Administrador: " + Session["Administrador"].ToString();
             }
 
+            CargarPacientes();
+
+        }
+
+        // Muestra el GridView con los pacientes
+
+        protected void CargarPacientes()
+        {
+
+            DataTable pacientes = negocioPacientes.ObtenerPacienteConAltaLogica();
+
+            if (pacientes != null && pacientes.Rows.Count > 0)
+            {
+                gv_EliminarPaciente.DataSource = pacientes;
+                gv_EliminarPaciente.DataBind();
+            }
+            else
+            {
+                gv_EliminarPaciente.DataSource = null;
+                gv_EliminarPaciente.DataBind();
+            }
         }
 
         //elimina el paciente
@@ -40,6 +61,8 @@ namespace TP_INTEGRADOR_15
             // Limpiar el GridView
             gv_EliminarPaciente.DataSource = null;
             gv_EliminarPaciente.DataBind();
+
+            CargarPacientes();
         }
 
 
@@ -64,6 +87,14 @@ namespace TP_INTEGRADOR_15
                 lbl_Mensaje.ForeColor = System.Drawing.Color.OrangeRed;
                 lbl_Mensaje.Visible = true;
             }
+
+            
+
+        }
+
+        protected void BTN_Reestablecer_Click(object sender, EventArgs e)
+        {
+            CargarPacientes();
         }
     }
 }

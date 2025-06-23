@@ -51,24 +51,6 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control txt_DniPaciente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_DniPaciente;
-
-        /// <summary>
-        /// Control rev_DniPaciente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_DniPaciente;
-
-        /// <summary>
         /// Control btn_aceptar.
         /// </summary>
         /// <remarks>
@@ -78,13 +60,31 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.Button btn_aceptar;
 
         /// <summary>
-        /// Control gv_EliminarPaciente.
+        /// Control txt_DniPaciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_EliminarPaciente;
+        protected global::System.Web.UI.WebControls.TextBox txt_DniPaciente;
+
+        /// <summary>
+        /// Control RGL_Datos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RGL_Datos;
+
+        /// <summary>
+        /// Control BTN_Reestablecer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTN_Reestablecer;
 
         /// <summary>
         /// Control lbl_Mensaje.
@@ -94,5 +94,14 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Mensaje;
+
+        /// <summary>
+        /// Control gv_EliminarPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gv_EliminarPaciente;
     }
 }
