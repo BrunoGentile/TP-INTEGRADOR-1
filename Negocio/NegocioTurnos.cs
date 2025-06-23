@@ -145,7 +145,13 @@ namespace Negocio
             return gestionTurnos.ObtenerMedicosConMasTurnos(mes, anio);
         }
 
-
-
+        public DataTable cargarPresente()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = gestionTurnos.CargarPresente();
+            return dataTable;
+        }
     }
+
 }
+

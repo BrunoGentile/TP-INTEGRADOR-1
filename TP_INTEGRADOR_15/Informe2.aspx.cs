@@ -19,7 +19,10 @@ namespace TP_INTEGRADOR_15
                 DataTable dt =  negocioConsultas.cargarTabla();
                 gvConsultas.DataSource = dt;
                 gvConsultas.DataBind();
+                if (Session["Usuario"] != null)
+                {
                 lbl_Usuario.Text = Session["Usuario"].ToString();
+                }
             }
         }
 
