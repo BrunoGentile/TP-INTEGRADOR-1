@@ -480,7 +480,7 @@ namespace Datos
                 }
 
             }*/
-            public DataTable ObtenerTurnosCompletos()
+         /*   public DataTable ObtenerTurnosCompletos()
         {
             DataTable dt = new DataTable();
             using (SqlConnection conexion = ObtenerConexion())
@@ -508,32 +508,26 @@ namespace Datos
             }
             return dt;
         }
+         */
 
+      /*  public DataTable CargarPresente()
+{
+    DataTable dt = new DataTable();
 
-        public DataTable CargarPresente()
+    using (SqlConnection conexion = ObtenerConexion())
+    {
+        string consulta = @"SELECT * FROM Turnos INNER JOIN Pacientes ON DNIPaciente_Turnos = DNI_Paciente";
+
+        using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
         {
-            DataTable dt = new DataTable();
-
-            using (SqlConnection conexion = ObtenerConexion())
-            {
-                string consulta = @"SELECT * FROM Turnos INNER JOIN Pacientes ON DNIPaciente_Turnos = DNI_Paciente";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                {
-                    conexion.Open();
-                    adapter.Fill(dt);
-                }
-            }
-
-            return dt;
+            conexion.Open();
+            adapter.Fill(dt);
         }
-
     }
 
-
-
-}
+    return dt;
+      */
 
 
 
