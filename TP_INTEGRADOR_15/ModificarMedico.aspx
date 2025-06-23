@@ -118,6 +118,9 @@
                                         <asp:TextBox ID="txtNombre" runat="server" Height="16px" Text='<%# Bind("Nombre_Medico") %>' Width="90px"></asp:TextBox>
                                         &nbsp;
                                         <asp:TextBox ID="txtApellido" runat="server" Height="16px" Text='<%# Bind("Apellido_Medico") %>' Width="91px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre">Falta nombre</asp:RequiredFieldValidator>
+                                        &nbsp;<asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtApellido">Falta apellido</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Nombre" runat="server" Text='<%# Bind("Nombre_Medico") %>'></asp:Label>
@@ -127,6 +130,8 @@
                                 <asp:TemplateField HeaderText="Especialidad">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtEspecialidad" runat="server" Text='<%# Bind("CodEspecialidad_Medico") %>' Width="100px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="txtEspecialidad">Falta especialidad</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Especialidad" runat="server" Text='<%# Bind("CodEspecialidad_Medico") %>'></asp:Label>
@@ -135,6 +140,8 @@
                                 <asp:TemplateField HeaderText="Correo">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtCorreo" runat="server" Height="20px" Text='<%# Bind("Correo_Medico") %>' Width="200px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtCorreo">Falta correo</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Correo" runat="server" Text='<%# Bind("Correo_Medico") %>'></asp:Label>
@@ -143,6 +150,9 @@
                                 <asp:TemplateField HeaderText="Telefono">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtTelefono" runat="server" Height="18px" Text='<%# Bind("Telefono_Medico") %>' Width="100px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono">Falta Telefono</asp:RequiredFieldValidator>
+                                        &nbsp;<asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ValidationExpression="&quot;^[\d\W]+$&quot;">Sin letras</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Telefono" runat="server" Text='<%# Bind("Telefono_Medico") %>'></asp:Label>
@@ -151,6 +161,8 @@
                                 <asp:TemplateField HeaderText="Sexo">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtSexo" runat="server" Height="19px" Text='<%# Bind("Sexo_Medico") %>' Width="100px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ControlToValidate="txtSexo">Falta Sexo</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Sexo" runat="server" Text='<%# Bind("Sexo_Medico") %>'></asp:Label>
@@ -167,6 +179,8 @@
                                 <asp:TemplateField HeaderText="Nacionalidad">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtNacionalidad" runat="server" Height="18px" Text='<%# Bind("Nacionalidad_Medico") %>' Width="100px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="txtNacionalidad">Falta Nacionalidad</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Nacionalidad" runat="server" Text='<%# Bind("Nacionalidad_Medico") %>'></asp:Label>
@@ -175,6 +189,8 @@
                                 <asp:TemplateField HeaderText="Provincia">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtProvincia" runat="server" Height="19px" Text='<%# Bind("Provincia_Medico") %>' Width="101px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="txtProvincia">Falta Provincia</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Provincia" runat="server" Text='<%# Bind("Provincia_Medico") %>'></asp:Label>
@@ -183,6 +199,8 @@
                                 <asp:TemplateField HeaderText="Ciudad">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtCiudad" runat="server" Height="19px" Text='<%# Bind("Ciudad_Medico") %>' Width="100px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvCiudad" runat="server" ControlToValidate="txtCiudad">Falta Ciudad</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Ciudad" runat="server" Text='<%# Bind("Ciudad_Medico") %>'></asp:Label>
@@ -191,6 +209,8 @@
                                 <asp:TemplateField HeaderText="Direccion">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtDireccion" runat="server" Height="20px" Text='<%# Bind("Direccion_Medico") %>' Width="200px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">Falta Direccion</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Direccion" runat="server" Text='<%# Bind("Direccion_Medico") %>'></asp:Label>
@@ -199,6 +219,8 @@
                                 <asp:TemplateField HeaderText="Dias de atencion">
                                     <EditItemTemplate>
                                         <asp:TextBox ID="txtDiasAtencion" runat="server" Height="20px" Text='<%# Bind("DiasAtencion_Medico") %>' Width="140px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvDiasAtencion" runat="server" ControlToValidate="txtDiasAtencion">Faltan los dias</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_DiasAtencion" runat="server" Text='<%# Bind("DiasAtencion_Medico") %>'></asp:Label>
@@ -209,6 +231,12 @@
                                         <asp:TextBox ID="txtHoraInicio" runat="server" Height="20px" Text='<%# Bind("HorarioInicio_Medico") %>' Width="90px"></asp:TextBox>
                                         &nbsp;-
                                         <asp:TextBox ID="txtHoraFin" runat="server" Height="20px" Text='<%# Bind("HorarioFin_Medico") %>' Width="90px"></asp:TextBox>
+                                        <br />
+                                        <asp:RequiredFieldValidator ID="rfvHoraInicio" runat="server" ControlToValidate="txtHoraInicio">Falta hora inicio</asp:RequiredFieldValidator>
+                                        &nbsp;<asp:RequiredFieldValidator ID="rfvHoraFin" runat="server" ControlToValidate="txtHoraFin">Falta hora fin</asp:RequiredFieldValidator>
+&nbsp;<br />
+                                        <asp:RegularExpressionValidator ID="revHoraInicio" runat="server" ControlToValidate="txtHoraInicio" ValidationExpression="&quot;^[\d\W]+$&quot;">Sin letras</asp:RegularExpressionValidator>
+                                        &nbsp;<asp:RegularExpressionValidator ID="revHoraFin" runat="server" ControlToValidate="txtHoraFin" ValidationExpression="&quot;^[\d\W]+$&quot;">Sin letras</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         desde
