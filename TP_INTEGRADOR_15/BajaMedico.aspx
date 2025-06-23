@@ -56,7 +56,7 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="nombreUsuario" runat="server"></asp:Label>
+                    <td class="auto-style2" rowspan="2"><strong>Usuario</strong>:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>&nbsp;</td>
