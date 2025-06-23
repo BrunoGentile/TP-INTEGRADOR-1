@@ -39,7 +39,9 @@
                         <asp:Label ID="lbl_Admin" runat="server"></asp:Label>
                     </td>
                     <td colspan="3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

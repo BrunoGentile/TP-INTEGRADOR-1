@@ -15,11 +15,11 @@
         }
         .auto-style3 {
             height: 23px;
-            width: 147px;
+            width: 235px;
             font-size:24px;
         }
         .auto-style5 {
-            width: 147px;
+            width: 235px;
         }
         .auto-style6 {
             height: 23px;
@@ -29,11 +29,11 @@
             width: 112px;
         }
         .auto-style8 {
-            width: 147px;
+            width: 235px;
             height: 23px;
         }
         .auto-style9 {
-            width: 147px;
+            width: 235px;
             height: 24px;
         }
         .auto-style10 {
@@ -43,6 +43,17 @@
         .auto-style11 {
             height: 24px;
         }
+        .auto-style12 {
+            width: 235px;
+            height: 30px;
+        }
+        .auto-style13 {
+            width: 112px;
+            height: 30px;
+        }
+        .auto-style14 {
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -50,24 +61,27 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style3"><strong>Presencia:</strong></td>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style3"><strong>Presencia: </strong></td>
+                    <td class="auto-style6">
+                        <asp:Label ID="lbl_Usuario" runat="server"></asp:Label>
+                    </td>
+                    <td class="auto-style2">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
+                    </td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2">
-                        <asp:Label ID="lbl_Usuario" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style12"><strong>&nbsp;</strong></td>
+                    <td class="auto-style13"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
                 </tr>
                 <tr>
                     <td class="auto-style5"><strong>Seleccione un dia:</strong></td>

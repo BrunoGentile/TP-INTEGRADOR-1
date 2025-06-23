@@ -50,7 +50,9 @@
                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario: "></asp:Label>
                         &nbsp;<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style8"></td>
+                    <td class="auto-style8">
+                        <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
