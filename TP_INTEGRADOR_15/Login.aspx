@@ -316,9 +316,11 @@
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style28">
-                        <asp:HyperLink ID="HL_AsignarTurnos" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Asignar Turnos</asp:HyperLink>
+                        <asp:HyperLink ID="HL_AsignarTurnos" runat="server" NavigateUrl="~/AsignarTurnos.aspx">Asignar Turnos</asp:HyperLink>
                     </td>
-                    <td class="auto-style27">&nbsp;</td>
+                    <td class="auto-style27">
+                        <asp:HyperLink ID="HL_VerAsignacionTurnos" runat="server" NavigateUrl="~/TurnosAsignados.aspx">Asignar Turnos</asp:HyperLink>
+                    </td>
                     <td class="auto-style24">&nbsp;</td>
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
