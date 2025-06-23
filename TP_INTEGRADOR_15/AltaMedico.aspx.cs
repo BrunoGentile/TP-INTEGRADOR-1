@@ -31,6 +31,26 @@ namespace TP_INTEGRADOR_15
 
         }
 
+        protected void LimpiarCampos()
+        {
+            TB_Nombre.Text = string.Empty;
+            TB_Apellido.Text = string.Empty;
+            TB_DNI.Text = string.Empty;
+            TB_Direccio.Text = string.Empty;
+            TB_Telefono.Text = string.Empty;
+            TB_Dias.Text = string.Empty;
+            TB_HS_Inicio.Text = string.Empty;
+            TB_HS_Fin.Text = string.Empty;
+            TB_Password.Text = string.Empty;
+            RBL_Sexo.ClearSelection();
+            DDL_Provincias.SelectedIndex = 0;
+            DDL_Ciudades.Items.Clear();
+            DDL_Especialidad.SelectedIndex = 0;
+            Input_FDN.Value = string.Empty;
+            TB_Nacionalidad.Text = string.Empty;
+            TB_Correo.Text = string.Empty;
+        }
+
         protected void CargarProvincias()
         {
 
@@ -91,7 +111,6 @@ namespace TP_INTEGRADOR_15
             _Medicos.Apellido_Medico = TB_Apellido.Text;
             _Medicos.Direccion_Medico = TB_Direccio.Text;
             _Medicos.Telefono_Medico = TB_Telefono.Text;
-            _Medicos.DiasAtencion_Medico = TB_Dias.Text;
             _Medicos.HorarioInicio_Medico = TB_HS_Inicio.Text;
             _Medicos.HorarioFin_Medico = TB_HS_Fin.Text;
             _Medicos.Contrasenia_Medico = TB_Password.Text;
@@ -101,6 +120,10 @@ namespace TP_INTEGRADOR_15
             _Medicos.CodEspecialidad_Medico = DDL_Especialidad.SelectedValue.ToString();
             _Medicos.Fecha_Nacimiento_Medico = Input_FDN.Value;
 
+            _Medicos.Nacionalidad_Medico = TB_Nacionalidad.Text;
+            _Medicos.Correo_Medico = TB_Correo.Text;
+            _Medicos.DiasAtencion_Medico = TB_Dias.Text;
+
             NegocioMedicos _Medico = new NegocioMedicos();
 
             try
@@ -109,6 +132,7 @@ namespace TP_INTEGRADOR_15
                 lbl_Mensaje.Text = "El médico se registró exitosamente.";
                 lbl_Mensaje.ForeColor = System.Drawing.Color.Green;
                 lbl_Mensaje.Visible = true;
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
