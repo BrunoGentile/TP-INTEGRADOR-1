@@ -313,7 +313,7 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style42">
-                        <asp:RequiredFieldValidator ID="rfv_provincia" runat="server" ControlToValidate="ddl_ProvPaciente" InitialValue="-- Seleccionar --">Seleccionar provincia</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfv_provincia" runat="server" ControlToValidate="ddl_ProvPaciente" InitialValue="0">Seleccionar provincia</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style43">Localidad:</td>
                     <td class="auto-style39">
@@ -322,7 +322,7 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style44">
-                        <asp:RequiredFieldValidator ID="rfv_localidad" runat="server" ControlToValidate="ddl_LocPaciente" InitialValue="-- Seleccionar --">Seleccionar localidad</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfv_localidad" runat="server" ControlToValidate="ddl_LocPaciente" InitialValue="0">Seleccionar localidad</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style45"></td>
                     <td class="auto-style45"></td>

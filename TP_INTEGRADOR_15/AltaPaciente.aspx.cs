@@ -24,6 +24,8 @@ namespace TP_INTEGRADOR_15
                     lbl_Admin.Text = "Administrador: " + Session["Administrador"].ToString();
                 }
                 cargarProvincias();
+                cargarProvincias();
+                cargarLocalidades("0");
             }
 
         }
@@ -116,10 +118,15 @@ namespace TP_INTEGRADOR_15
         {
             string codProvincia = ddl_ProvPaciente.SelectedValue;
 
-            if (codProvincia != "0")
+            if ( codProvincia != "0" )
             {
-                cargarLocalidades(codProvincia); 
+                cargarLocalidades(codProvincia);
             }
+            else
+            {
+                cargarLocalidades("0");
+            }
+
         }
     }
 }
