@@ -133,6 +133,9 @@ namespace TP_INTEGRADOR_15
         protected void btnReiniciar_Click(object sender, EventArgs e)
         {
             cargarGridView();
+
+            txtFiltrado.Text = string.Empty;
+            lblLegajoInexistente.Text = string.Empty;
         }
     }
 }

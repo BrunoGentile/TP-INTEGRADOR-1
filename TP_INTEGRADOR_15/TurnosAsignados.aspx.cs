@@ -57,5 +57,12 @@ namespace TP_INTEGRADOR_15
             // Limpiar el textBox después de filtrar
             txtFiltrado.Text = string.Empty;
         }
+
+        protected void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            cargarGridView();
+            txtFiltrado.Text = string.Empty;
+            lblPacienteInexistente.Text = string.Empty;
+        }
     }
 }

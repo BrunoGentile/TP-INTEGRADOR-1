@@ -89,9 +89,9 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtFiltrado" runat="server" Width="283px"></asp:TextBox>
                     &nbsp;
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" OnClick="btnFiltrar_Click" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Width="91px" OnClick="btnFiltrar_Click" ValidationGroup="Grupo1" />
                     &nbsp;
-                        <asp:Button ID="btnReiniciar" runat="server" Text="Reiniciar tabla" />
+                        <asp:Button ID="btnReiniciar" runat="server" OnClick="btnReiniciar_Click" Text="Reiniciar tabla" ValidationGroup="Grupo2" />
                     </td>
                     <td class="auto-style4">
                         &nbsp;</td>
@@ -99,15 +99,15 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style3">
-                        <asp:RequiredFieldValidator ID="rfvPacienteVacio" runat="server" ControlToValidate="txtFiltrado">Ingrese un paciente</asp:RequiredFieldValidator>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style7">
+                        <asp:RequiredFieldValidator ID="rfvPacienteVacio" runat="server" ControlToValidate="txtFiltrado" ValidationGroup="Grupo1">Ingrese un paciente</asp:RequiredFieldValidator>
                     &nbsp;
                         <asp:Label ID="lblPacienteInexistente" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style12"></td>

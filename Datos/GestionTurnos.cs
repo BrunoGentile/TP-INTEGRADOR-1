@@ -38,7 +38,7 @@ namespace Datos
         public void ObtenerTurnos(DataTable dataTable)
         {
             SqlConnection conexion = ObtenerConexion();
-            string consultaSQL = "SELECT * FROM Turnos";
+            string consultaSQL = "SELECT * FROM Turnos INNER JOIN Medicos ON LegajoMedico_Turnos = Legajo_Medico";
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             adaptador.Fill(dataTable);
@@ -54,7 +54,7 @@ namespace Datos
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
 
-            string consultaSQL = "SELECT * FROM Turnos WHERE DNIPaciente_Turnos = @DNIPaciente";
+            string consultaSQL = "SELECT * FROM Turnos INNER JOIN Medicos ON LegajoMedico_Turnos = Legajo_Medico WHERE DNIPaciente_Turnos = @DNIPaciente";
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             comando.Parameters.AddWithValue("@DNIPaciente", DNIPaciente);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -70,7 +70,7 @@ namespace Datos
             SqlConnection conexion = new SqlConnection(Conexion);
             conexion.Open();
 
-            string consulta = "SELECT COUNT(*) FROM Turnos WHERE DNIPaciente_Turnos = @DNIPaciente";
+            string consulta = "SELECT COUNT(*) FROM Turnos INNER JOIN Medicos ON LegajoMedico_Turnos = Legajo_Medico WHERE DNIPaciente_Turnos = @DNIPaciente";
             SqlCommand comando = new SqlCommand(consulta, conexion);
             comando.Parameters.AddWithValue("@DNIPaciente", DNIpaciente);
 
