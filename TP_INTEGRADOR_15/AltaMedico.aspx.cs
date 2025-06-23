@@ -13,9 +13,10 @@ namespace TP_INTEGRADOR_15
 {
     public partial class AltaMedico : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 CargarProvincias();
@@ -26,7 +27,7 @@ namespace TP_INTEGRADOR_15
 
         protected void CargarProvincias()
         {
-            
+
             NegocioMedicos negocioMedicos = new NegocioMedicos();
             DataTable Provincias = negocioMedicos.ListarProvincias();
 
@@ -40,7 +41,7 @@ namespace TP_INTEGRADOR_15
 
         protected void CargarLocalidades(string CodProvincia)
         {
-            
+
             NegocioMedicos negocioMedicos = new NegocioMedicos();
             DataTable Localidades = negocioMedicos.ListarLocalidades(CodProvincia);
 
@@ -88,14 +89,32 @@ namespace TP_INTEGRADOR_15
             _Medicos.HorarioInicio_Medico = TB_HS_Inicio.Text;
             _Medicos.HorarioFin_Medico = TB_HS_Fin.Text;
             _Medicos.Contrasenia_Medico = TB_Password.Text;
-            _Medicos.Sexo_Medico = CheckBoxList1.SelectedValue.ToString();
+            _Medicos.Sexo_Medico = cblSexo.SelectedValue.ToString();
             _Medicos.Provincia_Medico = DDL_Provincias.SelectedItem.ToString();
             _Medicos.Ciudad_Medico = DDL_Ciudades.SelectedItem.ToString();
             _Medicos.CodEspecialidad_Medico = DDL_Especialidad.SelectedValue.ToString();
             _Medicos.Fecha_Nacimiento_Medico = Input_FDN.Value;
 
             NegocioMedicos _Medico = new NegocioMedicos();
-            _Medico.RegistrarMedico(_Medicos);
+
+            try
+            {
+                _Medico.RegistrarMedico(_Medicos);
+                lbl_Mensaje.Text = "El médico se registró exitosamente.";
+                lbl_Mensaje.ForeColor = System.Drawing.Color.Green;
+                lbl_Mensaje.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                lbl_Mensaje.Text = "Error al registrar el médico. Verifique los datos.";
+                lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
+                lbl_Mensaje.Visible = true;
+            }
         }
     }
 }
+                
+    
+
+
+               

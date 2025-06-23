@@ -265,12 +265,9 @@ namespace Datos
                 comando.Parameters.AddWithValue("@DNI", medico.DNI_Medico);
                 comando.Parameters.AddWithValue("@Nombre", medico.Nombre_Medico);
                 comando.Parameters.AddWithValue("@Apellido", medico.Apellido_Medico);
-
                 DateTime FDN;
                 DateTime.TryParse(medico.Fecha_Nacimiento_Medico, out FDN);
-
                 comando.Parameters.AddWithValue("@FechaNac", FDN);
-
                 comando.Parameters.AddWithValue("@Especialidad", medico.CodEspecialidad_Medico);
                 comando.Parameters.AddWithValue("@Correo", medico.Correo_Medico);
                 comando.Parameters.AddWithValue("@Telefono", medico.Telefono_Medico);
@@ -279,7 +276,6 @@ namespace Datos
                 comando.Parameters.AddWithValue("@Provincia", medico.Provincia_Medico);
                 comando.Parameters.AddWithValue("@Ciudad", medico.Ciudad_Medico);
                 comando.Parameters.AddWithValue("@Direccion", medico.Direccion_Medico);
-
                 TimeSpan HSInicio;
                 TimeSpan.TryParse(medico.HorarioInicio_Medico, out HSInicio);
                 comando.Parameters.AddWithValue("@DiasAtencion", HSInicio);
