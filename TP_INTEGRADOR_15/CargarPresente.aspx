@@ -112,11 +112,6 @@
                         CommandArgument='<%# Container.DataItemIndex %>' OnCommand="Button2_Command" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Observación">
-                <ItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Visible="false" TextMode="MultiLine" Rows="2" Columns="30" />
-                </ItemTemplate>
-            </asp:TemplateField>
         </Columns>
     </asp:GridView>
              

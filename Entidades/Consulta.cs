@@ -14,17 +14,18 @@ namespace Entidades
         private string DNIPaciente_Cons;
         private bool PresenciaPaciente;
         private string Observacion_Cons;
+        private bool Estado;
 
         public Consulta()
         {
-            CodConsultas =  string.Empty;
+            CodConsultas = string.Empty;
             LegajoMedico_Cons = string.Empty;
             DNIPaciente_Cons = string.Empty;
             PresenciaPaciente = false;
             Observacion_Cons = string.Empty;
         }
 
-        public Consulta(string codConsultas , string legajoMedico_Cons, string dNIPaciente_Cons, bool presenciaPaciente, string observacion_Cons)
+        public Consulta(string codConsultas, string legajoMedico_Cons, string dNIPaciente_Cons, bool presenciaPaciente, string observacion_Cons)
         {
             CodConsultas = codConsultas;
             LegajoMedico_Cons = legajoMedico_Cons;
@@ -32,11 +33,11 @@ namespace Entidades
             PresenciaPaciente = presenciaPaciente;
             Observacion_Cons = observacion_Cons;
         }
-        
+
         public string _CodConsultas
         {
             get { return CodConsultas; }
-            set { CodConsultas = value; } 
+            set { CodConsultas = value; }
         }
         public string _LegajoMedico_cons
         {
@@ -46,7 +47,7 @@ namespace Entidades
         public string _DNIPaciente_cons
         {
             get { return DNIPaciente_Cons; }
-            set {  DNIPaciente_Cons = value;}
+            set { DNIPaciente_Cons = value; }
         }
         public bool _PresenciaPaciente
         {
@@ -57,6 +58,12 @@ namespace Entidades
         {
             get { return Observacion_Cons; }
             set { Observacion_Cons = value; }
+        }
+
+        public bool _Estado
+        {
+            get { return Estado; }
+            set { Estado = value; }
         }
     }
 }

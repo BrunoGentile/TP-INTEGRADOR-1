@@ -79,11 +79,14 @@ namespace TP_INTEGRADOR_15
                 consulta._DNIPaciente_cons = ((Label)row.FindControl("lblDNI")).Text;
                 consulta._LegajoMedico_cons = ((Label)row.FindControl("label1")).Text;
                 consulta._PresenciaPaciente = true;
+                consulta._Estado = false;
                 consulta._Observacion_Cons = txtObservacion.Text;
                 NegocioConsultas negocioCons = new NegocioConsultas();
                 if (negocioCons.RegistrarConsulta(consulta))
                 {
                     lbl_Mensaje.Text = "La consultas se realizo con exito"; 
+                    txtObservacion.Text = string.Empty; // Limpiar el TextBox después de registrar la consulta
+                    
                 }
                 else
                 {
@@ -104,19 +107,23 @@ namespace TP_INTEGRADOR_15
 
                 consulta._DNIPaciente_cons = ((Label)row.FindControl("lblDNI")).Text;
                 consulta._LegajoMedico_cons = ((Label)row.FindControl("label1")).Text;
+                consulta._Estado = false; // Asegúrate de que el estado esté definido en la clase Consulta
                 consulta._PresenciaPaciente = false;
                 consulta._Observacion_Cons = " ";
                 NegocioConsultas negocioCons = new NegocioConsultas();
                 if (negocioCons.RegistrarConsulta(consulta))
                 {
                     lbl_Mensaje.Text = "La consultas se realizo con exito";
+                    
                 }
                 else
                 {
                     lbl_Mensaje.Text = "no se pudo realizar la consulta";
+                    txtObservacion.Text = string.Empty; // Limpiar el TextBox después de registrar la consulta
                 }
 
             }
+
         }
 
     }

@@ -16,6 +16,7 @@ namespace Entidades
         private string LegajoAdmin_Turno;
         private string Dia_Turno;
         private string Horarios_Turno;
+        
 
         // ---------- CONSTRUCTORES ----------
 

@@ -125,7 +125,7 @@ namespace Datos
             using (SqlConnection conexion = ObtenerConexion())
             {
                 string consultaSQL = @"INSERT INTO Consultas 
-                               (CodConsultas, LegajoMedico_Cons, DNIPaciente_Cons, PresenciaPaciente, Observacion_Cons)
+                               (CodConsultas, LegajoMedico_Cons, DNIPaciente_Cons, PresenciaPaciente, Observacion_Cons) 
                                VALUES (@Cod, @Medico, @DNI, @Presente, @Observacion)";
 
                 using (SqlCommand comando = new SqlCommand(consultaSQL, conexion))
