@@ -16,7 +16,8 @@ namespace Entidades
         private string LegajoAdmin_Turno;
         private string Dia_Turno;
         private string Horarios_Turno;
-        
+        private bool Estado_Turno;
+
 
         // ---------- CONSTRUCTORES ----------
 
@@ -29,11 +30,12 @@ namespace Entidades
             LegajoAdmin_Turno = string.Empty;
             Dia_Turno = string.Empty;
             Horarios_Turno = string.Empty;
+            Estado_Turno = false;
         }
 
         // CONSTRUCTOR CON TODOS LOS PARÁMETROS
 
-        public Turnos(string cod_Turno, string legajoMedico_Turno, string dNIPaciente_Turno, string legajoAdmin_Turno, string dia_Turno, string horarios_Turno)
+        public Turnos(string cod_Turno, string legajoMedico_Turno, string dNIPaciente_Turno, string legajoAdmin_Turno, string dia_Turno, string horarios_Turno, bool estado_turno)
         {
             Cod_Turno = cod_Turno;
             LegajoMedico_Turno = legajoMedico_Turno;
@@ -41,6 +43,7 @@ namespace Entidades
             LegajoAdmin_Turno = legajoAdmin_Turno;
             Dia_Turno = dia_Turno;
             Horarios_Turno = horarios_Turno;
+            Estado_Turno = estado_turno;
         }
 
         // SETTERS Y GETTERS
@@ -79,6 +82,12 @@ namespace Entidades
         {
             get { return Horarios_Turno; }
             set { Horarios_Turno = value; }
+        }
+        public bool _Estado_Turno
+        {
+            get { return _Estado_Turno; }
+
+            set { Estado_Turno = value; }
         }
     }
 }

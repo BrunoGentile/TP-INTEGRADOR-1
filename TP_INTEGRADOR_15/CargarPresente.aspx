@@ -65,6 +65,11 @@
             <td class="auto-style5">
        <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
+            <asp:TemplateField HeaderText="Codigo de Turno">
+                <ItemTemplate>
+                    <asp:Label ID="lbl_codTurno" runat="server" Text='<%# Bind("Cod_Turno") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Nombre De Paciente">
                 <ItemTemplate>
                   <asp:Label ID="NombrePaciente" runat="server" Text='<%# Bind("Nombre_Paciente") %>'></asp:Label> 

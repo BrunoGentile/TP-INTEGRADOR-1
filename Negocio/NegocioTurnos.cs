@@ -151,6 +151,11 @@ namespace Negocio
             dataTable = gestionTurnos.CargarPresente();
             return dataTable;
         }
+
+        public void CambiarEstadoTurno(string CodTurno)
+        {
+            gestionTurnos.CambiarEstadoTurno(CodTurno);
+        }
     }
 
 }

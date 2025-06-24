@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using Negocio;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TP_INTEGRADOR_15
 {
@@ -79,20 +80,30 @@ namespace TP_INTEGRADOR_15
                 consulta._DNIPaciente_cons = ((Label)row.FindControl("lblDNI")).Text;
                 consulta._LegajoMedico_cons = ((Label)row.FindControl("label1")).Text;
                 consulta._PresenciaPaciente = true;
-                consulta._Estado = false;
                 consulta._Observacion_Cons = txtObservacion.Text;
+                string codConsulta = ((Label)row.FindControl("lbl_codTurno")).Text;
+                negocio.CambiarEstadoTurno(codConsulta);
                 NegocioConsultas negocioCons = new NegocioConsultas();
                 if (negocioCons.RegistrarConsulta(consulta))
                 {
                     lbl_Mensaje.Text = "La consultas se realizo con exito"; 
                     txtObservacion.Text = string.Empty; // Limpiar el TextBox después de registrar la consulta
-                    
+                    DataTable dt = negocio.cargarPresente(); // este es tu método que ya hiciste
+                    gvTurnos.DataSource = dt;
+
+                    gvTurnos.DataBind();
                 }
                 else
                 {
                     lbl_Mensaje.Text = "no se pudo realizar la consulta";
                 }
             }
+        }
+
+        public void ActualizarTurno()
+        {
+            Turnos turnos = new Turnos();
+            turnos._Estado_Turno = false;
         }
 
 
@@ -107,14 +118,19 @@ namespace TP_INTEGRADOR_15
 
                 consulta._DNIPaciente_cons = ((Label)row.FindControl("lblDNI")).Text;
                 consulta._LegajoMedico_cons = ((Label)row.FindControl("label1")).Text;
-                consulta._Estado = false; // Asegúrate de que el estado esté definido en la clase Consulta
                 consulta._PresenciaPaciente = false;
                 consulta._Observacion_Cons = " ";
+                string codConsulta = ((Label)row.FindControl("lbl_codTurno")).Text;
+                negocio.CambiarEstadoTurno(codConsulta);
                 NegocioConsultas negocioCons = new NegocioConsultas();
                 if (negocioCons.RegistrarConsulta(consulta))
                 {
                     lbl_Mensaje.Text = "La consultas se realizo con exito";
-                    
+                    DataTable dt = negocio.cargarPresente(); // este es tu método que ya hiciste
+                    gvTurnos.DataSource = dt;
+
+                    gvTurnos.DataBind();
+
                 }
                 else
                 {

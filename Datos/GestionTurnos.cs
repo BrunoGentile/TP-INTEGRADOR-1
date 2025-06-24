@@ -447,7 +447,25 @@ namespace Datos
 
             return dt;
         }
-        
+
+        public bool CambiarEstadoTurno(string codTurno)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                string consultaSQL = "UPDATE Turnos SET Estado_Turno = @Estado WHERE Cod_Turno = @CodTurno";
+
+                using (SqlCommand comando = new SqlCommand(consultaSQL, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Estado", false);
+                    comando.Parameters.AddWithValue("@CodTurno", codTurno);
+
+                    conexion.Open();
+                    int filasAfectadas = comando.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+        }
+
 
     }
 }
