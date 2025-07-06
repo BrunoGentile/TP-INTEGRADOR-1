@@ -53,6 +53,21 @@
         .auto-style14 {
             height: 30px;
         }
+        .auto-style15 {
+            height: 23px;
+            width: 31px;
+        }
+        .auto-style16 {
+            height: 30px;
+            width: 31px;
+        }
+        .auto-style17 {
+            width: 31px;
+        }
+        .auto-style18 {
+            height: 24px;
+            width: 31px;
+        }
     </style>
 </head>
 <body>
@@ -63,7 +78,7 @@
                     <td class="auto-style3" colspan="2">Usuario:&nbsp;
                         <asp:Label ID="lbl_Usuario" runat="server" Font-Bold="True"></asp:Label>
                     </td>
-                    <td class="auto-style2">
+                    <td class="auto-style15">
                         &nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
@@ -75,7 +90,7 @@
                     <td class="auto-style3"><strong>Presencia: </strong></td>
                     <td class="auto-style6">
                         &nbsp;</td>
-                    <td class="auto-style2">
+                    <td class="auto-style15">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
                     </td>
                     <td class="auto-style2"></td>
@@ -87,7 +102,7 @@
                 <tr>
                     <td class="auto-style12"><strong>&nbsp;</strong></td>
                     <td class="auto-style13"></td>
-                    <td class="auto-style14"></td>
+                    <td class="auto-style16"></td>
                     <td class="auto-style14"></td>
                     <td class="auto-style14"></td>
                     <td class="auto-style14"></td>
@@ -107,7 +122,7 @@
                             <WeekendDayStyle BackColor="#CCCCFF" />
                         </asp:Calendar>
                     </td>
-                    <td>
+                    <td class="auto-style17">
                         <asp:Button ID="btn_Presente" runat="server" OnClick="btn_Presente_Click" Text="Aceptar" />
                     </td>
                     <td></td>
@@ -120,7 +135,7 @@
                         <asp:Label ID="lbl1" runat="server"></asp:Label>
                         </td>
                     <td class="auto-style10"></td>
-                    <td class="auto-style11"></td>
+                    <td class="auto-style18"></td>
                     <td class="auto-style11"></td>
                     <td class="auto-style11"></td>
                     <td class="auto-style11"></td>
@@ -130,8 +145,8 @@
                     <td class="auto-style8">Ausentes:
                         <asp:Label ID="lbl2" runat="server"></asp:Label>
                         </td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style15"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
@@ -140,7 +155,7 @@
                 <tr>
                     <td class="auto-style8"></td>
                     <td class="auto-style6"></td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style15"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
@@ -149,7 +164,7 @@
                 <tr>
                     <td class="auto-style8">Listado de Personas:</td>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
@@ -193,7 +208,7 @@
                         </asp:GridView>
                     </td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -204,7 +219,7 @@
                         <asp:Label ID="lbl_Mensaje" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
