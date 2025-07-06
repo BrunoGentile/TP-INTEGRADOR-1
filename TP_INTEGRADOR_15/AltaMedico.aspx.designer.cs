@@ -69,6 +69,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
 
         /// <summary>
+        /// Control REV_Nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Nombre;
+
+        /// <summary>
         /// Control TB_Apellido.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApellido;
+
+        /// <summary>
+        /// Control REV_Apellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Apellido;
 
         /// <summary>
         /// Control TB_DNI.
@@ -105,6 +123,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDNI;
 
         /// <summary>
+        /// Control REV_DNI.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_DNI;
+
+        /// <summary>
         /// Control RBL_Sexo.
         /// </summary>
         /// <remarks>
@@ -112,6 +139,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RBL_Sexo;
+
+        /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// Control TB_Nacionalidad.
@@ -130,6 +166,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNacionalidad;
+
+        /// <summary>
+        /// Control REV_Nacionalidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Nacionalidad;
 
         /// <summary>
         /// Control Input_FDN.
@@ -157,6 +202,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDireccion;
+
+        /// <summary>
+        /// Control REV_Direccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Direccion;
 
         /// <summary>
         /// Control DDL_Provincias.
@@ -213,6 +267,15 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCorreo;
 
         /// <summary>
+        /// Control REV_Correo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Correo;
+
+        /// <summary>
         /// Control TB_Telefono.
         /// </summary>
         /// <remarks>
@@ -222,13 +285,22 @@ namespace TP_INTEGRADOR_15
         protected global::System.Web.UI.WebControls.TextBox TB_Telefono;
 
         /// <summary>
-        /// Control revNumeros.
+        /// Control RFV_Telefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNumeros;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_Telefono;
+
+        /// <summary>
+        /// Control REV_Telefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Telefono;
 
         /// <summary>
         /// Control DDL_Especialidad.
@@ -265,6 +337,15 @@ namespace TP_INTEGRADOR_15
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDias;
+
+        /// <summary>
+        /// Control REV_Dias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Dias;
 
         /// <summary>
         /// Control TB_HS_Inicio.
