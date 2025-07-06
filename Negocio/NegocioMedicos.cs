@@ -75,6 +75,15 @@ namespace Negocio
             _GestionMedicos.RegistrarMedico(_Medico);
         }
 
+        public bool verificarDNIexistente(Medicos med)
+        {
+
+            if (GestionMedicos.verificarDNIexistente(med))
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 
 }
