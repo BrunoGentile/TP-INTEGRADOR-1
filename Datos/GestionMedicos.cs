@@ -200,37 +200,19 @@ namespace Datos
 
         // [+] ---------- LISTAR PROVINCIAS ---------- [+]
 
-        public DataTable Provincias()
-        {
-            DataTable dataTable = new DataTable();
-            using (SqlConnection conexion = ObtenerConexion())
-            {
-                conexion.Open();
-                SqlCommand comando = new SqlCommand("SELECT * FROM Provincias", conexion);
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(dataTable);
-            }
-            return dataTable;
-        }
+      public void CargarProvinciasDesdePaciente()
+       {
+        GestionPacientes gestionPacientes = new GestionPacientes();
+        DataTable provincias = gestionPacientes.Provincias();
+       }
 
         // [+] ---------- LISTAR LOCALIDADES ---------- [+]
 
-        public DataTable Localidades(string CodProvincia)
+       public void CargarLocalidadesDesdePaciente(string CodProvincia)
         {
-            DataTable dataTable = new DataTable();
-            using (SqlConnection conexion = ObtenerConexion())
-
-            {
-                conexion.Open();
-                SqlCommand comando = new SqlCommand("SELECT * FROM Ciudades WHERE CodProvincia = @CodProvincia", conexion);
-                comando.Parameters.AddWithValue("@CodProvincia", CodProvincia);
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(dataTable);
-            }
-
-            return dataTable;
+            GestionPacientes gestionPacientes = new GestionPacientes();
+            DataTable localidades = gestionPacientes.Localidades(CodProvincia);
         }
-
         // [+] ---------- LISTAR ESPECIALIDADES ---------- [+]
 
         public DataTable Especialidades()
