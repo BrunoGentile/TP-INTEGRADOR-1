@@ -76,9 +76,14 @@ namespace TP_INTEGRADOR_15
             _Paciente.DNI_Paciente = ((Label)GV_Pacientes.Rows[e.RowIndex].FindControl("LBL_EIT_DNI")).Text;
             _Paciente.Nombre_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Nombre")).Text;
             _Paciente.Apellido_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Apellido")).Text;
-            _Paciente.Sexo_Paciente = ((Label)GV_Pacientes.Rows[e.RowIndex].FindControl("LBL_EIT_Sexo")).Text;
+
+            // VERIFICAR QUE SI NO SE SELECCIONA NADA QUEDA EN STRING.EMPTY
+            _Paciente.Sexo_Paciente = ((RadioButtonList)GV_Pacientes.Rows[e.RowIndex].FindControl("RBT_EIT_Genero")).SelectedValue;
+
             _Paciente.Nacionalidad_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Nacionalidad")).Text;
-            _Paciente.FechaNacimiento_Paciente = ((Label)GV_Pacientes.Rows[e.RowIndex].FindControl("LBL_EIT_FechaNacimiento")).Text;
+            
+            _Paciente.FechaNacimiento_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("ID_EIT_FechaDeNac")).Text;
+
             _Paciente.Direccion_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Direccion")).Text;
             _Paciente.Correo_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Correo")).Text;
             _Paciente.Telefono_Paciente = ((TextBox)GV_Pacientes.Rows[e.RowIndex].FindControl("TB_EIT_Telefono")).Text;

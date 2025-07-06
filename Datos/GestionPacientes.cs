@@ -267,8 +267,10 @@ namespace Datos
                 Paciente.DNI_Paciente = Paciente.DNI_Paciente == string.Empty ? sqlDataReader["DNI_Paciente"].ToString() : Paciente.DNI_Paciente;
                 Paciente.Nombre_Paciente = Paciente.Nombre_Paciente == string.Empty ? sqlDataReader["Nombre_Paciente"].ToString() : Paciente.Nombre_Paciente;
                 Paciente.Apellido_Paciente = Paciente.Apellido_Paciente == string.Empty ? sqlDataReader["Apellido_Paciente"].ToString() : Paciente.Apellido_Paciente;
+                
                 Paciente.Sexo_Paciente = Paciente.Sexo_Paciente == string.Empty ? sqlDataReader["Sexo_Paciente"].ToString() : Paciente.Sexo_Paciente;
                 Paciente.FechaNacimiento_Paciente = Paciente.FechaNacimiento_Paciente == string.Empty ? sqlDataReader["FechaNacimiento_Paciente"].ToString() : Paciente.FechaNacimiento_Paciente;
+                
                 Paciente.Correo_Paciente = Paciente.Correo_Paciente == string.Empty ? sqlDataReader["Correo_Paciente"].ToString() : Paciente.Correo_Paciente;
                 Paciente.Telefono_Paciente = Paciente.Telefono_Paciente == string.Empty ? sqlDataReader["Telefono_Paciente"].ToString() : Paciente.Telefono_Paciente;
                 Paciente.Direccion_Paciente = Paciente.Direccion_Paciente == string.Empty ? sqlDataReader["Direccion_Paciente"].ToString() : Paciente.Direccion_Paciente;
