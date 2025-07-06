@@ -122,7 +122,7 @@ namespace Datos
 
             int cantidad = (int)comando.ExecuteScalar();
             conexion.Close();
-            return cantidad > 0; 
+            return cantidad > 0;
         }
 
         // -------------------------------------------------------------------------------------------------
@@ -200,15 +200,15 @@ namespace Datos
 
         // [+] ---------- LISTAR PROVINCIAS ---------- [+]
 
-      public void CargarProvinciasDesdePaciente()
-       {
-        GestionPacientes gestionPacientes = new GestionPacientes();
-        DataTable provincias = gestionPacientes.Provincias();
-       }
+        public void CargarProvinciasDesdePaciente()
+        {
+            GestionPacientes gestionPacientes = new GestionPacientes();
+            DataTable provincias = gestionPacientes.Provincias();
+        }
 
         // [+] ---------- LISTAR LOCALIDADES ---------- [+]
 
-       public void CargarLocalidadesDesdePaciente(string CodProvincia)
+        public void CargarLocalidadesDesdePaciente(string CodProvincia)
         {
             GestionPacientes gestionPacientes = new GestionPacientes();
             DataTable localidades = gestionPacientes.Localidades(CodProvincia);
@@ -234,13 +234,13 @@ namespace Datos
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
-             
+
                 conexion.Open();
                 string consultaSQL = "INSERT INTO Medicos (Legajo_Medico, DNI_Medico, Nombre_Medico, Apellido_Medico, CodEspecialidad_Medico, Correo_Medico, Telefono_Medico, " +
                     "Sexo_Medico, Nacionalidad_Medico, Provincia_Medico, Ciudad_Medico, Direccion_Medico, DiasAtencion_Medico, HorarioInicio_Medico, FechaNacimiento_Medico, " +
                     "HorarioFin_Medico, Contraseña_Medico) VALUES (@Legajo, @DNI ,@Nombre, @Apellido, @Especialidad, @Correo, @Telefono, @Sexo, @Nacionalidad, " +
                     "@Provincia, @Ciudad, @Direccion, @DiasAtencion, @HorarioInicio, @FechaNac, @HorarioFin, @Contraseña)";
-                
+
                 SqlCommand comando = new SqlCommand(consultaSQL, conexion);
 
                 medico.Legajo_Medico = obtenerLegajo(medico); // Asignar el legajo generado
@@ -248,7 +248,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@DNI", medico.DNI_Medico);
                 comando.Parameters.AddWithValue("@Nombre", medico.Nombre_Medico);
                 comando.Parameters.AddWithValue("@Apellido", medico.Apellido_Medico);
-                
+
                 DateTime FDN;
                 DateTime.TryParse(medico.Fecha_Nacimiento_Medico, out FDN);
                 comando.Parameters.AddWithValue("@FechaNac", FDN);
@@ -257,13 +257,13 @@ namespace Datos
                 comando.Parameters.AddWithValue("@Correo", medico.Correo_Medico);
                 comando.Parameters.AddWithValue("@Telefono", medico.Telefono_Medico);
                 comando.Parameters.AddWithValue("@Sexo", medico.Sexo_Medico);
-                
+
                 comando.Parameters.AddWithValue("@Nacionalidad", medico.Nacionalidad_Medico);
                 comando.Parameters.AddWithValue("@Provincia", medico.Provincia_Medico);
                 comando.Parameters.AddWithValue("@Ciudad", medico.Ciudad_Medico);
                 comando.Parameters.AddWithValue("@Direccion", medico.Direccion_Medico);
-                
-                
+
+
                 comando.Parameters.AddWithValue("@DiasAtencion", medico.DiasAtencion_Medico);
 
                 TimeSpan HSInicio;
@@ -275,10 +275,10 @@ namespace Datos
                 comando.Parameters.AddWithValue("@HorarioFin", HSFinal);
 
                 comando.Parameters.AddWithValue("@Contraseña", medico.Contrasenia_Medico);
-                
+
                 // Ejecutar el comando
                 comando.ExecuteNonQuery();
-                
+
             }
         }
 
@@ -316,7 +316,7 @@ namespace Datos
             {
                 string codigoActual = reader["Legajo_Medico"].ToString();  // Ej: "MED0007"
 
-                if ( !string.IsNullOrEmpty(codigoActual) && codigoActual.Length >= 4)
+                if (!string.IsNullOrEmpty(codigoActual) && codigoActual.Length >= 4)
                 {
                     string parteNumerica = codigoActual.Substring(3); // "0007"
 
@@ -338,5 +338,32 @@ namespace Datos
             return legajo;
         }
 
+        public DataTable Provincias()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("SELECT * FROM Provincias", conexion);
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(dataTable);
+            }
+            return dataTable;
+        }
+
+        public DataTable Localidades(string CodProvincia)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("SELECT * FROM Ciudades WHERE CodProvincia = @CodProvincia", conexion);
+                comando.Parameters.AddWithValue("@CodProvincia", CodProvincia);
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(dataTable);
+            }
+            return dataTable;
+
+        }
     }
 }
