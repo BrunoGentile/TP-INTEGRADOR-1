@@ -365,5 +365,8 @@ namespace Datos
             return dataTable;
 
         }
+
+        // [+] ---------- OBTENER MÉDICO POR LEGAJO ---------- [+]
+
     }
 }

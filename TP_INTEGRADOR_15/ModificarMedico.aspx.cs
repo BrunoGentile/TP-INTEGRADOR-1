@@ -14,6 +14,9 @@ namespace TP_INTEGRADOR_15
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+
+        private string Usuario = string.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] == null)
@@ -33,10 +36,21 @@ namespace TP_INTEGRADOR_15
 
         public void cargarGridView()
         {
-            NegocioMedicos negocioMedicos = new NegocioMedicos();
-            gvMedico.DataSource = negocioMedicos.ObtenerMedicos();
-            gvMedico.DataBind();
+            if (txtFiltrado.Text == string.Empty)
+            {
+                NegocioMedicos negocioMedicos = new NegocioMedicos();
+                gvMedico.DataSource = negocioMedicos.ObtenerMedicos();
+                gvMedico.DataBind();
+            }
+            else
+            {
+                NegocioMedicos _NegMedicos = new NegocioMedicos();
+                gvMedico.DataSource = _NegMedicos.filtrarMedicosPorLegajo(txtFiltrado.Text);
+                gvMedico.DataBind();
+            }
+
         }
+
        
         //CANCELAR
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
@@ -113,14 +127,16 @@ namespace TP_INTEGRADOR_15
                 gvMedico.DataBind();
 
                 lblLegajoInexistente.Text = string.Empty; // Limpiar mensaje de error si el legajo si existe
+                
             }
             else
             {
                 lblLegajoInexistente.Text = "El legajo ingresado no existe.";
             }
 
+            
             // Limpiar el textBox después de filtrar
-            txtFiltrado.Text = string.Empty;           
+            //txtFiltrado.Text = string.Empty;           
         }
 
         protected void gvMedico_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,9 +146,9 @@ namespace TP_INTEGRADOR_15
 
         protected void btnReiniciar_Click(object sender, EventArgs e)
         {
+            txtFiltrado.Text = string.Empty;
             cargarGridView();
 
-            txtFiltrado.Text = string.Empty;
             lblLegajoInexistente.Text = string.Empty;
         }
 

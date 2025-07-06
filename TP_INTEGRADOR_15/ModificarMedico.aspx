@@ -123,6 +123,9 @@
                                         <br />
                                         <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre">Falta nombre</asp:RequiredFieldValidator>
                                         &nbsp;<asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtApellido">Falta apellido</asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="REV_Nombre" runat="server" ControlToValidate="txtNombre" ValidationExpression="^[A-ZÁÉÍÓÚÑa-záéíóúñ]+(?:[\s'-][A-ZÁÉÍÓÚÑa-záéíóúñ]+)*$">Nombre inválido</asp:RegularExpressionValidator>
+                                        &nbsp;<asp:RegularExpressionValidator ID="REV_Apellido" runat="server" ControlToValidate="txtApellido" ValidationExpression="^[A-ZÁÉÍÓÚÑa-záéíóúñ]+(?:[\s'-][A-ZÁÉÍÓÚÑa-záéíóúñ]+)*$">Apellido inválido</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Nombre" runat="server" Text='<%# Bind("Nombre_Medico") %>'></asp:Label>
@@ -144,6 +147,8 @@
                                         <asp:TextBox ID="txtCorreo" runat="server" Height="20px" Text='<%# Bind("Correo_Medico") %>' Width="200px"></asp:TextBox>
                                         <br />
                                         <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtCorreo">Falta correo</asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="REV_Correo" runat="server" ControlToValidate="txtCorreo" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Correo inválido</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Correo" runat="server" Text='<%# Bind("Correo_Medico") %>'></asp:Label>
@@ -154,7 +159,7 @@
                                         <asp:TextBox ID="txtTelefono" runat="server" Height="18px" Text='<%# Bind("Telefono_Medico") %>' Width="100px"></asp:TextBox>
                                         <br />
                                         <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono">Falta Telefono</asp:RequiredFieldValidator>
-                                        &nbsp;<asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ValidationExpression="^[\d\W+]+$">Sin letras</asp:RegularExpressionValidator>
+                                        &nbsp;<asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ValidationExpression="^\+?[0-9]+$">Sin letras</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Telefono" runat="server" Text='<%# Bind("Telefono_Medico") %>'></asp:Label>
@@ -183,6 +188,8 @@
                                         <asp:TextBox ID="txtNacionalidad" runat="server" Height="18px" Text='<%# Bind("Nacionalidad_Medico") %>' Width="100px"></asp:TextBox>
                                         <br />
                                         <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="txtNacionalidad">Falta Nacionalidad</asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="REV_Nacionalidad" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="RegularExpressionValidator" ValidationExpression="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$">Nacionalidad inválida</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Nacionalidad" runat="server" Text='<%# Bind("Nacionalidad_Medico") %>'></asp:Label>
@@ -213,6 +220,8 @@
                                         <asp:TextBox ID="txtDireccion" runat="server" Height="20px" Text='<%# Bind("Direccion_Medico") %>' Width="200px"></asp:TextBox>
                                         <br />
                                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">Falta Direccion</asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="REV_Direccion" runat="server" ControlToValidate="txtDireccion" ValidationExpression="^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s\.,-]+$">Direccion inválida</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Direccion" runat="server" Text='<%# Bind("Direccion_Medico") %>'></asp:Label>

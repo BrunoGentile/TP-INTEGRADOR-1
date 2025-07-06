@@ -409,9 +409,9 @@
                 <td class="auto-style4">
                     </td>
                 <td class="auto-style8"></td>
-                <td class="auto-style24">&nbsp;</td>
-                <td class="auto-style11" colspan="2"></td>
-                <td class="auto-style11"></td>
+                <td class="auto-style2"></td>
+                <td class="auto-style2" colspan="2"></td>
+                <td class="auto-style2"></td>
                 <td class="auto-style2"></td>
                 <td class="auto-style14"></td>
                 <td class="auto-style2"></td>
