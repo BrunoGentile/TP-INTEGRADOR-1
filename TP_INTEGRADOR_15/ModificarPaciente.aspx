@@ -167,7 +167,7 @@
                                     <EditItemTemplate>
                                         <asp:TextBox ID="TB_EIT_Apellido" runat="server"></asp:TextBox>
                                         <br />
-                                        <asp:RegularExpressionValidator ID="REV_Apellido" runat="server" ControlToValidate="TB_EIT_Apellido" ForeColor="#CC0000">Ingrese un apellido válido</asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="REV_Apellido" runat="server" ControlToValidate="TB_EIT_Apellido" ForeColor="#CC0000" ValidationExpression="^[a-zA-Z]+$">Ingrese un apellido válido</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="LBL_IT_Apellido" runat="server" Text='<%# Bind("Apellido_Paciente") %>'></asp:Label>

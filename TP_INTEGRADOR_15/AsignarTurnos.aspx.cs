@@ -69,6 +69,7 @@ namespace TP_INTEGRADOR_15
         protected void DDL_Especialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarMedicos();
+            CargarDiasDisponibles();
             CargarHorarios();
         }
 
