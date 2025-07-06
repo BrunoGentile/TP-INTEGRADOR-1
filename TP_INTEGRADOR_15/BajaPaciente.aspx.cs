@@ -96,5 +96,11 @@ namespace TP_INTEGRADOR_15
         {
             CargarPacientes();
         }
+
+        protected void gv_EliminarPaciente_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gv_EliminarPaciente.PageIndex = e.NewPageIndex;
+            CargarPacientes();
+        }
     }
 }

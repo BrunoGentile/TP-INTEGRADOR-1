@@ -200,37 +200,19 @@ namespace Datos
 
         // [+] ---------- LISTAR PROVINCIAS ---------- [+]
 
-        public DataTable Provincias()
-        {
-            DataTable dataTable = new DataTable();
-            using (SqlConnection conexion = ObtenerConexion())
-            {
-                conexion.Open();
-                SqlCommand comando = new SqlCommand("SELECT * FROM Provincias", conexion);
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(dataTable);
-            }
-            return dataTable;
-        }
+      public void CargarProvinciasDesdePaciente()
+       {
+        GestionPacientes gestionPacientes = new GestionPacientes();
+        DataTable provincias = gestionPacientes.Provincias();
+       }
 
         // [+] ---------- LISTAR LOCALIDADES ---------- [+]
 
-        public DataTable Localidades(string CodProvincia)
+       public void CargarLocalidadesDesdePaciente(string CodProvincia)
         {
-            DataTable dataTable = new DataTable();
-            using (SqlConnection conexion = ObtenerConexion())
-
-            {
-                conexion.Open();
-                SqlCommand comando = new SqlCommand("SELECT * FROM Ciudades WHERE CodProvincia = @CodProvincia", conexion);
-                comando.Parameters.AddWithValue("@CodProvincia", CodProvincia);
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(dataTable);
-            }
-
-            return dataTable;
+            GestionPacientes gestionPacientes = new GestionPacientes();
+            DataTable localidades = gestionPacientes.Localidades(CodProvincia);
         }
-
         // [+] ---------- LISTAR ESPECIALIDADES ---------- [+]
 
         public DataTable Especialidades()
@@ -252,6 +234,7 @@ namespace Datos
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
+             
                 conexion.Open();
                 string consultaSQL = "INSERT INTO Medicos (Legajo_Medico, DNI_Medico, Nombre_Medico, Apellido_Medico, CodEspecialidad_Medico, Correo_Medico, Telefono_Medico, " +
                     "Sexo_Medico, Nacionalidad_Medico, Provincia_Medico, Ciudad_Medico, Direccion_Medico, DiasAtencion_Medico, HorarioInicio_Medico, FechaNacimiento_Medico, " +
@@ -295,7 +278,26 @@ namespace Datos
                 
                 // Ejecutar el comando
                 comando.ExecuteNonQuery();
+                
             }
+        }
+
+        public bool verificarDNIexistente(Medicos med)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                string consulta = "SELECT COUNT(*) FROM Medicos WHERE DNI_Medico = @DNI";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@DNI", med.DNI_Medico);
+
+                    int cantidad = (int)comando.ExecuteScalar();
+                    return cantidad > 0;
+                }
+            }
+
         }
 
         public string obtenerLegajo(Medicos medicos)

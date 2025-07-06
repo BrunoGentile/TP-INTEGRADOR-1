@@ -105,6 +105,7 @@ namespace TP_INTEGRADOR_15
 
         protected void BTN_Enviar_Click(object sender, EventArgs e)
         {
+            
             Medicos _Medicos = new Medicos();
             _Medicos.DNI_Medico = TB_DNI.Text;
             _Medicos.Nombre_Medico = TB_Nombre.Text;
@@ -123,7 +124,8 @@ namespace TP_INTEGRADOR_15
             _Medicos.Nacionalidad_Medico = TB_Nacionalidad.Text;
             _Medicos.Correo_Medico = TB_Correo.Text;
             _Medicos.DiasAtencion_Medico = TB_Dias.Text;
-
+            NegocioMedicos negocioMedicos = new NegocioMedicos();
+            if (!negocioMedicos.verificarDNIexistente(_Medicos)) {
             NegocioMedicos _Medico = new NegocioMedicos();
 
             try
@@ -139,6 +141,12 @@ namespace TP_INTEGRADOR_15
                 lbl_Mensaje.Text = "Error al registrar el médico. Verifique los datos.";
                 lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
                 lbl_Mensaje.Visible = true;
+            }
+            }
+            else
+            {
+                lbl_Mensaje.Text = "El DNI ya se encuentra en la base de datos";
+                lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
             }
         }
 

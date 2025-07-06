@@ -188,7 +188,7 @@
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style5">
-                                     <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" DataKeyNames="Legajo_Medico" OnRowCommand="gvMedico_RowCommand" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" >
+                                     <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="Legajo_Medico" OnRowCommand="gvMedico_RowCommand" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="gvMedico_PageIndexChanging" PageSize="5" >
             <Columns>
                 <asp:TemplateField HeaderText="Legajo">
                     <ItemTemplate>

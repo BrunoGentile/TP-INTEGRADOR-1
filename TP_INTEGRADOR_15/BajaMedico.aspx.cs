@@ -85,5 +85,11 @@ namespace TP_INTEGRADOR_15
             CargarGridMedicos();
             lblMensaje.Text = string.Empty;
         }
+
+        protected void gvMedico_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMedico.PageIndex = e.NewPageIndex;
+            CargarGridMedicos();
+        }
     }
 }

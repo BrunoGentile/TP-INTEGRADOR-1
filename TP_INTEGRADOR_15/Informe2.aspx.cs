@@ -30,9 +30,9 @@ namespace TP_INTEGRADOR_15
         {
             DateTime fechaSelecionada = Calendar1.SelectedDate;
             DateTime dia = fechaSelecionada;
-            DataTable dt = new DataTable();
-            dt = negocioConsultas.cargarTablaxDia(dia);
-            if (dt.Rows.Count == 0)
+            DataTable gv = new DataTable();
+            gv = negocioConsultas.cargarTablaxDia(dia);
+            if (gv.Rows.Count == 0)
             {
                 lbl_Mensaje.Text = "No se encontraron registros para la fecha seleccionada.";
                 gvConsultas.DataSource = null;
@@ -43,10 +43,10 @@ namespace TP_INTEGRADOR_15
             else
             {
                 lbl_Mensaje.Text = ""; // Limpiar mensaje si hay resultados
-                gvConsultas.DataSource = dt;
+                gvConsultas.DataSource = gv;
                 gvConsultas.DataBind();
-                int total = dt.Rows.Count;
-                int presentes = dt.AsEnumerable().Count(row => Convert.ToBoolean(row["PresenciaPaciente"]));
+                int total = gv.Rows.Count;
+                int presentes = gv.AsEnumerable().Count(row => Convert.ToBoolean(row["PresenciaPaciente"]));
                 int ausentes = total - presentes;
 
                 int porcentajePresente = (int)Math.Round((double)(presentes * 100) / total);
@@ -54,6 +54,7 @@ namespace TP_INTEGRADOR_15
 
                 lbl1.Text =  porcentajePresente + "%";
                 lbl2.Text =  porcentajeAusente + "%";
+                
             }
 
         }
