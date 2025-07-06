@@ -28,6 +28,16 @@ namespace TP_INTEGRADOR_15
 
         protected void btn_Presente_Click(object sender, EventArgs e)
         {
+            if (Calendar1.SelectedDate == DateTime.MinValue)
+            {
+                lbl_Mensaje.Text = "Por favor, seleccione una fecha antes de continuar.";
+                gvConsultas.DataSource = null;
+                gvConsultas.DataBind();
+                lbl1.Text = string.Empty;
+                lbl2.Text = string.Empty;
+                return; // corta la ejecución
+            }
+
             DateTime fechaSelecionada = Calendar1.SelectedDate;
             DateTime dia = fechaSelecionada;
             DataTable gv = new DataTable();
