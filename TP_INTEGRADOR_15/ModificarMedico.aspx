@@ -37,6 +37,18 @@
             width: 640px;
             height: 30px;
         }
+        .auto-style11 {
+            width: 80px;
+            height: 23px;
+        }
+        .auto-style12 {
+            width: 640px;
+            height: 23px;
+        }
+        .auto-style13 {
+            width: 117px;
+            height: 23px;
+        }
         </style>
 </head>
 <body>
@@ -63,7 +75,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;&nbsp;&nbsp; </td>
+                    <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                 </tr>
                 <tr>
@@ -97,7 +109,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style9">
-                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" AllowPaging="true" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowUpdating="gvMedico_RowUpdating" OnSelectedIndexChanged="gvMedico_SelectedIndexChanged" OnPageIndexChanging="gvMedico_PageIndexChanging" PageSize="5">
+                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" AllowPaging="true" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowUpdating="gvMedico_RowUpdating" OnSelectedIndexChanged="gvMedico_SelectedIndexChanged" OnPageIndexChanging="gvMedico_PageIndexChanging" PageSize="5" OnRowDataBound="gvMedico_RowDataBound">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo">
                                     <EditItemTemplate>
@@ -134,12 +146,11 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Especialidad">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txtEspecialidad" runat="server" Text='<%# Bind("CodEspecialidad_Medico") %>' Width="100px"></asp:TextBox>
-                                        <br />
-                                        <asp:RequiredFieldValidator ID="rfvEspecialidad" runat="server" ControlToValidate="txtEspecialidad">Falta especialidad</asp:RequiredFieldValidator>
+                                        <asp:DropDownList ID="DDL_EIT_Especialidades" runat="server">
+                                        </asp:DropDownList>
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:Label ID="lbl_It_Especialidad" runat="server" Text='<%# Bind("CodEspecialidad_Medico") %>'></asp:Label>
+                                        <asp:Label ID="lbl_It_Especialidad" runat="server" Text='<%# Bind("Especialidad") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Correo">
@@ -167,9 +178,11 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Sexo">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txtSexo" runat="server" Height="19px" Text='<%# Bind("Sexo_Medico") %>' Width="100px"></asp:TextBox>
+                                        <asp:RadioButtonList ID="RBL_Sexo" runat="server">
+                                            <asp:ListItem Value="Masculino">M</asp:ListItem>
+                                            <asp:ListItem Value="Femenino">F</asp:ListItem>
+                                        </asp:RadioButtonList>
                                         <br />
-                                        <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ControlToValidate="txtSexo">Falta Sexo</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Sexo" runat="server" Text='<%# Bind("Sexo_Medico") %>'></asp:Label>
@@ -197,9 +210,8 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Provincia">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txtProvincia" runat="server" Height="19px" Text='<%# Bind("Provincia_Medico") %>' Width="101px"></asp:TextBox>
-                                        <br />
-                                        <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="txtProvincia">Falta Provincia</asp:RequiredFieldValidator>
+                                        <asp:DropDownList ID="DDL_EIT_Provincias" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDL_EIT_Provincias_SelectedIndexChanged">
+                                        </asp:DropDownList>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Provincia" runat="server" Text='<%# Bind("Provincia_Medico") %>'></asp:Label>
@@ -207,9 +219,9 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Ciudad">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="txtCiudad" runat="server" Height="19px" Text='<%# Bind("Ciudad_Medico") %>' Width="100px"></asp:TextBox>
+                                        <asp:DropDownList ID="DDL_EIT_Ciudades" runat="server">
+                                        </asp:DropDownList>
                                         <br />
-                                        <asp:RequiredFieldValidator ID="rfvCiudad" runat="server" ControlToValidate="txtCiudad">Falta Ciudad</asp:RequiredFieldValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_Ciudad" runat="server" Text='<%# Bind("Ciudad_Medico") %>'></asp:Label>
@@ -232,6 +244,8 @@
                                         <asp:TextBox ID="txtDiasAtencion" runat="server" Height="20px" Text='<%# Bind("DiasAtencion_Medico") %>' Width="140px"></asp:TextBox>
                                         <br />
                                         <asp:RequiredFieldValidator ID="rfvDiasAtencion" runat="server" ControlToValidate="txtDiasAtencion">Faltan los dias</asp:RequiredFieldValidator>
+                                        <br />
+                                        <asp:RegularExpressionValidator ID="REV_Dias" runat="server" ControlToValidate="txtDiasAtencion" ValidationExpression="^(Lunes|Martes|Miércoles|Jueves|Viernes)(,\s*(Lunes|Martes|Miércoles|Jueves|Viernes))*$">Formato Incorrecto</asp:RegularExpressionValidator>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_It_DiasAtencion" runat="server" Text='<%# Bind("DiasAtencion_Medico") %>'></asp:Label>
@@ -271,9 +285,9 @@
                     <td class="auto-style4">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style13"></td>
                 </tr>
             </table>
         </div>

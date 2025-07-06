@@ -39,7 +39,7 @@ namespace Datos
         public void ObtenerMedicos(DataTable dataTable)
         {
             SqlConnection conexion = ObtenerConexion();
-            string consultaSQL = "SELECT * FROM Medicos WHERE Estado_Medico = 1";
+            string consultaSQL = "SELECT * FROM Medicos INNER JOIN Especialidades ON CodEspecialidad_Medico = Cod_Especialidad WHERE Estado_Medico = 1";
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             adaptador.Fill(dataTable);
@@ -55,7 +55,7 @@ namespace Datos
             SqlConnection conexion = ObtenerConexion();
             conexion.Open();
 
-            string consultaSQL = "SELECT * FROM Medicos WHERE Legajo_Medico = @Legajo AND Estado_Medico = 1";
+            string consultaSQL = "SELECT * FROM Medicos INNER JOIN Especialidades ON CodEspecialidad_Medico = Cod_Especialidad WHERE Legajo_Medico = @Legajo AND Estado_Medico = 1";
             SqlCommand comando = new SqlCommand(consultaSQL, conexion);
             comando.Parameters.AddWithValue("@Legajo", legajo);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -123,6 +123,70 @@ namespace Datos
             int cantidad = (int)comando.ExecuteScalar();
             conexion.Close();
             return cantidad > 0;
+        }
+
+        // [+] ---------- OBTENER SEXO DEL MÉDICO ---------- [+]
+
+        public string ObtenerSexo(string LegajoMed)
+        {
+
+            string Sexo = string.Empty;
+
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("SELECT Sexo_Medico FROM Medicos WHERE Legajo_Medico = @Legajo", conexion);
+                comando.Parameters.AddWithValue("@Legajo", LegajoMed);
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    Sexo = reader["Sexo_Medico"].ToString();
+                }
+                reader.Close();
+            }
+
+            return Sexo;
+        }
+
+        // [+] ---------- VALIDAR ESPECIALIDAD ---------- [+]
+
+        public string ObtenerEspecialidad(string LegajoMed)
+        {
+            string Especialidad = string.Empty;
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("SELECT CodEspecialidad_Medico FROM Medicos WHERE Legajo_Medico = @Legajo", conexion);
+                comando.Parameters.AddWithValue("@Legajo", LegajoMed);
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    Especialidad = reader["CodEspecialidad_Medico"].ToString();
+                }
+                reader.Close();
+            }
+            return Especialidad;
+        }
+
+        // [+] ---------- VALIDAR MEDICO ---------- [+]
+
+        public Medicos ValidarMedico(Medicos medico)
+        {
+
+            // VERIFICAR SEXO
+            if ( medico.Sexo_Medico != "Masculino" && medico.Sexo_Medico != "Femenino" )
+            {
+                medico.Sexo_Medico = ObtenerSexo(medico.Legajo_Medico);
+            }
+
+            // VERIFICAR ESPECIALIDAD
+
+            if ( medico.CodEspecialidad_Medico == "0" )
+            {
+                medico.CodEspecialidad_Medico = ObtenerEspecialidad(medico.Legajo_Medico);
+            }
+
+            return medico;
         }
 
         // -------------------------------------------------------------------------------------------------

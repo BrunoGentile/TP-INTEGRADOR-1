@@ -25,6 +25,8 @@ namespace Negocio
 
         public void ActualizarMedico(Medicos medico)
         {
+            medico = GestionMedicos.ValidarMedico(medico);
+
             GestionMedicos.actualizarMedicos(medico);
         }
 
