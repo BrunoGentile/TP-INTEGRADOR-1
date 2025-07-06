@@ -252,6 +252,7 @@ namespace Datos
         {
             using (SqlConnection conexion = ObtenerConexion())
             {
+             
                 conexion.Open();
                 string consultaSQL = "INSERT INTO Medicos (Legajo_Medico, DNI_Medico, Nombre_Medico, Apellido_Medico, CodEspecialidad_Medico, Correo_Medico, Telefono_Medico, " +
                     "Sexo_Medico, Nacionalidad_Medico, Provincia_Medico, Ciudad_Medico, Direccion_Medico, DiasAtencion_Medico, HorarioInicio_Medico, FechaNacimiento_Medico, " +
@@ -295,7 +296,26 @@ namespace Datos
                 
                 // Ejecutar el comando
                 comando.ExecuteNonQuery();
+                
             }
+        }
+
+        public bool verificarDNIexistente(Medicos med)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+                string consulta = "SELECT COUNT(*) FROM Medicos WHERE DNI_Medico = @DNI";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@DNI", med.DNI_Medico);
+
+                    int cantidad = (int)comando.ExecuteScalar();
+                    return cantidad > 0;
+                }
+            }
+
         }
 
         public string obtenerLegajo(Medicos medicos)
