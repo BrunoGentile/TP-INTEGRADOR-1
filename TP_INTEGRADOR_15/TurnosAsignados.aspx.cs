@@ -62,5 +62,11 @@ namespace TP_INTEGRADOR_15
             txtFiltrado.Text = string.Empty;
             lblPacienteInexistente.Text = string.Empty;
         }
+
+        protected void gvTurnos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvTurnos.PageIndex = e.NewPageIndex;
+            cargarGridView();
+        }
     }
 }

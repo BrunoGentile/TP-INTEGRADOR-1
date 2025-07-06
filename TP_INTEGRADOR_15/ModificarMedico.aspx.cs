@@ -135,5 +135,11 @@ namespace TP_INTEGRADOR_15
             txtFiltrado.Text = string.Empty;
             lblLegajoInexistente.Text = string.Empty;
         }
+
+        protected void gvMedico_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMedico.PageIndex = e.NewPageIndex;
+            cargarGridView();
+        }
     }
 }

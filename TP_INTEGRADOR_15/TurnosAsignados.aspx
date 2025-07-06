@@ -114,7 +114,7 @@
                 <tr>
                     <td class="auto-style12"></td>
                     <td class="auto-style13">
-                        <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" Width="538px" Height="106px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+                        <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" AllowPaging="true" Width="538px" Height="106px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" OnPageIndexChanging="gvTurnos_PageIndexChanging" PageSize="5">
                             <Columns>
                                 <asp:TemplateField HeaderText="DNI Paciente">
                                     <ItemTemplate>

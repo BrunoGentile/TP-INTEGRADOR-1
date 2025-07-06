@@ -97,7 +97,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style9">
-                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowUpdating="gvMedico_RowUpdating" OnSelectedIndexChanged="gvMedico_SelectedIndexChanged">
+                        <asp:GridView ID="gvMedico" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" AllowPaging="true" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnRowUpdating="gvMedico_RowUpdating" OnSelectedIndexChanged="gvMedico_SelectedIndexChanged" OnPageIndexChanging="gvMedico_PageIndexChanging" PageSize="5">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo">
                                     <EditItemTemplate>

@@ -142,6 +142,15 @@ namespace TP_INTEGRADOR_15
 
         }
 
+        protected void gvTurnos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvTurnos.PageIndex = e.NewPageIndex;
+
+            DataTable dt = negocio.cargarPresente(); // Volvés a cargar los datos
+            gvTurnos.DataSource = dt;
+            gvTurnos.DataBind();
+
+        }
     }
 }
 

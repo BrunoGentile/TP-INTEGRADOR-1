@@ -63,7 +63,7 @@
         </tr>
         <tr>
             <td class="auto-style5">
-       <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" CssClass="gridview" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+       <asp:GridView ID="gvTurnos" runat="server" AutoGenerateColumns="False" AllowPaging="true" CssClass="gridview" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnPageIndexChanging="gvTurnos_PageIndexChanging" PageSize="5">
         <Columns>
             <asp:TemplateField HeaderText="Codigo de Turno">
                 <ItemTemplate>
