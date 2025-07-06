@@ -94,13 +94,13 @@ namespace TP_INTEGRADOR_15
 
             _Turno._Horarios_Turno = Request.Form["IN_Horario"]; // HH:MM |
 
-            if (_NegocioTurnos.VerificarExistenciaPaciente(_Turno._DNIPaciente_Turno))
+            if ( _NegocioTurnos.VerificarExistenciaPaciente(_Turno._DNIPaciente_Turno) )
             {
 
-                if (_NegocioTurnos.VerificarDiaTurno(_Turno._LegajoMedico_Turno, _Turno._Dia_Turno))
+                if ( _NegocioTurnos.VerificarDiaTurno(_Turno._LegajoMedico_Turno, _Turno._Dia_Turno) )
                 {
 
-                    if (_NegocioTurnos.VerificarHorarioTurno(_Turno._LegajoMedico_Turno, _Turno._Horarios_Turno, Request.Form["Input_FechaAtencion"]))
+                    if ( _NegocioTurnos.VerificarHorarioTurno(_Turno._LegajoMedico_Turno, _Turno._Horarios_Turno, Request.Form["Input_FechaAtencion"]))
                     {
                         _Turno._Dia_Turno = Request.Form["Input_FechaAtencion"];
                         _NegocioTurnos.CargarTurnos(_Turno);

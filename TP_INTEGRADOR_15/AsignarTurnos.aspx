@@ -10,16 +10,8 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 15px;
-        }
         .auto-style3 {
             height: 35px;
-        }
-        .auto-style5 {
-        }
-        .auto-style6 {
-            width: 160px;
         }
         .auto-style7 {
             width: 15px;
@@ -64,6 +56,14 @@
         .auto-style21 {
             height: 30px;
         }
+        .auto-style22 {
+            height: 35px;
+            width: 160px;
+        }
+        .auto-style23 {
+            height: 30px;
+            width: 160px;
+        }
     </style>
 </head>
 <body>
@@ -71,17 +71,17 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style5" colspan="2">Usuario:&nbsp;
+                    <td class="auto-style14"></td>
+                    <td class="auto-style17" colspan="2">Usuario:&nbsp;
                         <asp:Label ID="LBL_UserName" runat="server" Font-Bold="True"></asp:Label>
                     </td>
-                    <td class="auto-style6">
+                    <td class="auto-style15">
                         <asp:HyperLink ID="hlVolver" runat="server" NavigateUrl="~/Login.aspx">Volver</asp:HyperLink>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style17"></td>
                 </tr>
                 <tr>
                     <td class="auto-style14"></td>
@@ -107,7 +107,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style8">Seleccionar Médico:</td>
+                    <td class="auto-style22">Seleccionar Médico:</td>
                     <td class="auto-style11"></td>
                     <td class="auto-style8">
                         <asp:DropDownList ID="DDL_Medicos" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDL_Medicos_SelectedIndexChanged">
@@ -120,7 +120,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style8">DNI_Paciente:</td>
+                    <td class="auto-style22">DNI_Paciente:</td>
                     <td class="auto-style11"></td>
                     <td class="auto-style8" colspan="2">
                         <asp:TextBox ID="TB_DNI" runat="server" Width="160px"></asp:TextBox>
@@ -131,7 +131,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style3">Seleccionar Día:</td>
+                    <td class="auto-style22">Seleccionar Día:</td>
                     <td class="auto-style11"></td>
                     <td class="auto-style3">&nbsp;
                         <input type="date" id="Input_FechaAtencion" name="Input_FechaAtencion" runat="server"/>
@@ -146,13 +146,13 @@
                 </tr>
                 <tr>
                     <td class="auto-style7"></td>
-                    <td class="auto-style8">Horario:</td>
+                    <td class="auto-style22">Horario:</td>
                     <td class="auto-style11"></td>
-                    <td class="auto-style8">
+                    <td class="auto-style3">
                         &nbsp;
                         <input type="time" id="IN_Horario" name="IN_Horario" runat="server"/>
                     </td>
-                    <td class="auto-style13" colspan="3">
+                    <td class="auto-style3" colspan="3">
                         <asp:Label ID="LBL_HSMedico" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style3"></td>
@@ -169,7 +169,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style18"></td>
-                    <td class="auto-style19"></td>
+                    <td class="auto-style23"></td>
                     <td class="auto-style20"></td>
                     <td class="auto-style19">
                         <asp:Button ID="BTN_Enviar" runat="server" Text="Cargar Turno" OnClick="BTN_Enviar_Click" />

@@ -17,7 +17,7 @@ namespace TP_INTEGRADOR_15
             this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             // VERIFICA SI EL USUARIO YA ESTÁ LOGUEADO
-            if (Session["LegajoUsuario"] != null )
+            if ( Session["LegajoUsuario"] != null )
             {
 
                 string UserName = Session["LegajoUsuario"].ToString();
@@ -79,6 +79,24 @@ namespace TP_INTEGRADOR_15
 
             LimpiarCampos();
 
+        }
+
+        protected void BTN_CloseSession_Click(object sender, EventArgs e)
+        {
+            DIV_Login.Visible = true;
+            DIV_InterfazAdmin.Visible = false;
+
+            Session["Usuario"] = null;
+            Session["LegajoUsuario"] = null;
+        }
+
+        protected void BTN_CloseSession2_Click(object sender, EventArgs e)
+        {
+            DIV_Login.Visible = true;
+            DIV_InterfazMedico.Visible = false;
+
+            Session["Usuario"] = null;
+            Session["LegajoUsuario"] = null;
         }
     }
 }

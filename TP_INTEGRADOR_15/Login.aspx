@@ -180,6 +180,14 @@
             width: 205px;
             height: 23px;
         }
+        .auto-style56 {
+            width: 195px;
+            height: 23px;
+        }
+        .auto-style57 {
+            width: 195px;
+            height: 24px;
+        }
     </style>
 </head>
 <body class="Body">
@@ -194,7 +202,8 @@
                         <asp:Label ID="LBL_Title" runat="server" Font-Size="20pt" Font-Underline="True" Text="Clínica Médica"></asp:Label>
                     </td>
                     <td class="auto-style43"></td>
-                    <td class="auto-style8"></td>
+                    <td class="auto-style8">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style35"></td>
@@ -220,7 +229,7 @@
                     <td class="auto-style45"></td>
                     <td class="auto-style46">Contraseña:</td>
                     <td class="auto-style47">
-                        <asp:TextBox ID="TB_Password" runat="server" Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="TB_Password" type="password" runat="server" Width="200px"></asp:TextBox>
                     </td>
                     <td class="auto-style48" colspan="2">
                         <asp:RequiredFieldValidator ID="RFV_Pass" runat="server" ControlToValidate="TB_Password" ForeColor="#CC0000">Ingrese una Contraseña</asp:RequiredFieldValidator>
@@ -248,6 +257,7 @@
                     <td class="auto-style9"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style12">
+                        <asp:Button ID="BTN_CloseSession" runat="server" OnClick="BTN_CloseSession_Click" Text="Cerrar Sesión" ValidationGroup="Group2" Width="105px" />
                         </td>
                     <td class="auto-style8"></td>
                 </tr>
@@ -366,7 +376,8 @@
                     </td>
                     <td class="auto-style8"></td>
                     <td class="auto-style10"></td>
-                    <td class="auto-style12">
+                    <td class="auto-style56">
+                        <asp:Button ID="BTN_CloseSession2" runat="server" OnClick="BTN_CloseSession2_Click" Text="Cerrar Sesión" ValidationGroup="Group2"/>
                         </td>
                     <td class="auto-style8"></td>
                 </tr>
@@ -377,7 +388,7 @@
                     <td class="auto-style8"></td>
                     <td class="auto-style8"></td>
                     <td class="auto-style10"></td>
-                    <td class="auto-style12"></td>
+                    <td class="auto-style56"></td>
                     <td class="auto-style8"></td>
                 </tr>
                 <tr>
@@ -391,7 +402,7 @@
                     <td class="auto-style15"></td>
                     <td class="auto-style15"></td>
                     <td class="auto-style17"></td>
-                    <td class="auto-style18"></td>
+                    <td class="auto-style57"></td>
                     <td class="auto-style15"></td>
                  </tr>
                  </table>
