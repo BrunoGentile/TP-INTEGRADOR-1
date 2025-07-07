@@ -14,6 +14,7 @@ namespace TP_INTEGRADOR_15
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // DESACTIVAR VALIDACIÓN DE DATOS DEL LADO DEL SERVIDOR
             this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             // VERIFICA SI EL USUARIO YA ESTÁ LOGUEADO

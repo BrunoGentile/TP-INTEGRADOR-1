@@ -125,23 +125,25 @@ namespace TP_INTEGRADOR_15
             _Medicos.Correo_Medico = TB_Correo.Text;
             _Medicos.DiasAtencion_Medico = TB_Dias.Text;
             NegocioMedicos negocioMedicos = new NegocioMedicos();
+            
             if (!negocioMedicos.verificarDNIexistente(_Medicos)) {
-            NegocioMedicos _Medico = new NegocioMedicos();
+            
+                NegocioMedicos _Medico = new NegocioMedicos();
 
-            try
-            {
-                _Medico.RegistrarMedico(_Medicos);
-                lbl_Mensaje.Text = "El médico se registró exitosamente.";
-                lbl_Mensaje.ForeColor = System.Drawing.Color.Green;
-                lbl_Mensaje.Visible = true;
-                LimpiarCampos();
-            }
-            catch (Exception ex)
-            {
-                lbl_Mensaje.Text = "Error al registrar el médico. Verifique los datos.";
-                lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
-                lbl_Mensaje.Visible = true;
-            }
+                try
+                {
+                    _Medico.RegistrarMedico(_Medicos);
+                    lbl_Mensaje.Text = "El médico se registró exitosamente.";
+                    lbl_Mensaje.ForeColor = System.Drawing.Color.Green;
+                    lbl_Mensaje.Visible = true;
+                    LimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    lbl_Mensaje.Text = "Error al registrar el médico. Verifique los datos.";
+                    lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
+                    lbl_Mensaje.Visible = true;
+                }
             }
             else
             {

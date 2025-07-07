@@ -44,8 +44,10 @@ namespace TP_INTEGRADOR_15
         }
 
 
+        // SE DISPARA AL HACER CLIC EN UN BOTÓN DE UNA FILA DEL GRIDVIEW.
         protected void gvTurnos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            // ENTRA AL BLOQUE SI EL BOTÓN QUE SE CLICKEÓ TIENE EL NOMBRE "VerObservacion".
             if (e.CommandName == "VerObservacion")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
